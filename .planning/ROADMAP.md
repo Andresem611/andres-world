@@ -8,7 +8,7 @@ Build a Pokemon Gen 1/2 pixel-art overworld personal website from the ground up.
 
 - [x] **Phase 1: Infrastructure** - Phaser 3 + Vite + TypeScript + Grid Engine scaffold deployed to andresmartinez.com
 - [x] **Phase 2: Overworld Map** - Miami-themed tilemap with player character, grid movement, and collision (completed 2026-03-09)
-- [ ] **Phase 3: Interaction + NPC System** - Building interactions, sign dialogs, and all overworld NPCs
+- [x] **Phase 3: Interaction + NPC System** - Building interactions, sign dialogs, and all overworld NPCs (completed 2026-03-09)
 - [ ] **Phase 4: Andres's Room** - First complete interior with full object interactions and wandering sprites
 - [ ] **Phase 5: Thoven HQ** - Second interior with metrics board, corkboard, practice rooms, and NPCs
 - [ ] **Phase 6: Starbucks Cafe + Engineering Lab** - Essay reading system and tools/experiments section
@@ -145,7 +145,7 @@ Plans:
 |-------|----------------|--------|-----------|
 | 1. Infrastructure | 2/2 | Complete | 2026-03-09 |
 | 2. Overworld Map | 3/3 | Complete   | 2026-03-09 |
-| 3. Interaction + NPC System | 4/5 | In Progress|  |
+| 3. Interaction + NPC System | 5/5 | Complete   | 2026-03-09 |
 | 4. Andres's Room | 0/TBD | Not started | - |
 | 5. Thoven HQ | 0/TBD | Not started | - |
 | 6. Starbucks Cafe + Engineering Lab | 0/TBD | Not started | - |
