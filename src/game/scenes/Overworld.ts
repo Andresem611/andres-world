@@ -33,27 +33,33 @@ export class OverworldScene extends Phaser.Scene {
     const map = this.make.tilemap({ key: "overworld" });
 
     // addTilesetImage(tiledTilesetName, phaserImageKey)
-    // First arg MUST match tilesets[0].name in overworld.json exactly: "modern-exteriors"
-    const tileset = map.addTilesetImage("modern-exteriors", "modern-exteriors")!;
+    // First arg MUST match tilesets[N].name in overworld.json exactly.
+    // 5 LimeZu tilesets in GID order (matching generate-map.ts TILESET_ORDER):
+    const terrains  = map.addTilesetImage("terrains",  "terrains")!;
+    const beach     = map.addTilesetImage("beach",     "beach")!;
+    const buildings = map.addTilesetImage("buildings", "buildings")!;
+    const garden    = map.addTilesetImage("garden",    "garden")!;
+    const worksite  = map.addTilesetImage("worksite",  "worksite")!;
+    const allTilesets = [terrains, beach, buildings, garden, worksite];
 
     // 2. Create all layers in order (bottom to top draw order)
     //    ALL createLayer() calls MUST complete before gridEngine.create() is called
-    map.createLayer("Ground", tileset, 0, 0);
-    map.createLayer("Above", tileset, 0, 0);
-    const collisionLayer = map.createLayer("Collision", tileset, 0, 0);
+    map.createLayer("Ground",    allTilesets, 0, 0);
+    map.createLayer("Above",     allTilesets, 0, 0);
+    const collisionLayer = map.createLayer("Collision", allTilesets, 0, 0);
     collisionLayer?.setVisible(false); // Collision layer is invisible at runtime
 
     // 3. Player sprite — position is managed by Grid Engine, not Phaser physics
     const playerSprite = this.add.sprite(0, 0, "player");
 
-    // 4. Camera — follow player, clamp to map bounds, 2x zoom for pixel art clarity
+    // 4. Camera — follow player, clamp to map bounds, 4x zoom for pixel art clarity
     this.cameras.main.startFollow(playerSprite, true);
     this.cameras.main.setFollowOffset(
       -playerSprite.width / 2,
       -playerSprite.height / 2
     );
     this.cameras.main.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
-    this.cameras.main.setZoom(2); // 2x zoom — 32px tiles at 2x = 64px apparent size
+    this.cameras.main.setZoom(4); // 4x zoom — 16px tiles at 4x = 64px apparent size
 
     // 5. Keyboard — created once in create(), NOT in update().
     //    Creating key objects every frame discards the previous frame's objects

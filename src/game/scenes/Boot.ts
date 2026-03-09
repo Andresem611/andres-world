@@ -4,6 +4,14 @@ import Phaser from "phaser";
 // Layout: 96x128px, 3 frames wide x 4 rows tall
 // Row 0: Down, Row 1: Left, Row 2: Right, Row 3: Up
 // (PIPOYA-compatible convention — walkingAnimationMapping: 0 row offsets apply)
+//
+// Tilesets: 5 LimeZu PNG files (16x16 tiles, Modern Exteriors pack)
+// Keys match tilesets[N].name in overworld.json AND addTilesetImage() first arg:
+//   terrains  → 1_Terrains_and_Fences_16x16.png  (GIDs 1–2368)
+//   beach     → 21_Beach_16x16.png                (GIDs 2369–6368)
+//   buildings → 4_Generic_Buildings_16x16.png      (GIDs 6369–12768)
+//   garden    → 17_Garden_16x16.png                (GIDs 12769–19040)
+//   worksite  → 8_Worksite_16x16.png               (GIDs 19041+)
 
 export class BootScene extends Phaser.Scene {
   constructor() {
@@ -11,8 +19,12 @@ export class BootScene extends Phaser.Scene {
   }
 
   preload(): void {
-    // Tileset image — key must match tilesets[0].name in overworld.json AND addTilesetImage() first arg
-    this.load.image("modern-exteriors", "assets/tilesets/modern-exteriors-32.png");
+    // Tileset images — keys must match tilesets[N].name in overworld.json AND addTilesetImage() first arg
+    this.load.image("terrains",  "assets/tilesets/1_Terrains_and_Fences_16x16.png");
+    this.load.image("beach",     "assets/tilesets/21_Beach_16x16.png");
+    this.load.image("buildings", "assets/tilesets/4_Generic_Buildings_16x16.png");
+    this.load.image("garden",    "assets/tilesets/17_Garden_16x16.png");
+    this.load.image("worksite",  "assets/tilesets/8_Worksite_16x16.png");
     // Tiled JSON map
     this.load.tilemapTiledJSON("overworld", "assets/maps/overworld.json");
     // Character placeholder sprite sheet (32x32 per frame, 4-directional)

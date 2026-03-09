@@ -119,13 +119,13 @@ const NPC_CONFIG: (NpcDefinition | PatrolNpcDefinition)[] = [
     startPosition: { x: 6, y: 34 },
     facingDirection: Direction.DOWN,
   },
-  // 9. Vinod Khosla — east boardwalk
+  // 9. Vinod Khosla — east beach boardwalk (x=40 = beach strip, not ocean x=42+)
   {
     id: "vinod-khosla",
     name: "Vinod Khosla",
     spriteKey: "npc-vinod-khosla",
     dialog: ["The best entrepreneurs ignore the odds."],
-    startPosition: { x: 42, y: 25 },
+    startPosition: { x: 40, y: 25 },
     facingDirection: Direction.LEFT,
   },
   // 10. Tobi Lutke — Engineering Lab area north
