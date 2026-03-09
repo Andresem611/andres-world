@@ -112,8 +112,11 @@ Garden sheet appears to repeat every ~4 rows with different plant/foliage varian
 | Foliage variant B3 | 7 | 0 | 12993 | (38,139,73) dark green | ❌ NEEDS HUMAN |
 
 **Best guess for Phase 3.2 PALM_GID replacement:**
-→ GID=12801 (garden row=1, col=0) rgb=(73,169,47) — bright lime green foliage
-→ This is likely the top of a palm tree sprite. Needs human confirm to identify which tile is trunk vs. fronds.
+→ ⚠️ Rows 1-3 of garden sheet are SMALL SHRUBS/BUSHES, NOT palm trees
+→ Per LimeZu community research: palm trees are in Garden rows 26-45
+→ GID=13601 (garden row=26, col=0) — likely palm tree fronds — ❌ NEEDS HUMAN
+→ Formula: 12769 + (26 × 32 + 0) = 13601
+→ Open tileset-preview.html, scroll to garden row=26-45, hover tiles to find actual palm
 
 ---
 

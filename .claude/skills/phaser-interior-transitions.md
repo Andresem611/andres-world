@@ -84,7 +84,9 @@ export class ThovenHQScene extends Phaser.Scene {
     this.cameras.main.setZoom(4)
 
     // 5. Grid Engine — MUST be after all createLayer() calls
+    //    cacheTileCollisions: true is a v2.28+ optimization for static tilemaps
     this.gridEngine.create(map, {
+      cacheTileCollisions: true,
       characters: [{
         id: "player",
         sprite: playerSprite,
