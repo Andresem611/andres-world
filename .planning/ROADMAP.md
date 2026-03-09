@@ -81,6 +81,31 @@ Plans:
 - [ ] 03.1-02-PLAN.md — Rewrite generate-map.ts with real LimeZu GIDs + regenerate overworld.json
 - [ ] 03.1-03-PLAN.md — Update Boot.ts + Overworld.ts (5 tilesets, zoom=4) + fix Vinod NPC position + human smoke test
 
+### Phase 3.2: Map Visual Design
+
+**Goal:** The overworld map looks like Miami — real grass, earthy paths, teal ocean, sandy beach, dock, building shells, palm trees. Every tile is from TILE-CATALOG.md with status ✅. No tile GID is hardcoded without visual confirmation. Fixes the critical bug where BUILDING_GID, PALM_GID, and SCAFFOLD_GID all point at transparent row-0 tiles.
+**Depends on:** Phase 3.1 + completed TILE-CATALOG.md (all overworld tile entries ✅)
+**Requirements**: ART-06, ART-07, ART-08
+**Success Criteria** (what must be TRUE):
+  1. Walking the map shows visible building shells (not invisible transparent blocks)
+  2. Palm trees are visible pixel art palm sprites (not transparent)
+  3. Chalk Lab and VC Office render with visible scaffolding overlay
+  4. All tile GIDs in generate-map.ts have a matching ✅ entry in TILE-CATALOG.md
+**Gate:** Do not plan this phase until TILE-CATALOG.md has ✅ on all overworld tiles (building wall, palm tree, scaffold must be human-confirmed)
+**Plans**: TBD
+
+### Phase 3.3: Character + NPC Sprites
+
+**Goal:** Real pixel art character (hoodie + backpack, 4-directional walk, 3 frames, Gen 1 style) replaces the placeholder box. At least 5 key NPCs (Paul Graham, Marc Andreessen, Brian Chesky, Dalton Caldwell, Vinod Khosla) have real pixel art sprites sourced from free itch.io packs.
+**Depends on:** Phase 3.2
+**Requirements**: CHAR-04, CHAR-05, NPC-06
+**Success Criteria** (what must be TRUE):
+  1. Player character shows hoodie + backpack sprite with 4-directional walk animation
+  2. At least 5 NPC sprites are real pixel art (not the current colored-box placeholders)
+  3. All sprite sources and licenses documented in .planning/SPRITE-SOURCES.md
+**Gate:** Source sprites from itch.io free packs before planning. Document pack name, sprite file, and license in .planning/SPRITE-SOURCES.md before any code runs.
+**Plans**: TBD
+
 ### Phase 4: Andres's Room
 **Goal**: The first complete interior is explorable — every object in the room tells something real about Andres
 **Depends on**: Phase 3
@@ -151,14 +176,16 @@ Plans:
 
 ## Progress
 
-**Execution Order:** 1 → 2 → 3 → 3.1 → 4 → 5 → 6 → 7 → 8 → 9
+**Execution Order:** 1 → 2 → 3 → 3.1 → 3.2 → 3.3 → 4 → 5 → 6 → 7 → 8 → 9
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Infrastructure | 2/2 | Complete | 2026-03-09 |
 | 2. Overworld Map | 3/3 | Complete   | 2026-03-09 |
 | 3. Interaction + NPC System | 5/5 | Complete   | 2026-03-09 |
-| 3.1. Art Foundation | 1/3 | In Progress|  |
+| 3.1. Art Foundation | 3/3 | Complete   | 2026-03-09 |
+| 3.2. Map Visual Design | 0/TBD | Blocked (needs TILE-CATALOG ✅) | - |
+| 3.3. Character + NPC Sprites | 0/TBD | Not started | - |
 | 4. Andres's Room | 0/TBD | Not started | - |
 | 5. Thoven HQ | 0/TBD | Not started | - |
 | 6. Starbucks Cafe + Engineering Lab | 0/TBD | Not started | - |
