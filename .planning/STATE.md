@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: completed
-stopped_at: Phase 2 context gathered
-last_updated: "2026-03-09T17:10:44.543Z"
+stopped_at: Completed 02-overworld-map-01-PLAN.md
+last_updated: "2026-03-09T17:44:55.916Z"
 last_activity: 2026-03-09 — Plan 01-02 complete. Vercel deploy pipeline live, CI/CD wired to main branch.
 progress:
   total_phases: 9
   completed_phases: 1
-  total_plans: 2
-  completed_plans: 2
+  total_plans: 5
+  completed_plans: 3
   percent: 100
 ---
 
@@ -55,6 +55,7 @@ Progress: [██████████] 100% (Phase 1 complete)
 |-------|------|-------|-------|
 | Phase 01-infrastructure | P01 | 2 tasks | 9 files |
 | Phase 01-infrastructure | P02 | 2 tasks | 1 file |
+| Phase 02-overworld-map P01 | 4min | 2 tasks | 7 files |
 
 ## Accumulated Context
 
@@ -72,6 +73,9 @@ Recent decisions affecting current work:
 - [Phase 01-infrastructure]: pixelArt:true + CSS image-rendering:pixelated for two-layer pixel-perfect rendering at all zoom levels
 - [Phase 01-infrastructure P02]: Custom domain (andresmartinez.com) deferred until acquired — Vercel-provided URL is the deploy target until then
 - [Phase 01-infrastructure P02]: vercel.json SPA rewrite uses /(.*) wildcard — future routes added in later phases are covered automatically
+- [Phase 02-overworld-map]: Placeholder tileset PNG generated in-process; Phase 9 plan swaps it by updating localTileId constants in generate-map.ts
+- [Phase 02-overworld-map]: Map authored programmatically (scripts/generate-map.ts) not via Tiled GUI for reproducible regeneration when tileset GIDs change
+- [Phase 02-overworld-map]: Collision layer uses BUILDING_WALL GID as blocking marker — any non-zero GID resolving to ge_collide:true tile blocks Grid Engine movement
 
 ### Pending Todos
 
@@ -83,6 +87,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-09T17:10:44.534Z
-Stopped at: Phase 2 context gathered
-Resume file: .planning/phases/02-overworld-map/02-CONTEXT.md
+Last session: 2026-03-09T17:44:55.912Z
+Stopped at: Completed 02-overworld-map-01-PLAN.md
+Resume file: None
