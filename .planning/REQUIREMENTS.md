@@ -166,22 +166,91 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| FOUND-01, FOUND-02, FOUND-03 | Phase 1 | Pending |
-| WORLD-01–08, CHAR-01–03 | Phase 2 | Pending |
-| INTER-01–05, NPC-01–05 | Phase 3 | Pending |
-| ROOM-01–13 | Phase 4 | Pending |
-| THOV-01–08 | Phase 5 | Pending |
-| CAFE-01–05 | Phase 6 | Pending |
-| LAB-01–07 | Phase 6 | Pending |
-| CONST-01–04, HIDE-01–05, BULL-01–05 | Phase 7 | Pending |
-| LOAD-01–03 | Phase 8 | Pending |
-| POLI-01–05 | Phase 9 | Pending |
+| FOUND-01 | Phase 1 — Infrastructure | Pending |
+| FOUND-02 | Phase 1 — Infrastructure | Pending |
+| FOUND-03 | Phase 1 — Infrastructure | Pending |
+| WORLD-01 | Phase 2 — Overworld Map | Pending |
+| WORLD-02 | Phase 2 — Overworld Map | Pending |
+| WORLD-03 | Phase 2 — Overworld Map | Pending |
+| WORLD-04 | Phase 2 — Overworld Map | Pending |
+| WORLD-05 | Phase 2 — Overworld Map | Pending |
+| WORLD-06 | Phase 2 — Overworld Map | Pending |
+| WORLD-07 | Phase 2 — Overworld Map | Pending |
+| WORLD-08 | Phase 2 — Overworld Map | Pending |
+| CHAR-01 | Phase 2 — Overworld Map | Pending |
+| CHAR-02 | Phase 2 — Overworld Map | Pending |
+| CHAR-03 | Phase 2 — Overworld Map | Pending |
+| INTER-01 | Phase 3 — Interaction + NPC System | Pending |
+| INTER-02 | Phase 3 — Interaction + NPC System | Pending |
+| INTER-03 | Phase 3 — Interaction + NPC System | Pending |
+| INTER-04 | Phase 3 — Interaction + NPC System | Pending |
+| INTER-05 | Phase 3 — Interaction + NPC System | Pending |
+| NPC-01 | Phase 3 — Interaction + NPC System | Pending |
+| NPC-02 | Phase 3 — Interaction + NPC System | Pending |
+| NPC-03 | Phase 3 — Interaction + NPC System | Pending |
+| NPC-04 | Phase 3 — Interaction + NPC System | Pending |
+| NPC-05 | Phase 3 — Interaction + NPC System | Pending |
+| ROOM-01 | Phase 4 — Andres's Room | Pending |
+| ROOM-02 | Phase 4 — Andres's Room | Pending |
+| ROOM-03 | Phase 4 — Andres's Room | Pending |
+| ROOM-04 | Phase 4 — Andres's Room | Pending |
+| ROOM-05 | Phase 4 — Andres's Room | Pending |
+| ROOM-06 | Phase 4 — Andres's Room | Pending |
+| ROOM-07 | Phase 4 — Andres's Room | Pending |
+| ROOM-08 | Phase 4 — Andres's Room | Pending |
+| ROOM-09 | Phase 4 — Andres's Room | Pending |
+| ROOM-10 | Phase 4 — Andres's Room | Pending |
+| ROOM-11 | Phase 4 — Andres's Room | Pending |
+| ROOM-12 | Phase 4 — Andres's Room | Pending |
+| ROOM-13 | Phase 4 — Andres's Room | Pending |
+| THOV-01 | Phase 5 — Thoven HQ | Pending |
+| THOV-02 | Phase 5 — Thoven HQ | Pending |
+| THOV-03 | Phase 5 — Thoven HQ | Pending |
+| THOV-04 | Phase 5 — Thoven HQ | Pending |
+| THOV-05 | Phase 5 — Thoven HQ | Pending |
+| THOV-06 | Phase 5 — Thoven HQ | Pending |
+| THOV-07 | Phase 5 — Thoven HQ | Pending |
+| THOV-08 | Phase 5 — Thoven HQ | Pending |
+| CAFE-01 | Phase 6 — Starbucks Cafe + Engineering Lab | Pending |
+| CAFE-02 | Phase 6 — Starbucks Cafe + Engineering Lab | Pending |
+| CAFE-03 | Phase 6 — Starbucks Cafe + Engineering Lab | Pending |
+| CAFE-04 | Phase 6 — Starbucks Cafe + Engineering Lab | Pending |
+| CAFE-05 | Phase 6 — Starbucks Cafe + Engineering Lab | Pending |
+| LAB-01 | Phase 6 — Starbucks Cafe + Engineering Lab | Pending |
+| LAB-02 | Phase 6 — Starbucks Cafe + Engineering Lab | Pending |
+| LAB-03 | Phase 6 — Starbucks Cafe + Engineering Lab | Pending |
+| LAB-04 | Phase 6 — Starbucks Cafe + Engineering Lab | Pending |
+| LAB-05 | Phase 6 — Starbucks Cafe + Engineering Lab | Pending |
+| LAB-06 | Phase 6 — Starbucks Cafe + Engineering Lab | Pending |
+| LAB-07 | Phase 6 — Starbucks Cafe + Engineering Lab | Pending |
+| CONST-01 | Phase 7 — Hidden Areas + Under-Construction + Bulletin Board | Pending |
+| CONST-02 | Phase 7 — Hidden Areas + Under-Construction + Bulletin Board | Pending |
+| CONST-03 | Phase 7 — Hidden Areas + Under-Construction + Bulletin Board | Pending |
+| CONST-04 | Phase 7 — Hidden Areas + Under-Construction + Bulletin Board | Pending |
+| HIDE-01 | Phase 7 — Hidden Areas + Under-Construction + Bulletin Board | Pending |
+| HIDE-02 | Phase 7 — Hidden Areas + Under-Construction + Bulletin Board | Pending |
+| HIDE-03 | Phase 7 — Hidden Areas + Under-Construction + Bulletin Board | Pending |
+| HIDE-04 | Phase 7 — Hidden Areas + Under-Construction + Bulletin Board | Pending |
+| HIDE-05 | Phase 7 — Hidden Areas + Under-Construction + Bulletin Board | Pending |
+| BULL-01 | Phase 7 — Hidden Areas + Under-Construction + Bulletin Board | Pending |
+| BULL-02 | Phase 7 — Hidden Areas + Under-Construction + Bulletin Board | Pending |
+| BULL-03 | Phase 7 — Hidden Areas + Under-Construction + Bulletin Board | Pending |
+| BULL-04 | Phase 7 — Hidden Areas + Under-Construction + Bulletin Board | Pending |
+| BULL-05 | Phase 7 — Hidden Areas + Under-Construction + Bulletin Board | Pending |
+| LOAD-01 | Phase 8 — Loading Screen | Pending |
+| LOAD-02 | Phase 8 — Loading Screen | Pending |
+| LOAD-03 | Phase 8 — Loading Screen | Pending |
+| POLI-01 | Phase 9 — Miami Art + Polish | Pending |
+| POLI-02 | Phase 9 — Miami Art + Polish | Pending |
+| POLI-03 | Phase 9 — Miami Art + Polish | Pending |
+| POLI-04 | Phase 9 — Miami Art + Polish | Pending |
+| POLI-05 | Phase 9 — Miami Art + Polish | Pending |
 
 **Coverage:**
 - v1 requirements: 70 total
 - Mapped to phases: 70
-- Unmapped: 0 ✓
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-03-08*
-*Last updated: 2026-03-08 after initial definition*
+*Last updated: 2026-03-08 after roadmap creation*
