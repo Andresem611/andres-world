@@ -20,6 +20,10 @@ export class OverworldScene extends Phaser.Scene {
   private npcSprites: Map<string, Phaser.GameObjects.Sprite> = new Map();
   private onDialogClose: (() => void) | null = null;
 
+  private johnPatrolDirection: "north" | "south" = "north";
+  private johnDialogOpen = false;
+  private patrolSubscription: { unsubscribe: () => void } | null = null;
+
   constructor() {
     super({ key: "Overworld" });
   }
@@ -126,10 +130,14 @@ export class OverworldScene extends Phaser.Scene {
 
     // 11. Scene shutdown cleanup — prevents memory leaks from open dialog
     this.events.on("shutdown", () => {
-      // Grid Engine subscriptions are cleaned up on scene destroy
+      // Unsubscribe patrol observable to prevent memory leak
+      this.patrolSubscription?.unsubscribe();
       // Explicitly close dialog if scene shuts down mid-conversation
       this.dialogBox?.close();
     });
+
+    // 12. Start John Collison's patrol after all setup is complete
+    this.initJohnPatrol();
   }
 
   update(): void {
@@ -173,6 +181,22 @@ export class OverworldScene extends Phaser.Scene {
     }
   }
 
+  private initJohnPatrol(): void {
+    const northPath = Array(10).fill(Direction.UP);
+    const southPath = Array(10).fill(Direction.DOWN);
+
+    // Start John walking north
+    this.gridEngine.addQueueMovements("john-collison", northPath);
+
+    // When movement queue empties, re-queue reverse direction
+    this.patrolSubscription = this.gridEngine.movementStopped().subscribe(({ charId }: { charId: string }) => {
+      if (charId !== "john-collison" || this.johnDialogOpen) return;
+      this.johnPatrolDirection = this.johnPatrolDirection === "north" ? "south" : "north";
+      const path = this.johnPatrolDirection === "north" ? northPath : southPath;
+      this.gridEngine.addQueueMovements("john-collison", path);
+    });
+  }
+
   private handleInteraction(payload: InteractionPayload): void {
     switch (payload.type) {
       case "npc": {
@@ -185,6 +209,21 @@ export class OverworldScene extends Phaser.Scene {
           [Direction.RIGHT]: Direction.LEFT,
         };
         this.gridEngine.turnTowards(payload.id, opposite[playerFacing] ?? Direction.DOWN);
+
+        // Pause John's patrol if he's the one being talked to
+        if (payload.id === "john-collison") {
+          this.gridEngine.stopMovement("john-collison");
+          this.johnDialogOpen = true;
+          // Resume patrol after dialog closes
+          this.onDialogClose = () => {
+            this.johnDialogOpen = false;
+            const resumePath = this.johnPatrolDirection === "north"
+              ? Array(10).fill(Direction.UP)
+              : Array(10).fill(Direction.DOWN);
+            this.gridEngine.addQueueMovements("john-collison", resumePath);
+          };
+        }
+
         this.dialogBox.show(payload.dialog);
         this.dialogOpen = true;
         break;
