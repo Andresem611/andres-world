@@ -5,15 +5,18 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
   "dependencies": {
-    "phaser": "^3.90.0",
-    "grid-engine": "^2.48.0"
+    "grid-engine": "^2.48.0",
+    "phaser": "^3.90.0"
   },
   "devDependencies": {
-    "vite": "^6.0.0",
+    "@types/node": "latest",
     "typescript": "^5.7.0",
-    "@types/node": "latest"
+    "vite": "^6.0.0",
+    "vitest": "^4.0.18"
   }
 }
