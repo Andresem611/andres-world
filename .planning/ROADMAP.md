@@ -69,6 +69,18 @@ Plans:
 - [ ] 03-04-PLAN.md — Wire interaction system into OverworldScene + Boot: Space/E detection, interactionMap, NPC spawn, facing-tile dispatch
 - [ ] 03-05-PLAN.md — John Collison patrol + human smoke test checkpoint
 
+### Phase 03.1: Art Foundation - Real Tilesets and Programmatic Miami World Map (INSERTED)
+
+**Goal:** Replace placeholder colored-block tileset with real LimeZu Modern Exteriors 16x16 tiles. Generate the complete Miami overworld map programmatically with real tile IDs. The world must render actual pixel art — real buildings, paths, palm trees, beach, dock, Main Street — not colored blocks.
+**Requirements**: ART-01, ART-02, ART-03, ART-04, ART-05
+**Depends on:** Phase 3
+**Plans:** 3 plans
+
+Plans:
+- [ ] 03.1-01-PLAN.md — Update test contract (tilewidth:16, 5-tileset assertions) + write PNG inspection script
+- [ ] 03.1-02-PLAN.md — Rewrite generate-map.ts with real LimeZu GIDs + regenerate overworld.json
+- [ ] 03.1-03-PLAN.md — Update Boot.ts + Overworld.ts (5 tilesets, zoom=4) + fix Vinod NPC position + human smoke test
+
 ### Phase 4: Andres's Room
 **Goal**: The first complete interior is explorable — every object in the room tells something real about Andres
 **Depends on**: Phase 3
@@ -139,13 +151,14 @@ Plans:
 
 ## Progress
 
-**Execution Order:** 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8 → 9
+**Execution Order:** 1 → 2 → 3 → 3.1 → 4 → 5 → 6 → 7 → 8 → 9
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Infrastructure | 2/2 | Complete | 2026-03-09 |
 | 2. Overworld Map | 3/3 | Complete   | 2026-03-09 |
 | 3. Interaction + NPC System | 5/5 | Complete   | 2026-03-09 |
+| 3.1. Art Foundation | 0/3 | Not started | - |
 | 4. Andres's Room | 0/TBD | Not started | - |
 | 5. Thoven HQ | 0/TBD | Not started | - |
 | 6. Starbucks Cafe + Engineering Lab | 0/TBD | Not started | - |
