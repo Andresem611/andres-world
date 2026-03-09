@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: completed
-stopped_at: "Completed 03-05 Task 1 — awaiting human smoke test (checkpoint:human-verify)"
-last_updated: "2026-03-09T21:06:41.303Z"
+stopped_at: Completed 03.1-01 — TDD gate tests + tileset inspector script
+last_updated: "2026-03-09T22:34:48.641Z"
 last_activity: 2026-03-09 — Plan 01-02 complete. Vercel deploy pipeline live, CI/CD wired to main branch.
 progress:
-  total_phases: 9
+  total_phases: 10
   completed_phases: 3
-  total_plans: 10
-  completed_plans: 10
+  total_plans: 13
+  completed_plans: 11
   percent: 100
 ---
 
@@ -62,6 +62,7 @@ Progress: [██████████] 100% (Phase 1 complete)
 | Phase 03-interaction-npc-system P02 | 5 | 2 tasks | 19 files |
 | Phase 03-interaction-npc-system P03-04 | 7min | 2 tasks | 3 files |
 | Phase 03-interaction-npc-system P03-05 | 3min | 1 tasks | 1 files |
+| Phase 03.1-art-foundation-real-tilesets-and-programmatic-miami-world-map P01 | 5 | 2 tasks | 3 files |
 
 ## Accumulated Context
 
@@ -96,6 +97,8 @@ Recent decisions affecting current work:
 - [Phase 03-interaction-npc-system]: All 14 NPCs registered as collides:false in gridEngine.create() — player walks through NPCs; patrol wiring deferred to Plan 05
 - [Phase 03-interaction-npc-system]: patrolSubscription typed as { unsubscribe: () => void } | null — satisfies TypeScript without importing rxjs types into OverworldScene
 - [Phase 03-interaction-npc-system]: initJohnPatrol() called at end of create() after all gridEngine and interactionMap setup — ensures john-collison is registered before addQueueMovements is called
+- [Phase 03.1-art-foundation]: Test assertions updated before generate-map.ts changes: 2 tests intentionally fail as TDD RED gate for Plan 02
+- [Phase 03.1-art-foundation]: 5 LimeZu tilesets in fixed GID order: terrains(1), beach(2369), buildings(6369), garden(12769), worksite(19041)
 
 ### Pending Todos
 
@@ -107,6 +110,11 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-09T21:06:41.299Z
-Stopped at: Completed 03-05 Task 1 — awaiting human smoke test (checkpoint:human-verify)
+Last session: 2026-03-09T22:34:48.638Z
+Stopped at: Completed 03.1-01 — TDD gate tests + tileset inspector script
 Resume file: None
+
+## Accumulated Context
+
+### Roadmap Evolution
+- Phase 03.1 inserted after Phase 3: Art Foundation - Real Tilesets and Programmatic Miami World Map (URGENT)
