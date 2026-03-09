@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: completed
-stopped_at: Completed 03-02-PLAN.md
-last_updated: "2026-03-09T20:48:47.943Z"
+stopped_at: Completed 03-04-PLAN.md
+last_updated: "2026-03-09T21:02:01.146Z"
 last_activity: 2026-03-09 — Plan 01-02 complete. Vercel deploy pipeline live, CI/CD wired to main branch.
 progress:
   total_phases: 9
   completed_phases: 2
   total_plans: 10
-  completed_plans: 8
+  completed_plans: 9
   percent: 100
 ---
 
@@ -60,6 +60,7 @@ Progress: [██████████] 100% (Phase 1 complete)
 | Phase 03-interaction-npc-system P03-01 | 1min | 1 tasks | 3 files |
 | Phase 03-interaction-npc-system P03 | 2 | 1 tasks | 1 files |
 | Phase 03-interaction-npc-system P02 | 5 | 2 tasks | 19 files |
+| Phase 03-interaction-npc-system P03-04 | 7min | 2 tasks | 3 files |
 
 ## Accumulated Context
 
@@ -89,6 +90,9 @@ Recent decisions affecting current work:
 - [Phase 03-interaction-npc-system]: InteractionPayload union type (npc, sign, building, under_construction) defined in DialogBox.ts as the contract for Plan 04 interaction router
 - [Phase 03-interaction-npc-system]: 14 NPC_CONFIG entries: 12 founders + keri + dad + dog-1; dog-2 gets PNG sprite only — resolves 14-entry test constraint
 - [Phase 03-interaction-npc-system]: PatrolNpcDefinition has collides:false as typed field so OverworldScene can check statically without casting
+- [Phase 03-interaction-npc-system]: NPC_CONFIG uses startPosition.x/y (not tileX/tileY) — interactionMap registration uses startPosition fields to match actual data shape
+- [Phase 03-interaction-npc-system]: InteractionPayload corrected: npcId→id, sceneKey→key, returnPos added to building type — aligns DialogBox.ts with test expectations and Plan 04 interaction router
+- [Phase 03-interaction-npc-system]: All 14 NPCs registered as collides:false in gridEngine.create() — player walks through NPCs; patrol wiring deferred to Plan 05
 
 ### Pending Todos
 
@@ -100,6 +104,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-09T20:48:47.940Z
-Stopped at: Completed 03-02-PLAN.md
+Last session: 2026-03-09T21:02:01.143Z
+Stopped at: Completed 03-04-PLAN.md
 Resume file: None
