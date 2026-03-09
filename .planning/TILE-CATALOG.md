@@ -153,15 +153,41 @@ The interior scene will need its own tileset chain starting after worksite (1904
 
 ---
 
+## Visual Findings from Human Review (2026-03-09)
+
+Andres reviewed the tileset-preview.html and shared screenshots. Key findings:
+
+### Garden tileset — NOT useful for Miami overworld
+The garden tileset contains formal topiary hedges, ornate stone pergolas/columns, and potted
+plants. This is a formal English garden aesthetic — no palm trees. Do not use garden tileset
+for the Miami overworld palm trees.
+
+### Beach tileset — HAS the palm tree
+A full multi-tile palm tree sprite is visible in the beach tileset (green, ~3×4 tiles).
+This is the Miami-appropriate palm tree. GID needs hover confirmation.
+The beach tileset also has: sand/grass transitions, dock wooden planks, beach bar structure,
+beach umbrellas, tropical ground plants. Very Miami-relevant.
+
+### Steel scaffold/truss structures
+Visible in both beach and terrains tilesets as steel X-frame tower structures. These work
+for under-construction buildings (Chalk Lab, VC Office).
+
+### Terrains — ground tiles are good
+Grass, path, water transitions are confirmed strong. Round deciduous trees (not palms) also
+present — these can be used as generic foliage in non-beach areas.
+
+---
+
 ## NEEDS HUMAN VERIFICATION (Priority Order)
 
 Open http://localhost:5173/tileset-preview.html and hover tiles to confirm GIDs.
 Replace ❌ with ✅ and update the RGB values.
 
 ### Phase 3.2 blockers (must confirm before map visual design):
-- [ ] **BUILDING replacement** — Open buildings tileset, hover row=1 → confirm which column has the cleanest solid wall tile for building shells
-- [ ] **PALM replacement** — Open garden tileset, hover row=1-3 → identify which tile is an actual palm tree (not just generic bush). May need to look at multiple cols.
-- [ ] **SCAFFOLD replacement** — Open worksite tileset, hover row=1, col=8 (orange) and row=6, col=0 (red-orange) → pick the most visually recognizable scaffolding tile
+- [ ] **PALM GID** — In the BEACH tileset, hover the palm tree sprite (visible in middle-right area of beach sheet, ~row 5-6). Get the top-left tile GID. Note all tile GIDs for trunk and fronds if it's multi-tile.
+- [ ] **SCAFFOLD GID** — In the BEACH or TERRAINS tileset, hover one of the steel X-frame tower tiles. Get its GID.
+- [ ] **BUILDING wall GID** — In the BUILDINGS tileset, hover row=1 to find the cleanest solid wall tile.
+- [ ] **DOCK GID confirmation** — The existing DOCK_GID=2672 was pixel-sampled. Visual confirm it looks like wooden planks (not just brown pixels).
 
 ### Phase 4 blockers (interior tilesets):
 - [ ] Catalog Interiors_16x16.png first 30 rows (room floors, walls, furniture)

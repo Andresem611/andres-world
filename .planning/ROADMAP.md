@@ -91,7 +91,7 @@ Plans:
   2. Palm trees are visible pixel art palm sprites (not transparent)
   3. Chalk Lab and VC Office render with visible scaffolding overlay
   4. All tile GIDs in generate-map.ts have a matching ✅ entry in TILE-CATALOG.md
-**Gate:** Do not plan this phase until TILE-CATALOG.md has ✅ on all overworld tiles (building wall, palm tree, scaffold must be human-confirmed)
+**Human gate (required before planning):** Andres opens tileset-preview.html, hovers: (1) palm tree in beach tileset, (2) scaffold/truss in beach or terrains, (3) building wall in buildings sheet. Fills in GIDs in TILE-CATALOG.md with ✅. Claude does NOT start planning until catalog entries are confirmed. This is the permanent workflow: Claude proposes best-guess → human confirms visually → ✅ → code runs.
 **Plans**: TBD
 
 ### Phase 3.3: Character + NPC Sprites
