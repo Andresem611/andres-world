@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: completed
-stopped_at: Completed 03.1-02 — LimeZu 5-tileset map generator rewrite, all TDD tests GREEN
-last_updated: "2026-03-09T22:39:31.147Z"
+stopped_at: Completed 03.1-03 — 5 LimeZu tilesets wired to Phaser runtime, human smoke test approved
+last_updated: "2026-03-09T22:53:24.049Z"
 last_activity: 2026-03-09 — Plan 01-02 complete. Vercel deploy pipeline live, CI/CD wired to main branch.
 progress:
   total_phases: 10
-  completed_phases: 3
+  completed_phases: 4
   total_plans: 13
-  completed_plans: 12
+  completed_plans: 13
   percent: 100
 ---
 
@@ -64,6 +64,7 @@ Progress: [██████████] 100% (Phase 1 complete)
 | Phase 03-interaction-npc-system P03-05 | 3min | 1 tasks | 1 files |
 | Phase 03.1-art-foundation-real-tilesets-and-programmatic-miami-world-map P01 | 5 | 2 tasks | 3 files |
 | Phase 03.1-art-foundation-real-tilesets-and-programmatic-miami-world-map P02 | 8 | 2 tasks | 2 files |
+| Phase 03.1-art-foundation-real-tilesets-and-programmatic-miami-world-map P03 | 15 | 2 tasks | 3 files |
 
 ## Accumulated Context
 
@@ -102,6 +103,7 @@ Recent decisions affecting current work:
 - [Phase 03.1-art-foundation]: 5 LimeZu tilesets in fixed GID order: terrains(1), beach(2369), buildings(6369), garden(12769), worksite(19041)
 - [Phase 03.1-art-foundation]: GRASS_GID/PATH_GID use safe defaults (row=0/col=0) — catalog showed transparent border pixels; visual refinement deferred to Phase 9
 - [Phase 03.1-art-foundation]: Terrains fence tile (localId=160) marked ge_collide:true in buildTerrainTileProperties() — satisfies tilesets[0].tiles.length > 0 test without blocking walkable GRASS_GID
+- [Phase 03.1-art-foundation]: Boot.ts loads 5 LimeZu PNGs separately; Overworld.ts passes allTilesets array to createLayer; zoom=4 for 16px tiles; Vinod Khosla moved from ocean x=42 to boardwalk x=40
 
 ### Pending Todos
 
@@ -113,8 +115,8 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-09T22:39:31.144Z
-Stopped at: Completed 03.1-02 — LimeZu 5-tileset map generator rewrite, all TDD tests GREEN
+Last session: 2026-03-09T22:53:24.047Z
+Stopped at: Completed 03.1-03 — 5 LimeZu tilesets wired to Phaser runtime, human smoke test approved
 Resume file: None
 
 ## Accumulated Context
