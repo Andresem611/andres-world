@@ -60,7 +60,14 @@ Plans:
   3. Interacting with an under-construction building shows the correct popup instead of loading an interior
   4. Sign text and NPC dialogue appear in a Pokemon-style text box at the bottom of the screen, advance with Space/E, and support multi-line text
   5. All 14 NPCs from the roster are visible in their correct map locations; John Collison patrols Main Street
-**Plans**: TBD
+**Plans**: 5 plans
+
+Plans:
+- [ ] 03-01-PLAN.md — Wave 0 test scaffolds: npc-config, interaction-router, dialog-box test files (all requirements covered)
+- [ ] 03-02-PLAN.md — NPC config (14 entries), placeholder sprites (15 PNGs), InteriorStub scene, main.ts registration
+- [ ] 03-03-PLAN.md — DialogBox component + InteractionPayload type + splitIntoPages pure export
+- [ ] 03-04-PLAN.md — Wire interaction system into OverworldScene + Boot: Space/E detection, interactionMap, NPC spawn, facing-tile dispatch
+- [ ] 03-05-PLAN.md — John Collison patrol + human smoke test checkpoint
 
 ### Phase 4: Andres's Room
 **Goal**: The first complete interior is explorable — every object in the room tells something real about Andres
@@ -138,7 +145,7 @@ Plans:
 |-------|----------------|--------|-----------|
 | 1. Infrastructure | 2/2 | Complete | 2026-03-09 |
 | 2. Overworld Map | 3/3 | Complete   | 2026-03-09 |
-| 3. Interaction + NPC System | 0/TBD | Not started | - |
+| 3. Interaction + NPC System | 0/5 | Not started | - |
 | 4. Andres's Room | 0/TBD | Not started | - |
 | 5. Thoven HQ | 0/TBD | Not started | - |
 | 6. Starbucks Cafe + Engineering Lab | 0/TBD | Not started | - |
