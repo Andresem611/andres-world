@@ -27,7 +27,11 @@ Build a Pokemon Gen 1/2 pixel-art overworld personal website from the ground up.
   2. `vite build` produces a production build with no errors
   3. Pushing to main triggers Vercel deploy and the build is accessible at andresmartinez.com
   4. Canvas renders at 1x scale with no anti-aliasing blur on pixel edges
-**Plans**: TBD
+**Plans**: 2 plans
+
+Plans:
+- [ ] 01-01-PLAN.md — Phaser 3 + Grid Engine scaffold (package.json, vite config, src files, pixel-perfect rendering)
+- [ ] 01-02-PLAN.md — Vercel deploy pipeline + live site verification at andresmartinez.com
 
 ### Phase 2: Overworld Map
 **Goal**: A visitor can drop into the world and walk the full Miami-themed map
@@ -127,7 +131,7 @@ Build a Pokemon Gen 1/2 pixel-art overworld personal website from the ground up.
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Infrastructure | 0/TBD | Not started | - |
+| 1. Infrastructure | 0/2 | Planned | - |
 | 2. Overworld Map | 0/TBD | Not started | - |
 | 3. Interaction + NPC System | 0/TBD | Not started | - |
 | 4. Andres's Room | 0/TBD | Not started | - |
