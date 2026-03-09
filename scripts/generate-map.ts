@@ -14,18 +14,16 @@
  *   Garden   (17_Garden_16x16.png):             GID 12769 – 19040
  *   Worksite (8_Worksite_16x16.png):            GID 19041 – 19680
  *
- * Tile GID decisions (Task 1 — tileset-catalog.json inspection):
- *   All row 0 pixels sampled as [0,0,0] (transparent/black border) — catalog
- *   is ambiguous. Using Approach B safe defaults: row=0/col=0 for all tiles.
- *   Visual refinement is a separate task — the goal here is structural
- *   correctness (right GIDs, right tilesets, right tile size).
+ * Tile GID decisions (Task 2 — tileset-catalog.json confirmed real content rows):
+ *   Row 0 of every LimeZu sheet is a transparent border — all [0,0,0].
+ *   GIDs below point at actual colored content rows verified via catalog.
  *
- *   GRASS_GID    = Terrains row=0 col=0  → TODO: confirm green tile after visual review
- *   PATH_GID     = Terrains row=0 col=1  → TODO: confirm path tile after visual review
- *   WATER_GID    = Beach    row=0 col=0  → TODO: confirm blue water tile
- *   SAND_GID     = Beach    row=0 col=1  → TODO: confirm sandy tile
- *   DOCK_GID     = Beach    row=2 col=0  → TODO: confirm pier/dock tile
- *   PLAZA_GID    = Terrains row=1 col=0  → TODO: confirm plaza paving
+ *   GRASS_GID    = Terrains row=6 col=0  → GID 193,  rgb=[71,151,87]  green grass
+ *   PATH_GID     = Terrains row=9 col=5  → GID 294,  rgb=[199,140,89] earthy/sandy path
+ *   WATER_GID    = Terrains row=5 col=25 → GID 186,  rgb=[54,154,176] teal water
+ *   SAND_GID     = Beach    row=2 col=0  → GID 2433, rgb=[230,174,85] sandy golden
+ *   DOCK_GID     = Beach    row=9 col=15 → GID 2672, rgb=[126,97,81]  wooden pier brown
+ *   PLAZA_GID    = Terrains row=1 col=1  → GID 34,   rgb=[217,226,241] light stone/pavement
  *   BUILDING_GID = Buildings row=0 col=0 → ge_collide:true
  *   PALM_GID     = Garden   row=0 col=0  → ge_collide:true
  *   SCAFFOLD_GID = Worksite row=0 col=0  → ge_collide:true
@@ -71,21 +69,21 @@ function tileGid(firstgid: number, cols: number, row: number, col: number): numb
   return firstgid + (row * cols + col);
 }
 
-// Terrain tile GIDs — derived from tileset-catalog.json inspection
-// Catalog showed [0,0,0] for all row-0 pixels (transparent borders) — using
-// Approach B safe defaults (row=0/col=0). Visual refinement deferred.
-// Grass: Terrains row=0 col=0 → RGB [0,0,0] (transparent/border — safe default)
-const GRASS_GID = tileGid(TERRAIN_FIRSTGID, TERRAIN_COLS, 0, 0);
-// Path: Terrains row=0 col=1 → safe default adjacent tile
-const PATH_GID = tileGid(TERRAIN_FIRSTGID, TERRAIN_COLS, 0, 1);
-// Water: Beach row=0 col=0 → safe default
-const WATER_GID = tileGid(BEACH_FIRSTGID, BEACH_COLS, 0, 0);
-// Sand: Beach row=0 col=1 → safe default adjacent tile
-const SAND_GID = tileGid(BEACH_FIRSTGID, BEACH_COLS, 0, 1);
-// Dock: Beach row=2 col=0 → safe default for pier/dock look
-const DOCK_GID = tileGid(BEACH_FIRSTGID, BEACH_COLS, 2, 0);
-// Plaza: Terrains row=1 col=0 → different terrain row for variety
-const PLAZA_GID = tileGid(TERRAIN_FIRSTGID, TERRAIN_COLS, 1, 0);
+// Terrain tile GIDs — verified against tileset-catalog.json sampled center pixels.
+// Row 0 of every LimeZu sheet is a transparent border ([0,0,0]). All GIDs below
+// point at real content rows with confirmed non-black center pixel values.
+// Grass: Terrains row=6 col=0 → GID 193, rgb=[71,151,87] (green grass)
+const GRASS_GID = tileGid(TERRAIN_FIRSTGID, TERRAIN_COLS, 6, 0);
+// Path: Terrains row=9 col=5 → GID 294, rgb=[199,140,89] (earthy/sandy path)
+const PATH_GID = tileGid(TERRAIN_FIRSTGID, TERRAIN_COLS, 9, 5);
+// Water: Terrains row=5 col=25 → GID 186, rgb=[54,154,176] (teal water)
+const WATER_GID = tileGid(TERRAIN_FIRSTGID, TERRAIN_COLS, 5, 25);
+// Sand: Beach row=2 col=0 → GID 2433, rgb=[230,174,85] (sandy golden)
+const SAND_GID = tileGid(BEACH_FIRSTGID, BEACH_COLS, 2, 0);
+// Dock: Beach row=9 col=15 → GID 2672, rgb=[126,97,81] (wooden pier brown)
+const DOCK_GID = tileGid(BEACH_FIRSTGID, BEACH_COLS, 9, 15);
+// Plaza: Terrains row=1 col=1 → GID 34, rgb=[217,226,241] (light stone/pavement)
+const PLAZA_GID = tileGid(TERRAIN_FIRSTGID, TERRAIN_COLS, 1, 1);
 // Building: Buildings row=0 col=0 → ge_collide:true in tileset properties
 const BUILDING_GID = tileGid(BUILDING_FIRSTGID, BUILDING_COLS, 0, 0);
 // Palm: Garden row=0 col=0 → ge_collide:true in tileset properties
