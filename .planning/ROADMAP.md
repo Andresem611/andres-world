@@ -74,7 +74,7 @@ Plans:
 **Goal:** Replace placeholder colored-block tileset with real LimeZu Modern Exteriors 16x16 tiles. Generate the complete Miami overworld map programmatically with real tile IDs. The world must render actual pixel art — real buildings, paths, palm trees, beach, dock, Main Street — not colored blocks.
 **Requirements**: ART-01, ART-02, ART-03, ART-04, ART-05
 **Depends on:** Phase 3
-**Plans:** 3 plans
+**Plans:** 2/3 plans executed
 
 Plans:
 - [ ] 03.1-01-PLAN.md — Update test contract (tilewidth:16, 5-tileset assertions) + write PNG inspection script
