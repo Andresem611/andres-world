@@ -145,7 +145,7 @@ Plans:
 |-------|----------------|--------|-----------|
 | 1. Infrastructure | 2/2 | Complete | 2026-03-09 |
 | 2. Overworld Map | 3/3 | Complete   | 2026-03-09 |
-| 3. Interaction + NPC System | 0/5 | Not started | - |
+| 3. Interaction + NPC System | 1/5 | In Progress|  |
 | 4. Andres's Room | 0/TBD | Not started | - |
 | 5. Thoven HQ | 0/TBD | Not started | - |
 | 6. Starbucks Cafe + Engineering Lab | 0/TBD | Not started | - |

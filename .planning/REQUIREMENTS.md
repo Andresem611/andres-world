@@ -30,19 +30,19 @@
 
 ### Interaction System
 
-- [ ] **INTER-01**: Press Space or E near a building/sign triggers interaction
-- [ ] **INTER-02**: Interacting with a finished building loads its interior map (full page transition)
-- [ ] **INTER-03**: Interacting with an under-construction building shows popup: *"Builder still hammering away... check back soon."*
-- [ ] **INTER-04**: Interacting with signs shows Pokemon-style dialog text box at bottom of screen
-- [ ] **INTER-05**: Dialog text box supports multi-line text and advances with Space/E
+- [x] **INTER-01**: Press Space or E near a building/sign triggers interaction
+- [x] **INTER-02**: Interacting with a finished building loads its interior map (full page transition)
+- [x] **INTER-03**: Interacting with an under-construction building shows popup: *"Builder still hammering away... check back soon."*
+- [x] **INTER-04**: Interacting with signs shows Pokemon-style dialog text box at bottom of screen
+- [x] **INTER-05**: Dialog text box supports multi-line text and advances with Space/E
 
 ### NPC System
 
-- [ ] **NPC-01**: NPCs render as distinct pixel sprites on the overworld
-- [ ] **NPC-02**: Pressing Space/E near an NPC opens dialog with their quote (Pokemon-style text box)
-- [ ] **NPC-03**: NPC dialogue is self-aware/funny, fourth-wall breaking in tone
-- [ ] **NPC-04**: Walking NPCs (John Collison on Main Street) have patrol movement patterns
-- [ ] **NPC-05**: All 14 NPCs from the NPC roster are placed in their correct map locations
+- [x] **NPC-01**: NPCs render as distinct pixel sprites on the overworld
+- [x] **NPC-02**: Pressing Space/E near an NPC opens dialog with their quote (Pokemon-style text box)
+- [x] **NPC-03**: NPC dialogue is self-aware/funny, fourth-wall breaking in tone
+- [x] **NPC-04**: Walking NPCs (John Collison on Main Street) have patrol movement patterns
+- [x] **NPC-05**: All 14 NPCs from the NPC roster are placed in their correct map locations
 
 ### Andres's Room (First Interior)
 
@@ -180,16 +180,16 @@
 | CHAR-01 | Phase 2 — Overworld Map | Complete |
 | CHAR-02 | Phase 2 — Overworld Map | Complete |
 | CHAR-03 | Phase 2 — Overworld Map | Complete |
-| INTER-01 | Phase 3 — Interaction + NPC System | Pending |
-| INTER-02 | Phase 3 — Interaction + NPC System | Pending |
-| INTER-03 | Phase 3 — Interaction + NPC System | Pending |
-| INTER-04 | Phase 3 — Interaction + NPC System | Pending |
-| INTER-05 | Phase 3 — Interaction + NPC System | Pending |
-| NPC-01 | Phase 3 — Interaction + NPC System | Pending |
-| NPC-02 | Phase 3 — Interaction + NPC System | Pending |
-| NPC-03 | Phase 3 — Interaction + NPC System | Pending |
-| NPC-04 | Phase 3 — Interaction + NPC System | Pending |
-| NPC-05 | Phase 3 — Interaction + NPC System | Pending |
+| INTER-01 | Phase 3 — Interaction + NPC System | Complete |
+| INTER-02 | Phase 3 — Interaction + NPC System | Complete |
+| INTER-03 | Phase 3 — Interaction + NPC System | Complete |
+| INTER-04 | Phase 3 — Interaction + NPC System | Complete |
+| INTER-05 | Phase 3 — Interaction + NPC System | Complete |
+| NPC-01 | Phase 3 — Interaction + NPC System | Complete |
+| NPC-02 | Phase 3 — Interaction + NPC System | Complete |
+| NPC-03 | Phase 3 — Interaction + NPC System | Complete |
+| NPC-04 | Phase 3 — Interaction + NPC System | Complete |
+| NPC-05 | Phase 3 — Interaction + NPC System | Complete |
 | ROOM-01 | Phase 4 — Andres's Room | Pending |
 | ROOM-02 | Phase 4 — Andres's Room | Pending |
 | ROOM-03 | Phase 4 — Andres's Room | Pending |
