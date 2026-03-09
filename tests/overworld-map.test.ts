@@ -9,8 +9,8 @@ describe("overworld.json — map structure", () => {
   it("has correct map dimensions", () => {
     expect(mapData.width).toBe(50);
     expect(mapData.height).toBe(40);
-    expect(mapData.tilewidth).toBe(32);
-    expect(mapData.tileheight).toBe(32);
+    expect(mapData.tilewidth).toBe(16);
+    expect(mapData.tileheight).toBe(16);
   });
 
   it("has exactly 3 layers named Ground, Above, Collision in that order", () => {
@@ -70,7 +70,12 @@ describe("overworld.json — map structure", () => {
     }
   });
 
-  it("tileset name matches 'modern-exteriors' for addTilesetImage lookup", () => {
-    expect(mapData.tilesets[0].name).toBe("modern-exteriors");
+  it("has exactly 5 tilesets: terrains, beach, buildings, garden, worksite", () => {
+    expect(mapData.tilesets).toHaveLength(5);
+    expect(mapData.tilesets[0].name).toBe("terrains");
+    expect(mapData.tilesets[1].name).toBe("beach");
+    expect(mapData.tilesets[2].name).toBe("buildings");
+    expect(mapData.tilesets[3].name).toBe("garden");
+    expect(mapData.tilesets[4].name).toBe("worksite");
   });
 });
