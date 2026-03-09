@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: completed
-stopped_at: Completed 02-overworld-map-02-PLAN.md
-last_updated: "2026-03-09T17:49:10.986Z"
+stopped_at: Checkpoint at 02-03-PLAN.md Task 2 — awaiting human smoke test
+last_updated: "2026-03-09T17:52:01.530Z"
 last_activity: 2026-03-09 — Plan 01-02 complete. Vercel deploy pipeline live, CI/CD wired to main branch.
 progress:
   total_phases: 9
-  completed_phases: 1
+  completed_phases: 2
   total_plans: 5
-  completed_plans: 4
+  completed_plans: 5
   percent: 100
 ---
 
@@ -79,6 +79,7 @@ Recent decisions affecting current work:
 - [Phase 02-overworld-map]: Collision layer uses BUILDING_WALL GID as blocking marker — any non-zero GID resolving to ge_collide:true tile blocks Grid Engine movement
 - [Phase 02-overworld-map]: Character placeholder sprite generated programmatically (Python PNG encoder) with PIPOYA row order (Down/Left/Right/Up) for Grid Engine walkingAnimationMapping compatibility
 - [Phase 02-overworld-map]: Scene flow established: BootScene (preload only) -> OverworldScene; Grid Engine create() strictly after all createLayer() calls
+- [Phase 02-overworld-map]: Phase 2 integration verified automatically before human smoke test — all checks green on first run
 
 ### Pending Todos
 
@@ -90,6 +91,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-09T17:49:10.982Z
-Stopped at: Completed 02-overworld-map-02-PLAN.md
+Last session: 2026-03-09T17:51:52.848Z
+Stopped at: Checkpoint at 02-03-PLAN.md Task 2 — awaiting human smoke test
 Resume file: None
