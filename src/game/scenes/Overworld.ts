@@ -2,6 +2,14 @@ import Phaser from "phaser";
 import { Direction } from "grid-engine";
 
 export class OverworldScene extends Phaser.Scene {
+  private cursors!: Phaser.Types.Input.Keyboard.CursorKeys;
+  private wasd!: {
+    up: Phaser.Input.Keyboard.Key;
+    down: Phaser.Input.Keyboard.Key;
+    left: Phaser.Input.Keyboard.Key;
+    right: Phaser.Input.Keyboard.Key;
+  };
+
   constructor() {
     super({ key: "Overworld" });
   }
@@ -33,7 +41,21 @@ export class OverworldScene extends Phaser.Scene {
     this.cameras.main.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
     this.cameras.main.setZoom(2); // 2x zoom — 32px tiles at 2x = 64px apparent size
 
-    // 5. Grid Engine — MUST be called after all createLayer() calls
+    // 5. Keyboard — created once in create(), NOT in update().
+    //    Creating key objects every frame discards the previous frame's objects
+    //    and their event listeners, breaking isDown state tracking.
+    //    addCapture prevents arrow keys from scrolling the browser page.
+    const { LEFT, RIGHT, UP, DOWN } = Phaser.Input.Keyboard.KeyCodes;
+    this.cursors = this.input.keyboard!.createCursorKeys();
+    this.wasd = this.input.keyboard!.addKeys({
+      up: Phaser.Input.Keyboard.KeyCodes.W,
+      down: Phaser.Input.Keyboard.KeyCodes.S,
+      left: Phaser.Input.Keyboard.KeyCodes.A,
+      right: Phaser.Input.Keyboard.KeyCodes.D,
+    }) as typeof this.wasd;
+    this.input.keyboard!.addCapture([LEFT, RIGHT, UP, DOWN]);
+
+    // 6. Grid Engine — MUST be called after all createLayer() calls
     this.gridEngine.create(map, {
       characters: [
         {
@@ -49,27 +71,14 @@ export class OverworldScene extends Phaser.Scene {
   }
 
   update(): void {
-    const cursors = this.input.keyboard!.createCursorKeys();
-    const wasd = this.input.keyboard!.addKeys({
-      up: Phaser.Input.Keyboard.KeyCodes.W,
-      down: Phaser.Input.Keyboard.KeyCodes.S,
-      left: Phaser.Input.Keyboard.KeyCodes.A,
-      right: Phaser.Input.Keyboard.KeyCodes.D,
-    }) as {
-      up: Phaser.Input.Keyboard.Key;
-      down: Phaser.Input.Keyboard.Key;
-      left: Phaser.Input.Keyboard.Key;
-      right: Phaser.Input.Keyboard.Key;
-    };
-
     // Priority: left > right > up > down (only one direction per frame)
-    if (cursors.left.isDown || wasd.left.isDown) {
+    if (this.cursors.left.isDown || this.wasd.left.isDown) {
       this.gridEngine.move("player", Direction.LEFT);
-    } else if (cursors.right.isDown || wasd.right.isDown) {
+    } else if (this.cursors.right.isDown || this.wasd.right.isDown) {
       this.gridEngine.move("player", Direction.RIGHT);
-    } else if (cursors.up.isDown || wasd.up.isDown) {
+    } else if (this.cursors.up.isDown || this.wasd.up.isDown) {
       this.gridEngine.move("player", Direction.UP);
-    } else if (cursors.down.isDown || wasd.down.isDown) {
+    } else if (this.cursors.down.isDown || this.wasd.down.isDown) {
       this.gridEngine.move("player", Direction.DOWN);
     }
   }

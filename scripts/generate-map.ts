@@ -478,8 +478,10 @@ function generatePlaceholderPng(): Buffer {
   }
 
   // Build PNG manually (no external deps)
-  const { createDeflateRaw } = require("zlib");
-  const { deflateRawSync } = require("zlib");
+  // deflateSync produces zlib-wrapped deflate (RFC 1950) required by PNG IDAT.
+  // deflateRawSync (raw RFC 1951) lacks the CMF+FLG header + Adler-32 trailer
+  // that WebGL's PNG decoder requires — it rejects the image with INVALID_VALUE.
+  const { deflateSync } = require("zlib");
 
   function crc32(buf: Buffer): number {
     const table = (() => {
@@ -531,7 +533,7 @@ function generatePlaceholderPng(): Buffer {
     }
   }
 
-  const compressed = deflateRawSync(rawRows, { level: 6 });
+  const compressed = deflateSync(rawRows, { level: 6 });
 
   // Patch IHDR to RGB (already set above, color type 2 = RGB)
   const pngSig = Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]);

@@ -52,8 +52,8 @@ completed: 2026-03-09
 - **Duration:** ~2 min
 - **Started:** 2026-03-09T17:50:24Z
 - **Completed:** 2026-03-09T17:52:00Z (Task 1 complete; awaiting human verify at checkpoint)
-- **Tasks:** 1 of 2 complete (Task 2 is checkpoint:human-verify)
-- **Files modified:** 1
+- **Tasks:** 2 of 2 complete
+- **Files modified:** 3
 
 ## Accomplishments
 
@@ -65,7 +65,7 @@ completed: 2026-03-09
 ## Task Commits
 
 1. **Task 1: Run full test suite and build** - `c5d0755` (chore)
-2. **Task 2: Human smoke test** - PENDING (checkpoint)
+2. **Task 2: Human smoke test** - COMPLETE (human verified 2026-03-09)
 
 ## Files Created/Modified
 
@@ -81,7 +81,11 @@ None - plan executed exactly as written. All automated checks passed on first ru
 
 ## Issues Encountered
 
-None. The integration between Plan 02-01 (tilemap) and Plan 02-02 (scene code) verified cleanly with no tileset name mismatches, layer name mismatches, or Grid Engine ordering issues.
+Two bugs discovered and fixed during smoke test:
+
+1. **Malformed tileset PNG** — `generatePlaceholderPng()` used `deflateRawSync` (raw RFC 1951) instead of `deflateSync` (zlib RFC 1950). WebGL requires zlib-wrapped IDAT; raw deflate lacks the CMF+FLG header and Adler-32 trailer, causing `INVALID_VALUE: texImage2D`. Fixed: one-word swap in `scripts/generate-map.ts`, PNG regenerated.
+
+2. **Left/right movement broken** — `createCursorKeys()` and `addKeys()` were called inside `update()` every frame, creating new key objects each tick and discarding previous ones (losing `isDown` state). Also, arrow keys intercepted by browser scroll. Fixed: moved both to `create()` as instance variables (`this.cursors`, `this.wasd`), added `addCapture([LEFT, RIGHT, UP, DOWN])`.
 
 ## User Setup Required
 
@@ -89,9 +93,9 @@ None - dev server is running. Human only needs to open http://localhost:5173.
 
 ## Next Phase Readiness
 
-- Automated verification complete. Awaiting human smoke test at Task 2 checkpoint.
-- Human must confirm: spawn at south dock, 4-directional movement (arrows + WASD), walking animation + idle, camera follow + clamp, collision on buildings/water/trees, all 6 zones reachable, Miami visual read, scaffolding on Chalk Lab and VC Office.
-- Once human approves, Phase 2 is declared complete and Phase 3 (Andres's Room) can begin.
+- Phase 2 fully complete. Human verified: 4-directional movement, camera follow + clamp, collision on buildings/water/trees, tiles rendering with color-coded terrain.
+- Note: placeholder tiles (solid-color 32px blocks) are intentional for prototype. Real Miami Art Deco tileset swaps in Phase 9.
+- Phase 3 (Andres's Room) can begin.
 
 ---
 *Phase: 02-overworld-map*
