@@ -20,6 +20,17 @@ export class BootScene extends Phaser.Scene {
       frameWidth: 32,
       frameHeight: 32,
     });
+
+    // NPC placeholder sprites (single 32x32 frame — not a spritesheet)
+    const npcIds = [
+      "paul-graham", "marc-andreessen", "brian-chesky", "tobi-lutke",
+      "dalton-caldwell", "ben-horowitz", "vinod-khosla", "dario-amodei",
+      "michael-seibel", "patrick-collison", "john-collison", "keri",
+      "dad", "dog-1", "dog-2"
+    ];
+    for (const id of npcIds) {
+      this.load.image(`npc-${id}`, `assets/sprites/npc-${id}.png`);
+    }
   }
 
   create(): void {
