@@ -2,6 +2,7 @@ import Phaser from "phaser";
 import { GridEngine } from "grid-engine";
 import { BootScene } from "./scenes/Boot";
 import { OverworldScene } from "./scenes/Overworld";
+import { InteriorStubScene } from "./scenes/InteriorStub";
 
 const config: Phaser.Types.Core.GameConfig = {
   type: Phaser.AUTO,
@@ -18,7 +19,7 @@ const config: Phaser.Types.Core.GameConfig = {
       },
     ],
   },
-  scene: [BootScene, OverworldScene],
+  scene: [BootScene, OverworldScene, InteriorStubScene],
 };
 
 export default new Phaser.Game(config);
