@@ -8,7 +8,7 @@
 ### Foundation
 
 - [x] **FOUND-01**: Project builds with `vite build` and runs locally with `vite dev` (Phaser 3 + Grid Engine + TypeScript + Vite)
-- [ ] **FOUND-02**: Deployed build is accessible at andresmartinez.com via Vercel CI/CD
+- [x] **FOUND-02**: Deployed build is accessible at andresmartinez.com via Vercel CI/CD
 - [x] **FOUND-03**: Pixel-perfect rendering with no anti-aliasing or blurring artifacts at 1x scale
 
 ### World Map
@@ -167,7 +167,7 @@
 | Requirement | Phase | Status |
 |-------------|-------|--------|
 | FOUND-01 | Phase 1 — Infrastructure | Complete |
-| FOUND-02 | Phase 1 — Infrastructure | Pending |
+| FOUND-02 | Phase 1 — Infrastructure | Complete |
 | FOUND-03 | Phase 1 — Infrastructure | Complete |
 | WORLD-01 | Phase 2 — Overworld Map | Pending |
 | WORLD-02 | Phase 2 — Overworld Map | Pending |

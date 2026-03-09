@@ -6,7 +6,7 @@ Build a Pokemon Gen 1/2 pixel-art overworld personal website from the ground up.
 
 ## Phases
 
-- [ ] **Phase 1: Infrastructure** - Phaser 3 + Vite + TypeScript + Grid Engine scaffold deployed to andresmartinez.com
+- [x] **Phase 1: Infrastructure** - Phaser 3 + Vite + TypeScript + Grid Engine scaffold deployed to andresmartinez.com
 - [ ] **Phase 2: Overworld Map** - Miami-themed tilemap with player character, grid movement, and collision
 - [ ] **Phase 3: Interaction + NPC System** - Building interactions, sign dialogs, and all overworld NPCs
 - [ ] **Phase 4: Andres's Room** - First complete interior with full object interactions and wandering sprites
@@ -30,8 +30,8 @@ Build a Pokemon Gen 1/2 pixel-art overworld personal website from the ground up.
 **Plans**: 2 plans
 
 Plans:
-- [ ] 01-01-PLAN.md — Phaser 3 + Grid Engine scaffold (package.json, vite config, src files, pixel-perfect rendering)
-- [ ] 01-02-PLAN.md — Vercel deploy pipeline + live site verification at andresmartinez.com
+- [x] 01-01-PLAN.md — Phaser 3 + Grid Engine scaffold (package.json, vite config, src files, pixel-perfect rendering)
+- [x] 01-02-PLAN.md — Vercel deploy pipeline + live site verification at andresmartinez.com
 
 ### Phase 2: Overworld Map
 **Goal**: A visitor can drop into the world and walk the full Miami-themed map
@@ -131,7 +131,7 @@ Plans:
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Infrastructure | 1/2 | In Progress|  |
+| 1. Infrastructure | 2/2 | Complete | 2026-03-09 |
 | 2. Overworld Map | 0/TBD | Not started | - |
 | 3. Interaction + NPC System | 0/TBD | Not started | - |
 | 4. Andres's Room | 0/TBD | Not started | - |
