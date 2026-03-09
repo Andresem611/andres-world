@@ -131,7 +131,7 @@ Plans:
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Infrastructure | 0/2 | Planned | - |
+| 1. Infrastructure | 1/2 | In Progress|  |
 | 2. Overworld Map | 0/TBD | Not started | - |
 | 3. Interaction + NPC System | 0/TBD | Not started | - |
 | 4. Andres's Room | 0/TBD | Not started | - |

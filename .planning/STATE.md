@@ -1,3 +1,19 @@
+---
+gsd_state_version: 1.0
+milestone: v1.0
+milestone_name: milestone
+status: planning
+stopped_at: Completed 01-infrastructure-01-PLAN.md
+last_updated: "2026-03-09T15:02:50.975Z"
+last_activity: 2026-03-08 — Roadmap created, 70 v1 requirements mapped across 9 phases
+progress:
+  total_phases: 9
+  completed_phases: 0
+  total_plans: 2
+  completed_plans: 1
+  percent: 50
+---
+
 # Project State
 
 ## Project Reference
@@ -14,7 +30,7 @@ Plan: 0 of TBD in current phase
 Status: Ready to plan
 Last activity: 2026-03-08 — Roadmap created, 70 v1 requirements mapped across 9 phases
 
-Progress: [░░░░░░░░░░] 0%
+Progress: [█████░░░░░] 50%
 
 ## Performance Metrics
 
@@ -34,6 +50,7 @@ Progress: [░░░░░░░░░░] 0%
 - Trend: -
 
 *Updated after each plan completion*
+| Phase 01-infrastructure P01 | 1 | 2 tasks | 9 files |
 
 ## Accumulated Context
 
@@ -46,6 +63,9 @@ Recent decisions affecting current work:
 - Execution model: Ruflo swarm agents per phase (each phase needs approved PLAN.md first)
 - Art path: itch.io free assets to prototype → Miami-specific paid assets (KR Art Deco, Tropical Shores, LimeZu Modern Exteriors) for Phase 9
 - Deploy target: Vercel + andresmartinez.com — no server-side compute
+- [Phase 01-infrastructure]: base:./ in vite.config.ts so asset paths resolve correctly in Vercel-deployed build
+- [Phase 01-infrastructure]: public/ (not src/assets/) for game assets — Vite hashes src/ assets, breaking Phaser's string-based loader
+- [Phase 01-infrastructure]: pixelArt:true + CSS image-rendering:pixelated for two-layer pixel-perfect rendering at all zoom levels
 
 ### Pending Todos
 
@@ -57,6 +77,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-08
-Stopped at: Roadmap initialized — ready to run `/gsd:plan-phase 1`
+Last session: 2026-03-09T15:02:50.972Z
+Stopped at: Completed 01-infrastructure-01-PLAN.md
 Resume file: None
