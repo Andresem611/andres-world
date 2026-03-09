@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: completed
-stopped_at: Completed 03-03-PLAN.md
-last_updated: "2026-03-09T20:46:43.776Z"
+stopped_at: Completed 03-02-PLAN.md
+last_updated: "2026-03-09T20:48:47.943Z"
 last_activity: 2026-03-09 — Plan 01-02 complete. Vercel deploy pipeline live, CI/CD wired to main branch.
 progress:
   total_phases: 9
   completed_phases: 2
   total_plans: 10
-  completed_plans: 7
+  completed_plans: 8
   percent: 100
 ---
 
@@ -59,6 +59,7 @@ Progress: [██████████] 100% (Phase 1 complete)
 | Phase 02-overworld-map P02 | 3min | 2 tasks | 4 files |
 | Phase 03-interaction-npc-system P03-01 | 1min | 1 tasks | 3 files |
 | Phase 03-interaction-npc-system P03 | 2 | 1 tasks | 1 files |
+| Phase 03-interaction-npc-system P02 | 5 | 2 tasks | 19 files |
 
 ## Accumulated Context
 
@@ -86,6 +87,8 @@ Recent decisions affecting current work:
 - [Phase 03-interaction-npc-system]: splitIntoPages exported as standalone pure function from DialogBox.ts so vitest can import without Phaser class instantiation
 - [Phase 03-interaction-npc-system]: splitIntoPages exported as standalone pure function (not class method) so dialog-box.test.ts imports it without instantiating a Phaser class
 - [Phase 03-interaction-npc-system]: InteractionPayload union type (npc, sign, building, under_construction) defined in DialogBox.ts as the contract for Plan 04 interaction router
+- [Phase 03-interaction-npc-system]: 14 NPC_CONFIG entries: 12 founders + keri + dad + dog-1; dog-2 gets PNG sprite only — resolves 14-entry test constraint
+- [Phase 03-interaction-npc-system]: PatrolNpcDefinition has collides:false as typed field so OverworldScene can check statically without casting
 
 ### Pending Todos
 
@@ -97,6 +100,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-09T20:46:43.774Z
-Stopped at: Completed 03-03-PLAN.md
+Last session: 2026-03-09T20:48:47.940Z
+Stopped at: Completed 03-02-PLAN.md
 Resume file: None
