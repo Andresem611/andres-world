@@ -43,7 +43,12 @@ Plans:
   3. Walking into a building, water tile, tree, or sign stops movement (collision works)
   4. The map reads as Miami: palm trees (not oaks), ocean on the east edge, Art Deco pastel building shells, distinct dock/main street/plaza/beach/heights zones
   5. Character sprite is a hoodie-and-backpack founder figure (not Red/Ash) with 4-directional walk animation and idle state
-**Plans**: TBD
+**Plans**: 3 plans
+
+Plans:
+- [ ] 02-01-PLAN.md — Vitest scaffold + programmatic Tiled JSON map (50x40, all zones, collision, ge_collide properties)
+- [ ] 02-02-PLAN.md — BootScene preloader + OverworldScene (Grid Engine, camera, keyboard input) + placeholder sprite
+- [ ] 02-03-PLAN.md — Integration smoke test + human playability verification
 
 ### Phase 3: Interaction + NPC System
 **Goal**: Pressing Space or E near anything interactive produces the right response, and all overworld NPCs are placed and talkable
@@ -132,7 +137,7 @@ Plans:
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Infrastructure | 2/2 | Complete | 2026-03-09 |
-| 2. Overworld Map | 0/TBD | Not started | - |
+| 2. Overworld Map | 0/3 | Not started | - |
 | 3. Interaction + NPC System | 0/TBD | Not started | - |
 | 4. Andres's Room | 0/TBD | Not started | - |
 | 5. Thoven HQ | 0/TBD | Not started | - |
