@@ -1,0 +1,36 @@
+# Tileset Catalog — modern-exteriors-32.png
+# Placeholder tileset for prototype. Replace with LimeZu Modern Exteriors in Phase 9.
+#
+# PNG layout: 16 columns × 9 rows (512px × 288px), 32×32 tiles per cell
+# LocalTileId = row * 16 + column (0-based)
+#
+# Category         | LocalTileId | GID (firstgid=1) | Walkable | Notes
+# ------------------|-------------|------------------|----------|------
+# Ground/grass      |     0       |       1          |   YES    | Base terrain fill
+# Path/paved        |     1       |       2          |   YES    | Main street, walkways
+# Building wall     |    16       |      17          |    NO    | ge_collide:true — facades
+# Water/ocean       |    32       |      33          |    NO    | ge_collide:true — east boundary
+# Palm tree         |    48       |      49          |    NO    | ge_collide:true — decorative blocking
+# Scaffolding       |    64       |      65          |    NO    | ge_collide:true — under construction
+# Beach sand        |    80       |      81          |   YES    | x=38-41 strip
+# Dock/pier         |    96       |      97          |   YES    | South dock area
+# Plaza paved       |   112       |     113          |   YES    | Central plaza area
+# Grass (alt)       |   128       |     129          |   YES    | West side / heights
+#
+# Zone → GID mapping used in overworld.json:
+#   Ground layer default:  GID 129 (GRASS)
+#   Main street spine:     GID   2 (PATH)
+#   Dock area:             GID  97 (DOCK)
+#   Beach strip x=38-41:  GID  81 (SAND)
+#   Ocean x=42-49:        GID  33 (WATER)
+#   Central plaza:        GID 113 (PLAZA)
+#   Building facades:     GID  17 (BUILDING_WALL)
+#   Palm trees:           GID  49 (PALM_TREE)
+#   Scaffolding overlay:  GID  65 (SCAFFOLDING)
+#
+# To replace with real LimeZu assets (Phase 9):
+#   1. Download Modern Exteriors 32x32 spritesheet from itch.io
+#   2. Count actual PNG columns (imageWidth/32)
+#   3. Update localTileId values in this catalog
+#   4. Run scripts/generate-map.ts with updated constants
+#   5. Commit updated overworld.json + tileset-catalog.txt
