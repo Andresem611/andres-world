@@ -14,9 +14,9 @@
 ### World Map
 
 - [x] **WORLD-01**: Overworld tilemap loads and renders (~50×40 tiles, Miami-themed)
-- [ ] **WORLD-02**: Player character spawns at south dock entry point facing north
-- [ ] **WORLD-03**: Tile-based grid movement: character moves one tile at a time (arrow keys + WASD)
-- [ ] **WORLD-04**: Camera follows character, world scrolls as player moves
+- [x] **WORLD-02**: Player character spawns at south dock entry point facing north
+- [x] **WORLD-03**: Tile-based grid movement: character moves one tile at a time (arrow keys + WASD)
+- [x] **WORLD-04**: Camera follows character, world scrolls as player moves
 - [x] **WORLD-05**: Collision system blocks movement on buildings, water, trees, and signs
 - [x] **WORLD-06**: Map has distinct zones visible on overworld: dock, main street, beach strip, plaza, heights
 - [x] **WORLD-07**: Palm trees render as Miami-appropriate trees (not generic Pokemon oaks)
@@ -24,9 +24,9 @@
 
 ### Character Sprite
 
-- [ ] **CHAR-01**: Original founder sprite renders (hoodie, laptop backpack — not Red/Ash)
-- [ ] **CHAR-02**: 4-directional walking animation (3 frames each, ~32×32px, Gen 1 style)
-- [ ] **CHAR-03**: Idle animation plays when character is stationary
+- [x] **CHAR-01**: Original founder sprite renders (hoodie, laptop backpack — not Red/Ash)
+- [x] **CHAR-02**: 4-directional walking animation (3 frames each, ~32×32px, Gen 1 style)
+- [x] **CHAR-03**: Idle animation plays when character is stationary
 
 ### Interaction System
 
@@ -170,16 +170,16 @@
 | FOUND-02 | Phase 1 — Infrastructure | Complete |
 | FOUND-03 | Phase 1 — Infrastructure | Complete |
 | WORLD-01 | Phase 2 — Overworld Map | Complete |
-| WORLD-02 | Phase 2 — Overworld Map | Pending |
-| WORLD-03 | Phase 2 — Overworld Map | Pending |
-| WORLD-04 | Phase 2 — Overworld Map | Pending |
+| WORLD-02 | Phase 2 — Overworld Map | Complete |
+| WORLD-03 | Phase 2 — Overworld Map | Complete |
+| WORLD-04 | Phase 2 — Overworld Map | Complete |
 | WORLD-05 | Phase 2 — Overworld Map | Complete |
 | WORLD-06 | Phase 2 — Overworld Map | Complete |
 | WORLD-07 | Phase 2 — Overworld Map | Complete |
 | WORLD-08 | Phase 2 — Overworld Map | Complete |
-| CHAR-01 | Phase 2 — Overworld Map | Pending |
-| CHAR-02 | Phase 2 — Overworld Map | Pending |
-| CHAR-03 | Phase 2 — Overworld Map | Pending |
+| CHAR-01 | Phase 2 — Overworld Map | Complete |
+| CHAR-02 | Phase 2 — Overworld Map | Complete |
+| CHAR-03 | Phase 2 — Overworld Map | Complete |
 | INTER-01 | Phase 3 — Interaction + NPC System | Pending |
 | INTER-02 | Phase 3 — Interaction + NPC System | Pending |
 | INTER-03 | Phase 3 — Interaction + NPC System | Pending |

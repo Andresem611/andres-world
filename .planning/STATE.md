@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: completed
-stopped_at: Completed 02-overworld-map-01-PLAN.md
-last_updated: "2026-03-09T17:44:55.916Z"
+stopped_at: Completed 02-overworld-map-02-PLAN.md
+last_updated: "2026-03-09T17:49:10.986Z"
 last_activity: 2026-03-09 — Plan 01-02 complete. Vercel deploy pipeline live, CI/CD wired to main branch.
 progress:
   total_phases: 9
   completed_phases: 1
   total_plans: 5
-  completed_plans: 3
+  completed_plans: 4
   percent: 100
 ---
 
@@ -56,6 +56,7 @@ Progress: [██████████] 100% (Phase 1 complete)
 | Phase 01-infrastructure | P01 | 2 tasks | 9 files |
 | Phase 01-infrastructure | P02 | 2 tasks | 1 file |
 | Phase 02-overworld-map P01 | 4min | 2 tasks | 7 files |
+| Phase 02-overworld-map P02 | 3min | 2 tasks | 4 files |
 
 ## Accumulated Context
 
@@ -76,6 +77,8 @@ Recent decisions affecting current work:
 - [Phase 02-overworld-map]: Placeholder tileset PNG generated in-process; Phase 9 plan swaps it by updating localTileId constants in generate-map.ts
 - [Phase 02-overworld-map]: Map authored programmatically (scripts/generate-map.ts) not via Tiled GUI for reproducible regeneration when tileset GIDs change
 - [Phase 02-overworld-map]: Collision layer uses BUILDING_WALL GID as blocking marker — any non-zero GID resolving to ge_collide:true tile blocks Grid Engine movement
+- [Phase 02-overworld-map]: Character placeholder sprite generated programmatically (Python PNG encoder) with PIPOYA row order (Down/Left/Right/Up) for Grid Engine walkingAnimationMapping compatibility
+- [Phase 02-overworld-map]: Scene flow established: BootScene (preload only) -> OverworldScene; Grid Engine create() strictly after all createLayer() calls
 
 ### Pending Todos
 
@@ -87,6 +90,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-09T17:44:55.912Z
-Stopped at: Completed 02-overworld-map-01-PLAN.md
+Last session: 2026-03-09T17:49:10.982Z
+Stopped at: Completed 02-overworld-map-02-PLAN.md
 Resume file: None
