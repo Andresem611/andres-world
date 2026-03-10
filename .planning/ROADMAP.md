@@ -92,7 +92,12 @@ Plans:
   3. Chalk Lab and VC Office render with visible scaffolding overlay
   4. All tile GIDs in generate-map.ts have a matching ✅ entry in TILE-CATALOG.md
 **Human gate (required before planning):** Andres opens tileset-preview.html, hovers: (1) palm tree in beach tileset, (2) scaffold/truss in beach or terrains, (3) building wall in buildings sheet. Fills in GIDs in TILE-CATALOG.md with ✅. Claude does NOT start planning until catalog entries are confirmed. This is the permanent workflow: Claude proposes best-guess → human confirms visually → ✅ → code runs.
-**Plans**: TBD
+**Plans**: 3 plans
+
+Plans:
+- [ ] 03.2-01-PLAN.md — Add 4 failing GID assertions to overworld-map.test.ts (RED gate for ART-06/07/08)
+- [ ] 03.2-02-PLAN.md — Fix BUILDING_GID/PALM_GID/SCAFFOLD_GID constants + placePalm() + tile properties + regenerate overworld.json
+- [ ] 03.2-03-PLAN.md — Human visual verify: buildings, palms, scaffolding visible in browser
 
 ### Phase 3.3: Character + NPC Sprites
 
@@ -184,7 +189,7 @@ Plans:
 | 2. Overworld Map | 3/3 | Complete   | 2026-03-09 |
 | 3. Interaction + NPC System | 5/5 | Complete   | 2026-03-09 |
 | 3.1. Art Foundation | 3/3 | Complete   | 2026-03-09 |
-| 3.2. Map Visual Design | 0/TBD | Blocked (needs TILE-CATALOG ✅) | - |
+| 3.2. Map Visual Design | 0/3 | In Progress | - |
 | 3.3. Character + NPC Sprites | 0/TBD | Not started | - |
 | 4. Andres's Room | 0/TBD | Not started | - |
 | 5. Thoven HQ | 0/TBD | Not started | - |
