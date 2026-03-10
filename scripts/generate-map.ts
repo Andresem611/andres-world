@@ -1,6 +1,13 @@
 /**
  * generate-map.ts
  *
+ * ╔══════════════════════════════════════════════════════════════════╗
+ * ║  OVERWORLD ONLY — DO NOT USE FOR INTERIORS                      ║
+ * ║  All interior scenes (Andres's Room, Thoven HQ, etc.) must be   ║
+ * ║  authored visually in the Tiled GUI and exported as .tmj files. ║
+ * ║  See: .planning/ARCHITECTURE-DECISIONS.md, Decision 1           ║
+ * ╚══════════════════════════════════════════════════════════════════╝
+ *
  * Generates:
  * 1. public/assets/maps/overworld.json — complete 50x40 Miami overworld map
  *                                        using 5 real LimeZu 16x16 tilesets
@@ -24,9 +31,10 @@
  *   SAND_GID     = Beach    row=2 col=0  → GID 2433, rgb=[230,174,85] sandy golden
  *   DOCK_GID     = Beach    row=9 col=15 → GID 2672, rgb=[126,97,81]  wooden pier brown
  *   PLAZA_GID    = Terrains row=1 col=1  → GID 34,   rgb=[217,226,241] light stone/pavement
- *   BUILDING_GID = Buildings row=0 col=0 → ge_collide:true
- *   PALM_GID     = Garden   row=0 col=0  → ge_collide:true
- *   SCAFFOLD_GID = Worksite row=0 col=0  → ge_collide:true
+ *   BUILDING_GID = Buildings row=41 col=8 → GID 7689  (solid wall tile, confirmed ✅)
+ *   PALM_GID     = Beach    row=12 col=17 → GID 2770  (palm fronds, confirmed ✅)
+ *   PALM_TRUNK_GID = Beach  row=14 col=17 → GID 2834  (palm trunk, confirmed ✅)
+ *   SCAFFOLD_GID = Beach    row=38 col=13 → GID 3598  (X-brace scaffold, confirmed ✅)
  */
 
 import * as fs from "fs";
@@ -84,12 +92,14 @@ const SAND_GID = tileGid(BEACH_FIRSTGID, BEACH_COLS, 2, 0);
 const DOCK_GID = tileGid(BEACH_FIRSTGID, BEACH_COLS, 9, 15);
 // Plaza: Terrains row=1 col=1 → GID 34, rgb=[217,226,241] (light stone/pavement)
 const PLAZA_GID = tileGid(TERRAIN_FIRSTGID, TERRAIN_COLS, 1, 1);
-// Building: Buildings row=0 col=0 → ge_collide:true in tileset properties
-const BUILDING_GID = tileGid(BUILDING_FIRSTGID, BUILDING_COLS, 0, 0);
-// Palm: Garden row=0 col=0 → ge_collide:true in tileset properties
-const PALM_GID = tileGid(GARDEN_FIRSTGID, GARDEN_COLS, 0, 0);
-// Scaffolding: Worksite row=0 col=0 → ge_collide:true in tileset properties
-const SCAFFOLD_GID = tileGid(WORKSITE_FIRSTGID, WORKSITE_COLS, 0, 0);
+// Building wall: Buildings row=41, col=8 → GID 7689 (confirmed ✅ TILE-CATALOG.md)
+const BUILDING_GID = tileGid(BUILDING_FIRSTGID, BUILDING_COLS, 41, 8);
+// Palm fronds (top): Beach row=12, col=17 → GID 2770 (confirmed ✅ TILE-CATALOG.md)
+const PALM_GID = tileGid(BEACH_FIRSTGID, BEACH_COLS, 12, 17);
+// Palm trunk (bottom): Beach row=14, col=17 → GID 2834 (confirmed ✅ TILE-CATALOG.md)
+const PALM_TRUNK_GID = tileGid(BEACH_FIRSTGID, BEACH_COLS, 14, 17);
+// Scaffold X-brace: Beach row=38, col=13 → GID 3598 (confirmed ✅ TILE-CATALOG.md)
+const SCAFFOLD_GID = tileGid(BEACH_FIRSTGID, BEACH_COLS, 38, 13);
 
 // ---------------------------------------------------------------------------
 // Helpers
@@ -120,6 +130,11 @@ function setTile(data: number[], x: number, y: number, gid: number) {
   if (x >= 0 && x < MAP_WIDTH && y >= 0 && y < MAP_HEIGHT) {
     data[idx(x, y)] = gid;
   }
+}
+
+function placePalm(data: number[], x: number, y: number) {
+  setTile(data, x, y,     PALM_GID);       // fronds tile
+  setTile(data, x, y + 1, PALM_TRUNK_GID); // trunk tile (one row below)
 }
 
 // ---------------------------------------------------------------------------
@@ -210,13 +225,13 @@ function buildAboveLayer(): number[] {
 
   // Main street edges (x=21 west side, x=29 east side, sparse y=5-35)
   for (let y = 5; y <= 35; y += 4) {
-    setTile(data, 21, y, PALM_GID);
-    setTile(data, 29, y, PALM_GID);
+    placePalm(data, 21, y);
+    placePalm(data, 29, y);
   }
 
   // Plaza border (x=20-35, y=15 sparse)
   for (let x = 20; x <= 35; x += 5) {
-    setTile(data, x, 15, PALM_GID);
+    placePalm(data, x, 15);
   }
 
   // West side scattered (x=5-18, y=5-30 sparse, avoid building footprints)
@@ -225,13 +240,13 @@ function buildAboveLayer(): number[] {
     [18, 5], [18, 12], [18, 25], [18, 33],
   ];
   for (const [x, y] of westPalmPositions) {
-    setTile(data, x, y, PALM_GID);
+    placePalm(data, x, y);
   }
 
   // Beach strip border (x=37-38, y=5-32 sparse)
   for (let y = 5; y <= 32; y += 4) {
-    setTile(data, 37, y, PALM_GID);
-    setTile(data, 38, y, PALM_GID);
+    placePalm(data, 37, y);
+    placePalm(data, 38, y);
   }
 
   return data;
@@ -244,7 +259,7 @@ function buildAboveLayer(): number[] {
 function buildCollisionLayer(): number[] {
   const data = new Array(TOTAL_TILES).fill(0); // 0 = walkable by default
 
-  // BLOCK uses BUILDING_GID (localId=0 in Buildings tileset, marked ge_collide:true)
+  // BLOCK uses BUILDING_GID (localId=1320 in Buildings tileset, marked ge_collide:true)
   const BLOCK = BUILDING_GID;
 
   // -------------------------------------------------------------------------
@@ -313,24 +328,32 @@ function buildTerrainTileProperties() {
 }
 
 function buildBeachTileProperties() {
-  // Beach: no blocking tiles — sand/water walkable (collision layer handles ocean)
-  return [];
+  // Palm fronds (PALM_GID=2770) and scaffold X-brace (SCAFFOLD_GID=3598) are both
+  // in the beach tileset — declare ge_collide:true for both.
+  const palmLocalId = PALM_GID - BEACH_FIRSTGID;         // 401
+  const scaffoldLocalId = SCAFFOLD_GID - BEACH_FIRSTGID; // 1229
+  return [
+    { id: palmLocalId,     properties: [{ name: "ge_collide", type: "bool", value: true }] },
+    { id: scaffoldLocalId, properties: [{ name: "ge_collide", type: "bool", value: true }] },
+  ];
 }
 
 function buildBuildingTileProperties() {
-  // Mark localId=0 (BUILDING_GID local, row=0 col=0) as ge_collide:true
-  const localId = 0; // row=0, col=0 of buildings sheet
+  // BUILDING_GID=7689, localId = 7689 - 6369 = 1320 (buildings row=41, col=8)
+  const localId = BUILDING_GID - BUILDING_FIRSTGID; // 1320
   return [{ id: localId, properties: [{ name: "ge_collide", type: "bool", value: true }] }];
 }
 
 function buildGardenTileProperties() {
-  // Mark localId=0 (PALM_GID local, row=0 col=0) as ge_collide:true
-  return [{ id: 0, properties: [{ name: "ge_collide", type: "bool", value: true }] }];
+  // Garden tileset (formal hedges) is not used in the overworld map.
+  // No ge_collide declarations needed.
+  return [];
 }
 
 function buildWorksiteTileProperties() {
-  // Mark localId=0 (SCAFFOLD_GID local, row=0 col=0) as ge_collide:true
-  return [{ id: 0, properties: [{ name: "ge_collide", type: "bool", value: true }] }];
+  // Worksite tileset tiles are not placed in the overworld map.
+  // Scaffold tiles moved to beach tileset (see buildBeachTileProperties).
+  return [];
 }
 
 // ---------------------------------------------------------------------------
