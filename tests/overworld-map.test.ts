@@ -81,8 +81,8 @@ describe("overworld.json — map structure", () => {
 
   it("Above layer at Thoven HQ footprint has BUILDING_GID (7689)", () => {
     const aboveData: number[] = mapData.layers[1].data as number[];
-    // Thoven HQ: x=10-17, y=14-22 — top-left corner tile
-    const idx = 10 + 14 * WIDTH;
+    // Thoven HQ: x=12-21, y=14-22 — top-left corner tile (updated from x=10 in Plan 02)
+    const idx = 12 + 14 * WIDTH;
     expect(aboveData[idx]).toBe(7689);
   });
 

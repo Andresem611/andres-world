@@ -176,19 +176,20 @@ function buildAboveLayer(): number[] {
   // Buildings (facade tiles)
   // -------------------------------------------------------------------------
 
-  // Thoven HQ: x=10-17, y=14-22 (largest building, west of main street)
-  fillRect(data, 10, 14, 17, 22, BUILDING_GID);
+  // Thoven HQ: x=12-21, y=14-22 (largest building, west of main street — 10x9 tiles)
+  // Note: starts at x=12 (not x=10) to leave a 2-tile walkway gap east of Andres's House (x=6-9)
+  fillRect(data, 12, 14, 21, 22, BUILDING_GID);
 
   // Starbucks Café: x=29-34, y=24-28 (east of main street, south)
   fillRect(data, 29, 24, 34, 28, BUILDING_GID);
 
-  // Chalk Lab: x=18-22, y=8-13 (under construction — scaffolding overlay)
-  fillRect(data, 18, 8, 22, 13, BUILDING_GID);
+  // Chalk Lab: x=18-21, y=8-13 (under construction — scaffolding overlay)
+  fillRect(data, 18, 8, 21, 13, BUILDING_GID);
   // Scaffolding overlay on Chalk Lab (top rows)
-  fillRect(data, 18, 8, 22, 9, SCAFFOLD_GID);
+  fillRect(data, 18, 8, 21, 9, SCAFFOLD_GID);
 
-  // Andres's House: x=6-12, y=16-22 (northwest behind Thoven)
-  fillRect(data, 6, 16, 12, 22, BUILDING_GID);
+  // Andres's House: x=6-9, y=16-22 (northwest behind Thoven — 4x7 tiles)
+  fillRect(data, 6, 16, 9, 22, BUILDING_GID);
 
   // Engineering Lab: x=38-44, y=2-8 (northeast, hidden)
   fillRect(data, 38, 2, 44, 8, BUILDING_GID);
@@ -196,11 +197,11 @@ function buildAboveLayer(): number[] {
   // GitHub Library: x=38-44, y=12-18 (east side, beach-facing)
   fillRect(data, 38, 12, 44, 18, BUILDING_GID);
 
-  // Record Shop: x=29-33, y=10-14 (east of main street, north)
-  fillRect(data, 29, 10, 33, 14, BUILDING_GID);
+  // Record Shop: x=29-32, y=10-14 (east of main street, north)
+  fillRect(data, 29, 10, 32, 14, BUILDING_GID);
 
-  // Ventanita: x=23-27, y=26-29 (main street, south)
-  fillRect(data, 23, 26, 27, 29, BUILDING_GID);
+  // Ventanita: x=23-25, y=26-29 (main street, south)
+  fillRect(data, 23, 26, 25, 29, BUILDING_GID);
 
   // VC Office: x=28-33, y=16-20 (central plaza east — under construction)
   fillRect(data, 28, 16, 33, 20, BUILDING_GID);
@@ -216,8 +217,8 @@ function buildAboveLayer(): number[] {
   // Lookout Hill: x=20-30, y=0-6 (heights, top-center)
   fillRect(data, 20, 0, 30, 6, BUILDING_GID);
 
-  // Bulletin Board: x=23-25, y=30-31 (main street, near south)
-  fillRect(data, 23, 30, 25, 31, BUILDING_GID);
+  // Bulletin Board: x=23-24, y=30-31 (main street, near south)
+  fillRect(data, 23, 30, 24, 31, BUILDING_GID);
 
   // -------------------------------------------------------------------------
   // Palm trees (sparse — zone-appropriate positions)
@@ -265,19 +266,19 @@ function buildCollisionLayer(): number[] {
   // -------------------------------------------------------------------------
   // Buildings (all footprints blocked)
   // -------------------------------------------------------------------------
-  fillRect(data, 10, 14, 17, 22, BLOCK); // Thoven HQ
+  fillRect(data, 12, 14, 21, 22, BLOCK); // Thoven HQ (x=12-21, 10x9 tiles — 2-tile gap from Andres's House)
   fillRect(data, 29, 24, 34, 28, BLOCK); // Starbucks
-  fillRect(data, 18, 8, 22, 13, BLOCK);  // Chalk Lab
-  fillRect(data, 6, 16, 12, 22, BLOCK);  // Andres's House
+  fillRect(data, 18, 8, 21, 13, BLOCK);  // Chalk Lab (shrunk to x=18-21)
+  fillRect(data, 6, 16, 9, 22, BLOCK);   // Andres's House (shrunk to x=6-9)
   fillRect(data, 38, 2, 44, 8, BLOCK);   // Engineering Lab
   fillRect(data, 38, 12, 44, 18, BLOCK); // GitHub Library
-  fillRect(data, 29, 10, 33, 14, BLOCK); // Record Shop
-  fillRect(data, 23, 26, 27, 29, BLOCK); // Ventanita
+  fillRect(data, 29, 10, 32, 14, BLOCK); // Record Shop (shrunk to x=29-32)
+  fillRect(data, 23, 26, 25, 29, BLOCK); // Ventanita (shrunk to x=23-25)
   fillRect(data, 28, 16, 33, 20, BLOCK); // VC Office
   fillRect(data, 3, 10, 8, 14, BLOCK);   // Music Room
   fillRect(data, 2, 24, 10, 32, BLOCK);  // Idea Graveyard
   fillRect(data, 20, 0, 30, 6, BLOCK);   // Lookout Hill
-  fillRect(data, 23, 30, 25, 31, BLOCK); // Bulletin Board
+  fillRect(data, 23, 30, 24, 31, BLOCK); // Bulletin Board (shrunk to x=23-24)
 
   // Ocean east edge (x=42-49, all y)
   fillRect(data, 42, 0, 49, 39, BLOCK);
