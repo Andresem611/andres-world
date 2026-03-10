@@ -35,6 +35,7 @@
  *   PALM_GID     = Beach    row=12 col=17 → GID 2770  (palm fronds, confirmed ✅)
  *   PALM_TRUNK_GID = Beach  row=14 col=17 → GID 2834  (palm trunk, confirmed ✅)
  *   SCAFFOLD_GID = Beach    row=38 col=13 → GID 3598  (X-brace scaffold, confirmed ✅)
+ *   TALL_GRASS_GID = Terrains row=8 col=0 → GID 257  (dark/dense grass, confirmed ✅)
  */
 
 import * as fs from "fs";
@@ -100,6 +101,8 @@ const PALM_GID = tileGid(BEACH_FIRSTGID, BEACH_COLS, 12, 17);
 const PALM_TRUNK_GID = tileGid(BEACH_FIRSTGID, BEACH_COLS, 14, 17);
 // Scaffold X-brace: Beach row=38, col=13 → GID 3598 (confirmed ✅ TILE-CATALOG.md)
 const SCAFFOLD_GID = tileGid(BEACH_FIRSTGID, BEACH_COLS, 38, 13);
+// Tall grass: Terrains row=8 col=0 → GID 257 (confirmed ✅ TILE-CATALOG.md Phase 3.3)
+const TALL_GRASS_GID = tileGid(TERRAIN_FIRSTGID, TERRAIN_COLS, 8, 0);
 
 // ---------------------------------------------------------------------------
 // Helpers
@@ -159,6 +162,13 @@ function buildGroundLayer(): number[] {
   // Central plaza (x=20-35, y=16-22)
   fillRect(data, 20, 16, 35, 22, PLAZA_GID);
 
+  // West cross-street: connects main street to west district at y=23
+  fillRect(data, 9, 23, 21, 23, PATH_GID);
+  // East cross-street: connects main street to east boardwalk at y=23
+  fillRect(data, 28, 23, 37, 23, PATH_GID);
+  // East boardwalk: north-south path at x=37 (full map height)
+  fillRect(data, 37, 0, 37, 39, PATH_GID);
+
   return data;
 }
 
@@ -211,8 +221,8 @@ function buildAboveLayer(): number[] {
   // Music Room: x=3-8, y=10-14 (behind Andres house, basement entrance)
   fillRect(data, 3, 10, 8, 14, BUILDING_GID);
 
-  // Idea Graveyard: x=2-10, y=24-32 (southwest, overgrown)
-  fillRect(data, 2, 24, 10, 32, BUILDING_GID);
+  // Idea Graveyard: x=2-10, y=24-32 (southwest, overgrown tall grass field)
+  fillRect(data, 2, 24, 10, 32, TALL_GRASS_GID);
 
   // Lookout Hill: x=20-30, y=0-6 (heights, top-center)
   fillRect(data, 20, 0, 30, 6, BUILDING_GID);
@@ -244,11 +254,24 @@ function buildAboveLayer(): number[] {
     placePalm(data, x, y);
   }
 
-  // Beach strip border (x=37-38, y=5-32 sparse)
+  // Beach strip border (x=38 only — x=37 is the east boardwalk, must stay clear)
   for (let y = 5; y <= 32; y += 4) {
-    placePalm(data, 37, y);
     placePalm(data, 38, y);
   }
+
+  // Music Room north perimeter (tall grass above Music Room, blocking casual access)
+  // Gap at x=5-6, y=8 ONLY. Gap does NOT extend to y=9 — y=9 remains blocked.
+  // Reason: Music Room building north wall is at y=10 (BUILDING_GID collision).
+  // A gap at y=9 would leave the player one tile from an invisible wall with no entry.
+  fillRect(data, 2, 8, 8, 9, TALL_GRASS_GID);
+
+  // Hidden NPC zone (narrow grass row just south of Lookout Hill)
+  // Gap at x=25, y=7 (single-tile gap — hardest to find)
+  fillRect(data, 20, 7, 30, 7, TALL_GRASS_GID);
+
+  // Secret Beach enclosure palms (x=38 ONLY — x=37 is the boardwalk, must stay clear)
+  placePalm(data, 38, 33);
+  placePalm(data, 38, 35);
 
   return data;
 }
@@ -299,9 +322,35 @@ function buildCollisionLayer(): number[] {
     setTile(data, x, y, BLOCK);
   }
   for (let y = 5; y <= 32; y += 4) {
-    setTile(data, 37, y, BLOCK);
-    setTile(data, 38, y, BLOCK);
+    setTile(data, 38, y, BLOCK); // x=37 is now the boardwalk — walkable
   }
+
+  // -------------------------------------------------------------------------
+  // Tall grass zones (hidden area perimeters — blocked with gap carving)
+  // -------------------------------------------------------------------------
+
+  // Music Room north perimeter (blocked, gap at x=5-6, y=8 ONLY)
+  // y=9 is also fully blocked (no gap at y=9 — see note in buildAboveLayer)
+  fillRect(data, 2, 8, 8, 9, BLOCK);
+  setTile(data, 5, 8, 0); // gap leading toward Music Room area
+  setTile(data, 6, 8, 0); // gap (2 tiles wide) at y=8 only
+
+  // Hidden NPC zone (blocked row, gap at x=25, y=7)
+  fillRect(data, 20, 7, 30, 7, BLOCK);
+  setTile(data, 25, 7, 0); // single-tile gap — hardest to find
+
+  // Idea Graveyard gap (east boundary x=10, y=27-28 — carved from existing BLOCK)
+  // The Idea Graveyard is already blocked (fillRect 2,24,10,32,BLOCK above).
+  setTile(data, 10, 27, 0);
+  setTile(data, 10, 28, 0);
+
+  // Secret Beach enclosure palms (x=38 ONLY — x=37 boardwalk MUST remain walkable)
+  // CRITICAL: Do NOT place any block at x=37 for the Secret Beach zone.
+  setTile(data, 38, 33, BLOCK); // palm frond
+  setTile(data, 38, 34, BLOCK); // palm trunk
+  // Gap: x=38, y=35 (1-tile walkable gap into Secret Beach sand strip)
+  // Note: placePalm(38,35) was placed in buildAboveLayer but gap is carved here
+  setTile(data, 38, 36, BLOCK); // palm trunk below gap
 
   // -------------------------------------------------------------------------
   // Dock spawn zone (x=24-26, y=37-39) — EXPLICITLY WALKABLE
@@ -310,6 +359,11 @@ function buildCollisionLayer(): number[] {
     for (let x = 24; x <= 26; x++) {
       setTile(data, x, y, 0); // walkable
     }
+  }
+
+  // Dock welcome zone row (one tile above spawn — walkable arrival strip)
+  for (let x = 24; x <= 26; x++) {
+    setTile(data, x, 36, 0);
   }
 
   return data;
