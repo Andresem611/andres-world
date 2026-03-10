@@ -107,3 +107,74 @@ describe("overworld.json — map structure", () => {
     expect(aboveData[idx]).toBe(3598);
   });
 });
+
+// Phase 3.3 geometry constants
+const BUILDING_GID = 7689;
+const PATH_GID = 294;
+const TALL_GRASS_GID = 257;
+
+describe("Phase 3.3 — geometry changes", () => {
+  // 1. Andres's House east boundary shrunk — x=10, y=18 must NOT be BUILDING_GID
+  it("Andres House east boundary shrunk — x=10,y=18 no longer has BUILDING_GID", () => {
+    const aboveData: number[] = mapData.layers[1].data as number[];
+    const idx = 10 + 18 * WIDTH;
+    expect(aboveData[idx]).not.toBe(BUILDING_GID);
+  });
+
+  // 2. Andres's House east boundary cleared — x=11, y=16 (old footprint, outside new x=6-9) must NOT be BUILDING_GID
+  it("Andres House east cleared — x=11,y=16 (old footprint outside new x=6-9) not BUILDING_GID", () => {
+    const aboveData: number[] = mapData.layers[1].data as number[];
+    const idx = 11 + 16 * WIDTH;
+    expect(aboveData[idx]).not.toBe(BUILDING_GID);
+  });
+
+  // 3. Chalk Lab east boundary shrunk — x=22, y=10 must NOT be BUILDING_GID
+  it("Chalk Lab east boundary shrunk — x=22,y=10 no longer has BUILDING_GID", () => {
+    const aboveData: number[] = mapData.layers[1].data as number[];
+    const idx = 22 + 10 * WIDTH;
+    expect(aboveData[idx]).not.toBe(BUILDING_GID);
+  });
+
+  // 4. Thoven HQ expanded — x=18, y=18 must be BUILDING_GID (was outside old x=10-17)
+  it("Thoven HQ expanded east — x=18,y=18 has BUILDING_GID", () => {
+    const aboveData: number[] = mapData.layers[1].data as number[];
+    const idx = 18 + 18 * WIDTH;
+    expect(aboveData[idx]).toBe(BUILDING_GID);
+  });
+
+  // 5. Tall grass present inside Idea Graveyard field — x=3, y=27
+  it("Tall grass present inside Idea Graveyard — x=3,y=27 has TALL_GRASS_GID (257)", () => {
+    const aboveData: number[] = mapData.layers[1].data as number[];
+    const idx = 3 + 27 * WIDTH;
+    expect(aboveData[idx]).toBe(TALL_GRASS_GID);
+  });
+
+  // 6. Tall grass gap is walkable — x=10, y=27 east wall gap must be Collision=0
+  it("Tall grass gap walkable — Collision layer at x=10,y=27 is 0", () => {
+    const collisionData: number[] = mapData.layers[2].data as number[];
+    const idx = 10 + 27 * WIDTH;
+    expect(collisionData[idx]).toBe(0);
+  });
+
+  // 7. West cross-street — Ground layer at x=15, y=23 must be PATH_GID (294)
+  it("West cross-street present — Ground layer at x=15,y=23 has PATH_GID (294)", () => {
+    const groundData: number[] = mapData.layers[0].data as number[];
+    const idx = 15 + 23 * WIDTH;
+    expect(groundData[idx]).toBe(PATH_GID);
+  });
+
+  // 8. East boardwalk — Ground layer at x=37, y=10 must be PATH_GID (294)
+  it("East boardwalk present — Ground layer at x=37,y=10 has PATH_GID (294)", () => {
+    const groundData: number[] = mapData.layers[0].data as number[];
+    const idx = 37 + 10 * WIDTH;
+    expect(groundData[idx]).toBe(PATH_GID);
+  });
+
+  // 9. East boardwalk mid-point — Ground layer at x=37, y=25 must be PATH_GID (294)
+  //    (boardwalk spine runs full north-south; currently grass at mid-point)
+  it("East boardwalk mid-point — Ground layer at x=37,y=25 has PATH_GID (294)", () => {
+    const groundData: number[] = mapData.layers[0].data as number[];
+    const idx = 37 + 25 * WIDTH;
+    expect(groundData[idx]).toBe(PATH_GID);
+  });
+});

@@ -42,7 +42,7 @@ Transparent zone: rows 0-5 at col=0 are all transparent/sparse. Content starts r
 |---------|-----|-----|-----|-----|--------|
 | Flat grass | 6 | 0 | 193 | (71,151,87) green | ✅ CONFIRMED |
 | Grass variant | 7 | 0 | 225 | (71,151,87) green | ✅ CONFIRMED |
-| Grass variant | 8 | 0 | 257 | (71,151,87) green | ✅ CONFIRMED |
+| **TALL_GRASS_GID** | **8** | **0** | **257** | (71,151,87) green | ✅ CONFIRMED by Andres — dark/dense grass variant, Idea Graveyard field |
 | Earthy path | 9 | 5 | 294 | (199,140,89) sandy brown | ✅ CONFIRMED |
 | Plaza stone | 1 | 1 | 34 | (217,226,241) light gray | ✅ CONFIRMED |
 | Plaza stone alt | 1 | 15 | 48 | (217,226,241) light gray | ✅ CONFIRMED |
