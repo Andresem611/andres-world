@@ -78,4 +78,32 @@ describe("overworld.json — map structure", () => {
     expect(mapData.tilesets[3].name).toBe("garden");
     expect(mapData.tilesets[4].name).toBe("worksite");
   });
+
+  it("Above layer at Thoven HQ footprint has BUILDING_GID (7689)", () => {
+    const aboveData: number[] = mapData.layers[1].data as number[];
+    // Thoven HQ: x=10-17, y=14-22 — top-left corner tile
+    const idx = 10 + 14 * WIDTH;
+    expect(aboveData[idx]).toBe(7689);
+  });
+
+  it("Above layer has palm frond tile (GID 2770) at main street west palm position", () => {
+    const aboveData: number[] = mapData.layers[1].data as number[];
+    // Main street west palm frond at x=21, y=5
+    const idx = 21 + 5 * WIDTH;
+    expect(aboveData[idx]).toBe(2770);
+  });
+
+  it("Above layer has palm trunk (GID 2834) one row below the palm frond", () => {
+    const aboveData: number[] = mapData.layers[1].data as number[];
+    // Palm trunk at x=21, y=6 (one row below frond at y=5)
+    const idx = 21 + 6 * WIDTH;
+    expect(aboveData[idx]).toBe(2834);
+  });
+
+  it("Above layer at Chalk Lab top rows has SCAFFOLD_GID (3598)", () => {
+    const aboveData: number[] = mapData.layers[1].data as number[];
+    // Chalk Lab scaffold overlay: x=18-22, y=8-9
+    const idx = 18 + 8 * WIDTH;
+    expect(aboveData[idx]).toBe(3598);
+  });
 });
