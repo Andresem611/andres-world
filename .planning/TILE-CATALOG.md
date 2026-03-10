@@ -61,10 +61,14 @@ Transparent zone: rows 0-5 at col=0 are all transparent/sparse. Content starts r
 |---------|-----|-----|-----|-----|--------|
 | Sandy beach | 2 | 0 | 2433 | (230,174,85) golden | ✅ CONFIRMED |
 | Wooden dock/pier | 9 | 15 | 2672 | (126,97,81) wood brown | ✅ CONFIRMED |
-| Beach grass | 1 | 0 | 2401 | (71,151,87) green | ✅ CONFIRMED (same as terrain grass) |
-| Beach grass | 3 | 0 | 2465 | (71,151,87) green | ✅ CONFIRMED |
+| Beach grass | 1 | 0 | 2401 | (71,151,87) green | ✅ CONFIRMED |
+| Palm tree fronds (top) | 12 | 17 | 2770 | — | ✅ CONFIRMED by Andres — USE THIS as PALM_GID |
+| Palm tree trunk (bottom) | 14 | 17 | 2834 | — | ✅ CONFIRMED by Andres — secondary tile |
 
-**Note:** beach row=0 transparent. Rows 4-5 at col=0 also transparent.
+**Palm is a multi-tile sprite.** Use GID=2770 (fronds) for Above layer placement.
+GID=2834 is the trunk/bottom — can be placed one row below for a 2-tile tall palm.
+
+**Note:** garden tileset is NOT the palm source — it's formal hedges. Palm lives in BEACH.
 
 ---
 
@@ -96,6 +100,9 @@ arranged in vertical strips across columns.
 ---
 
 ## 17_Garden_16x16.png (firstgid=12769, 32 cols, 196 rows)
+
+🚫 DO NOT USE for palm trees. Confirmed by Andres: this tileset is formal English garden
+hedges/topiaries — not Miami/tropical. May be useful for hedge mazes or formal areas later.
 
 ⚠️ Row 0 is transparent — the current PALM_GID=12769 is invisible!
 
