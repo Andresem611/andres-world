@@ -205,7 +205,7 @@ Plans:
 | 2. Overworld Map | 3/3 | Complete   | 2026-03-09 |
 | 3. Interaction + NPC System | 5/5 | Complete   | 2026-03-09 |
 | 3.1. Art Foundation | 3/3 | Complete   | 2026-03-09 |
-| 3.2. Map Visual Design | 3/3 | Complete   | 2026-03-10 |
+| 3.2. Map Visual Design | 3/3 | Complete    | 2026-03-10 |
 | 3.3. Character + NPC Sprites | 0/TBD | Not started | - |
 | 3.4. Pre-Interior Architecture Foundations | 0/TBD | Not started | - |
 | 4. Andres's Room | 0/TBD | Not started | - |
