@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: completed
-stopped_at: Phase 3.2 context gathered
-last_updated: "2026-03-10T02:52:41.712Z"
+stopped_at: Completed 03.2-01-PLAN.md
+last_updated: "2026-03-10T14:03:54.339Z"
 last_activity: 2026-03-09 — Plan 01-02 complete. Vercel deploy pipeline live, CI/CD wired to main branch.
 progress:
-  total_phases: 12
+  total_phases: 13
   completed_phases: 4
-  total_plans: 13
-  completed_plans: 13
+  total_plans: 16
+  completed_plans: 14
   percent: 100
 ---
 
@@ -65,6 +65,7 @@ Progress: [██████████] 100% (Phase 1 complete)
 | Phase 03.1-art-foundation-real-tilesets-and-programmatic-miami-world-map P01 | 5 | 2 tasks | 3 files |
 | Phase 03.1-art-foundation-real-tilesets-and-programmatic-miami-world-map P02 | 8 | 2 tasks | 2 files |
 | Phase 03.1-art-foundation-real-tilesets-and-programmatic-miami-world-map P03 | 15 | 2 tasks | 3 files |
+| Phase 03.2-map-visual-design P01 | 4 | 1 tasks | 1 files |
 
 ## Accumulated Context
 
@@ -104,10 +105,20 @@ Recent decisions affecting current work:
 - [Phase 03.1-art-foundation]: GRASS_GID/PATH_GID use safe defaults (row=0/col=0) — catalog showed transparent border pixels; visual refinement deferred to Phase 9
 - [Phase 03.1-art-foundation]: Terrains fence tile (localId=160) marked ge_collide:true in buildTerrainTileProperties() — satisfies tilesets[0].tiles.length > 0 test without blocking walkable GRASS_GID
 - [Phase 03.1-art-foundation]: Boot.ts loads 5 LimeZu PNGs separately; Overworld.ts passes allTilesets array to createLayer; zoom=4 for 16px tiles; Vinod Khosla moved from ocean x=42 to boardwalk x=40
+- [ADR 2026-03-10]: generate-map.ts is OVERWORLD ONLY — all interiors authored in Tiled GUI (ARCHITECTURE-DECISIONS.md locked)
+- [ADR 2026-03-10]: Interior scene pattern = InteriorBaseScene + subclasses per room. No one-scene-per-interior duplication.
+- [ADR 2026-03-10]: Dialogue: DialogEntry TypeScript interface before Phase 4; all NPC strings extracted to src/content/dialogue.ts. YAML deferred to Phase 6+.
+- [ADR 2026-03-10]: Tilesets: LimeZu stays on overworld. Kokoro Reflections Art Deco + Seliel Tropical Shores for all interior Tiled maps.
+- [ADR 2026-03-10]: Mobile = graceful degradation (static landing, no Phaser on mobile). No D-pad. Implemented in Phase 3.4.
+- [ADR 2026-03-10]: Animated tiles = Phaser 3.90 native (no phaser-animated-tiles plugin needed — Phaser 3.90 handles Tiled animations natively).
+- [ADR 2026-03-10]: Sprite commission = 32x32, 16 frames, base mannequin + overlays for NPCs, X/Twitter or r/gameDevClassifieds, $50-80 protagonist. Start NOW.
+- [Phase 03.2-map-visual-design]: Palm trunk (GID 2834) gets its own TDD assertion at x=21,y=6 — forces Plan 02 to implement 2-tile palm placement in generate-map.ts
 
 ### Pending Todos
 
-None yet.
+- [ ] Post sprite commission brief on X/Twitter #PixelArt + r/gameDevClassifieds (32x32, 16 frames, hoodie+backpack+coffee, $50-80)
+- [ ] Add splash screen gate to andresmartinez.com (holds until commissioned sprite is ready)
+- [ ] Create TILE-REGISTRY.md — document LimeZu tileset versions and GID ranges
 
 ### Blockers/Concerns
 
@@ -115,9 +126,9 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-10T02:52:41.694Z
-Stopped at: Phase 3.2 context gathered
-Resume file: .planning/phases/03.2-map-visual-design/03.2-CONTEXT.md
+Last session: 2026-03-10T14:03:54.336Z
+Stopped at: Completed 03.2-01-PLAN.md
+Resume file: None
 
 ## Accumulated Context
 
