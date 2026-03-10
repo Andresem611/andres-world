@@ -155,13 +155,13 @@ const NPC_CONFIG: (NpcDefinition | PatrolNpcDefinition)[] = [
     startPosition: { x: 41, y: 6 },
     facingDirection: Direction.DOWN,
   },
-  // 13. Dad — Andres's House interior approach
+  // 13. Dad — Andres's House exterior (east entrance approach)
   {
     id: "dad",
     name: "Dad",
     spriteKey: "npc-dad",
     dialog: ["Have you eaten? Also, call me."],
-    startPosition: { x: 9, y: 18 },
+    startPosition: { x: 10, y: 18 },
     facingDirection: Direction.DOWN,
   },
   // 14. Dog 1 — Andres's House area
