@@ -24,11 +24,13 @@ but every LimeZu tileset has transparent border rows at row=0.
 Collision still works (Grid Engine reads ge_collide tile properties separately
 from visual rendering). This is the #1 fix for Phase 3.2.
 
-| GID in use | Value | Actual pixel | Status |
-|------------|-------|-------------|--------|
-| BUILDING_GID (buildings row=0, col=0) | 6369 | rgba(0,0,0,0) | 🚨 TRANSPARENT |
-| PALM_GID (garden row=0, col=0)        | 12769 | rgba(0,0,0,0) | 🚨 TRANSPARENT |
-| SCAFFOLD_GID (worksite row=0, col=0)  | 19041 | rgba(0,0,0,0) | 🚨 TRANSPARENT |
+| Constant | Old GID (broken) | New GID (confirmed) | Status |
+|----------|-----------------|---------------------|--------|
+| BUILDING_GID | 6369 (transparent) | **7689** (buildings row=41, col=8) | ✅ FIXED |
+| PALM_GID | 12769 (transparent) | **2770** (beach row=12, col=17) | ✅ FIXED |
+| SCAFFOLD_GID | 19041 (transparent) | **3598** (beach row=38, col=13) | ✅ FIXED |
+
+All three confirmed by Andres via tileset-preview.html. Ready to update generate-map.ts.
 
 ---
 
@@ -81,21 +83,8 @@ arranged in vertical strips across columns.
 
 | Purpose | Row | Col | GID | RGB | Status |
 |---------|-----|-----|-----|-----|--------|
-| 🚨 Current BUILDING_GID | 0 | 0 | 6369 | (0,0,0,a=0) TRANSPARENT | 🚨 BUG |
-| Building wall (dark red) | 1 | 0 | 6401 | (132,81,86) dark reddish | ❌ NEEDS HUMAN |
-| Building wall (tan) | 2 | 0 | 6433 | (189,167,102) beige/tan | ❌ NEEDS HUMAN |
-| Building wall (tan) | 3 | 0 | 6465 | (189,167,102) beige/tan | ❌ NEEDS HUMAN |
-| Dark window/wall | 4 | 0 | 6497 | (58,58,80) dark navy | ❌ NEEDS HUMAN |
-| Wall (golden) | 5 | 0 | 6529 | (180,143,84) golden brown | ❌ NEEDS HUMAN |
-| Wall (tan large) | 6 | 0 | 6561 | (189,167,102) beige | ❌ NEEDS HUMAN |
-| Brown terracotta wall | 12 | 0 | 6753 | (161,127,108) brown-orange | ❌ NEEDS HUMAN |
-| Alt building wall | 14 | 0 | 6817 | (142,89,92) dark red-gray | ❌ NEEDS HUMAN |
-| Gray building | 2 | 16 | 6449 | (157,163,183) blue-gray | ❌ NEEDS HUMAN |
-| Warm tan building | 2 | 8 | 6441 | (204,200,144) light tan | ❌ NEEDS HUMAN |
-
-**Best guess for Phase 3.2 BUILDING_GID replacement:**
-→ GID=6401 (buildings row=1, col=0) rgb=(132,81,86) — dark reddish wall, needs human confirm
-→ Or GID=6433 (buildings row=2, col=0) rgb=(189,167,102) — beige wall, more neutral/classic
+| 🚨 Old BUILDING_GID | 0 | 0 | 6369 | (0,0,0,a=0) TRANSPARENT | 🚨 WAS BUG — fixed |
+| **Building wall** | **41** | **8** | **7689** | — | **✅ CONFIRMED by Andres** |
 
 ---
 
@@ -129,23 +118,18 @@ Garden sheet appears to repeat every ~4 rows with different plant/foliage varian
 
 ## 8_Worksite_16x16.png (firstgid=19041, 32 cols, 20 rows)
 
-⚠️ Row 0 is transparent — the current SCAFFOLD_GID=19041 is invisible!
+⚠️ NOT USED for scaffold — scaffold tiles are in the BEACH tileset. See below.
 
-| Purpose | Row | Col | GID | RGB | Status |
-|---------|-----|-----|-----|-----|--------|
-| 🚨 Current SCAFFOLD_GID | 0 | 0 | 19041 | (0,0,0,a=0) TRANSPARENT | 🚨 BUG |
-| Pale gray/concrete | 1 | 0 | 19073 | (235,228,242) pale lavender | ❌ NEEDS HUMAN |
-| 🟠 Construction orange | 1 | 8 | 19081 | (237,147,30) ORANGE | ❌ NEEDS HUMAN |
-| Dark reddish | 2 | 8 | 19074+8=... | (107,80,82) dark | ❌ NEEDS HUMAN |
-| 🔴 Bright red-orange | 6 | 0 | 19233 | (252,92,70) bright red-orange | ❌ NEEDS HUMAN |
-| Red-orange (repeated) | 7 | 0 | 19265 | (252,92,70) bright red-orange | ❌ NEEDS HUMAN |
-| Red-orange (repeated) | 8 | 0 | 19297 | (252,92,70) bright red-orange | ❌ NEEDS HUMAN |
+---
 
-**Best guess for Phase 3.2 SCAFFOLD_GID replacement:**
-→ GID=19081 (worksite row=1, col=8) rgb=(237,147,30) — construction orange — classic scaffold color
-→ Or GID=19233 (worksite row=6, col=0) rgb=(252,92,70) — bright red-orange construction material
+## Scaffold tiles — in BEACH tileset (confirmed by Andres)
 
-Note: worksite row=1, col=8 GID = 19041 + (1×32) + 8 = 19041 + 32 + 8 = 19081
+| Purpose | Tileset | Row | Col | GID | Status |
+|---------|---------|-----|-----|-----|--------|
+| Steel scaffold (diagonal) | beach | 39 | 12 | 3629 | ✅ CONFIRMED by Andres |
+| Steel scaffold X-brace | beach | 38 | 13 | 3598 | ✅ CONFIRMED by Andres |
+
+**Use GID=3598 as SCAFFOLD_GID** — the X-crossbrace reads most clearly as construction scaffolding at 4x zoom.
 
 ---
 
