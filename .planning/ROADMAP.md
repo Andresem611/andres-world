@@ -111,6 +111,16 @@ Plans:
 - [ ] 03.3-02-PLAN.md — Fix 6 building footprints in generate-map.ts + update NPC coordinates in npcs.ts
 - [ ] 03.3-03-PLAN.md — Add tall grass zones, east boardwalk, cross-streets, dock welcome, Secret Beach + human visual verify
 
+### Phase 03.3.1: Tiled visual map design pass (INSERTED)
+
+**Goal:** [Urgent work - to be planned]
+**Requirements**: TBD
+**Depends on:** Phase 3.3
+**Plans:** 0 plans
+
+Plans:
+- [ ] TBD (run /gsd:plan-phase 03.3.1 to break down)
+
 ### Phase 3.4: Character + NPC Sprites
 
 **Goal:** Real pixel art character (hoodie + backpack, 32x32, 4-directional walk) replaces the placeholder. Dialogue content extracted from scene files into a typed content layer. Sprite commission started.

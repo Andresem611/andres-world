@@ -3,11 +3,11 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: completed
-stopped_at: Checkpoint 03.3-03 Task 2 — awaiting human visual verification
-last_updated: "2026-03-10T21:27:21.101Z"
+stopped_at: Completed 03.3-03-PLAN.md — Phase 3.3 Map Layout Design geometry pass done
+last_updated: "2026-03-10T21:50:34.052Z"
 last_activity: 2026-03-09 — Plan 01-02 complete. Vercel deploy pipeline live, CI/CD wired to main branch.
 progress:
-  total_phases: 14
+  total_phases: 15
   completed_phases: 6
   total_plans: 19
   completed_plans: 19
@@ -72,6 +72,7 @@ Progress: [██████████] 100% (Phase 1 complete)
 | Phase 03.3-map-layout-design P01 | 57min | 2 tasks | 2 files |
 | Phase 03.3-map-layout-design P02 | 12 | 2 tasks | 4 files |
 | Phase 03.3-map-layout-design P03 | 6 | 1 tasks | 2 files |
+| Phase 03.3-map-layout-design P03 | 6 | 2 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -130,6 +131,9 @@ Recent decisions affecting current work:
 - [Phase 03.3-map-layout-design]: East boardwalk column x=37 is sacred — zero Above tiles, zero Collision blocks for full y=0-39 range; Secret Beach palms use x=38 exclusively
 - [Phase 03.3-map-layout-design]: Music Room tall grass gap at y=8 only (not y=9) — prevents stranding player one tile from invisible wall at y=10 building north wall
 - [Phase 03.3-map-layout-design]: Dock welcome zone y=36 extended walkable — collision carved at x=24-26 giving player arrival strip above spawn zone
+- [Phase 03.3-map-layout-design]: East boardwalk column x=37 is sacred — zero Above tiles, zero Collision blocks for full y=0-39; Secret Beach palms at x=38 only
+- [Phase 03.3-map-layout-design]: Music Room tall grass gap at y=8 only — y=9 fully blocked to prevent stranding player one tile from invisible wall at y=10 building
+- [Phase 03.3-map-layout-design]: Dock welcome zone y=36 extended walkable — gives player arrival strip above spawn zone before entering Main Street
 
 ### Pending Todos
 
@@ -143,8 +147,8 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-10T21:27:21.095Z
-Stopped at: Checkpoint 03.3-03 Task 2 — awaiting human visual verification
+Last session: 2026-03-10T21:50:34.048Z
+Stopped at: Completed 03.3-03-PLAN.md — Phase 3.3 Map Layout Design geometry pass done
 Resume file: None
 
 ## Accumulated Context
@@ -152,3 +156,4 @@ Resume file: None
 ### Roadmap Evolution
 - Phase 03.1 inserted after Phase 3: Art Foundation - Real Tilesets and Programmatic Miami World Map (URGENT)
 - Phase 03.3 inserted after Phase 3: Map Layout Design — streets, terrain zones, building footprints, paths, beach edge (URGENT). Existing 3.3→3.4, 3.4→3.5.
+- Phase 03.3.1 inserted after Phase 3.3: Tiled visual map design pass — replace programmatic placeholder tiles with hand-crafted Tiled map (URGENT)
