@@ -69,6 +69,16 @@ Plans:
 - [ ] 03-04-PLAN.md — Wire interaction system into OverworldScene + Boot: Space/E detection, interactionMap, NPC spawn, facing-tile dispatch
 - [ ] 03-05-PLAN.md — John Collison patrol + human smoke test checkpoint
 
+### Phase 03.3: Map Layout Design (INSERTED)
+
+**Goal:** [Urgent work - to be planned]
+**Requirements**: TBD
+**Depends on:** Phase 3
+**Plans:** 0 plans
+
+Plans:
+- [ ] TBD (run /gsd:plan-phase 03.3 to break down)
+
 ### Phase 03.1: Art Foundation - Real Tilesets and Programmatic Miami World Map (INSERTED)
 
 **Goal:** Replace placeholder colored-block tileset with real LimeZu Modern Exteriors 16x16 tiles. Generate the complete Miami overworld map programmatically with real tile IDs. The world must render actual pixel art — real buildings, paths, palm trees, beach, dock, Main Street — not colored blocks.
@@ -99,10 +109,10 @@ Plans:
 - [ ] 03.2-02-PLAN.md — Fix BUILDING_GID/PALM_GID/SCAFFOLD_GID constants + placePalm() + tile properties + regenerate overworld.json
 - [ ] 03.2-03-PLAN.md — Human visual verify: buildings, palms, scaffolding visible in browser
 
-### Phase 3.3: Character + NPC Sprites
+### Phase 3.4: Character + NPC Sprites
 
 **Goal:** Real pixel art character (hoodie + backpack, 32x32, 4-directional walk) replaces the placeholder. Dialogue content extracted from scene files into a typed content layer. Sprite commission started.
-**Depends on:** Phase 3.2
+**Depends on:** Phase 3.3
 **Requirements**: CHAR-04, CHAR-05, NPC-06
 **Success Criteria** (what must be TRUE):
   1. Player character shows hoodie + backpack sprite with 4-directional walk animation (commissioned or interim free asset)
@@ -113,10 +123,10 @@ Plans:
 **Gate:** Sprite commission posted before planning (see ARCHITECTURE-DECISIONS.md Decision 3 for brief). Splash screen gate active on andresmartinez.com until commissioned sprite arrives.
 **Plans**: TBD
 
-### Phase 3.4: Pre-Interior Architecture Foundations
+### Phase 3.5: Pre-Interior Architecture Foundations
 
 **Goal:** Everything that must be true before the first interior can be built: scene transition contract, InteriorBaseScene, interactionMap scope verified, mobile gate implemented, tileset registry locked.
-**Depends on:** Phase 3.3
+**Depends on:** Phase 3.4
 **Requirements**: ARCH-01, ARCH-02, ARCH-03, ARCH-04
 **Success Criteria** (what must be TRUE):
   1. `InteriorBaseScene extends Phaser.Scene` exists with: tilemap load, Grid Engine init for interior, exit tile detection + camera fade, player position restore on return, NPC registration loop
@@ -129,7 +139,7 @@ Plans:
 
 ### Phase 4: Andres's Room
 **Goal**: The first complete interior is explorable — every object in the room tells something real about Andres
-**Depends on**: Phase 3.4
+**Depends on**: Phase 3.5
 **Notes:** Interior map authored in Tiled GUI using Kokoro Reflections Art Deco tilesets. Uses InteriorBaseScene base class + AndresRoomScene subclass. Interactive objects defined via Tiled Object Layer properties (interactType, contentId) — no hardcoded tile coordinates.
 **Requirements**: ROOM-01, ROOM-02, ROOM-03, ROOM-04, ROOM-05, ROOM-06, ROOM-07, ROOM-08, ROOM-09, ROOM-10, ROOM-11, ROOM-12, ROOM-13
 **Success Criteria** (what must be TRUE):
@@ -191,13 +201,13 @@ Plans:
 **Success Criteria** (what must be TRUE):
   1. 8-bit background music plays on a loop in the overworld
   2. Music Room plays a distinct 8-bit track when the interior loads
-  3. Mobile graceful degradation is live (static landing page on mobile, implemented in Phase 3.4)
+  3. Mobile graceful degradation is live (static landing page on mobile, implemented in Phase 3.5)
   4. The page has correct Open Graph meta tags (title, description, og:image) visible when the URL is shared
 **Plans**: TBD
 
 ## Progress
 
-**Execution Order:** 1 → 2 → 3 → 3.1 → 3.2 → 3.3 → 3.4 → 4 → 5 → 6 → 7 → 8 → 9
+**Execution Order:** 1 → 2 → 3 → 3.1 → 3.2 → 3.3 → 3.4 → 3.5 → 4 → 5 → 6 → 7 → 8 → 9
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
@@ -206,8 +216,9 @@ Plans:
 | 3. Interaction + NPC System | 5/5 | Complete   | 2026-03-09 |
 | 3.1. Art Foundation | 3/3 | Complete   | 2026-03-09 |
 | 3.2. Map Visual Design | 3/3 | Complete    | 2026-03-10 |
-| 3.3. Character + NPC Sprites | 0/TBD | Not started | - |
-| 3.4. Pre-Interior Architecture Foundations | 0/TBD | Not started | - |
+| 3.3. Map Layout Design | 0/TBD | Not started | - |
+| 3.4. Character + NPC Sprites | 0/TBD | Not started | - |
+| 3.5. Pre-Interior Architecture Foundations | 0/TBD | Not started | - |
 | 4. Andres's Room | 0/TBD | Not started | - |
 | 5. Thoven HQ | 0/TBD | Not started | - |
 | 6. Starbucks Cafe + Engineering Lab | 0/TBD | Not started | - |

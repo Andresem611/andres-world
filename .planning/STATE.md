@@ -141,3 +141,4 @@ Resume file: None
 
 ### Roadmap Evolution
 - Phase 03.1 inserted after Phase 3: Art Foundation - Real Tilesets and Programmatic Miami World Map (URGENT)
+- Phase 03.3 inserted after Phase 3: Map Layout Design — streets, terrain zones, building footprints, paths, beach edge (URGENT). Existing 3.3→3.4, 3.4→3.5.
