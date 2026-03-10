@@ -104,7 +104,7 @@ Plans:
 **Goal:** Fix building footprints and overlaps, add all missing map zones (tall grass, hidden areas, boardwalk, dock detail), wire the full path network. Every building coordinate locked here is the permanent contract for Phase 4+ interior entrance/exit tile detection.
 **Requirements**: (geometry foundations for WORLD-06, HIDE-01 through HIDE-05 — verified in later phases)
 **Depends on:** Phase 3.2
-**Plans:** 3 plans
+**Plans:** 1/3 plans executed
 
 Plans:
 - [ ] 03.3-01-PLAN.md — Confirm TALL_GRASS_GID (human visual confirm) + write 8 failing test assertions (RED gate)
