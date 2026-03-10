@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: completed
-stopped_at: Completed 03.3-02-PLAN.md — building footprint corrections and NPC coordinate updates
-last_updated: "2026-03-10T21:08:23.244Z"
+stopped_at: Checkpoint 03.3-03 Task 2 — awaiting human visual verification
+last_updated: "2026-03-10T21:27:21.101Z"
 last_activity: 2026-03-09 — Plan 01-02 complete. Vercel deploy pipeline live, CI/CD wired to main branch.
 progress:
   total_phases: 14
-  completed_phases: 5
+  completed_phases: 6
   total_plans: 19
-  completed_plans: 18
+  completed_plans: 19
   percent: 100
 ---
 
@@ -71,6 +71,7 @@ Progress: [██████████] 100% (Phase 1 complete)
 | Phase 03.2-map-visual-design P03 | 5 | 2 tasks | 0 files |
 | Phase 03.3-map-layout-design P01 | 57min | 2 tasks | 2 files |
 | Phase 03.3-map-layout-design P02 | 12 | 2 tasks | 4 files |
+| Phase 03.3-map-layout-design P03 | 6 | 1 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -126,6 +127,9 @@ Recent decisions affecting current work:
 - [Phase 03.3-map-layout-design]: TDD RED gate established: 9 failing assertions in overworld-map.test.ts must all pass before Phase 3.3 geometry changes are complete
 - [Phase 03.3-map-layout-design]: Thoven HQ footprint x=12-21 (not x=10-19) — 10x9 size preserved, 2-tile walkway gap at x=10-11 between Andres's House and Thoven HQ; required by TDD assertions
 - [Phase 03.3-map-layout-design]: Dad NPC at x=10,y=18 — walkway gap between Andres's House east wall (x=9) and Thoven HQ west wall (x=12)
+- [Phase 03.3-map-layout-design]: East boardwalk column x=37 is sacred — zero Above tiles, zero Collision blocks for full y=0-39 range; Secret Beach palms use x=38 exclusively
+- [Phase 03.3-map-layout-design]: Music Room tall grass gap at y=8 only (not y=9) — prevents stranding player one tile from invisible wall at y=10 building north wall
+- [Phase 03.3-map-layout-design]: Dock welcome zone y=36 extended walkable — collision carved at x=24-26 giving player arrival strip above spawn zone
 
 ### Pending Todos
 
@@ -139,8 +143,8 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-10T21:08:23.241Z
-Stopped at: Completed 03.3-02-PLAN.md — building footprint corrections and NPC coordinate updates
+Last session: 2026-03-10T21:27:21.095Z
+Stopped at: Checkpoint 03.3-03 Task 2 — awaiting human visual verification
 Resume file: None
 
 ## Accumulated Context
