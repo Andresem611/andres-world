@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: completed
-stopped_at: Completed 03.3-01-PLAN.md — TDD RED gate for Phase 3.3 geometry changes
-last_updated: "2026-03-10T20:47:45.467Z"
+stopped_at: Completed 03.3-02-PLAN.md — building footprint corrections and NPC coordinate updates
+last_updated: "2026-03-10T21:08:23.244Z"
 last_activity: 2026-03-09 — Plan 01-02 complete. Vercel deploy pipeline live, CI/CD wired to main branch.
 progress:
   total_phases: 14
   completed_phases: 5
   total_plans: 19
-  completed_plans: 17
+  completed_plans: 18
   percent: 100
 ---
 
@@ -70,6 +70,7 @@ Progress: [██████████] 100% (Phase 1 complete)
 | Phase 03.2-map-visual-design PP03 | 87 | 1 tasks | 4 files |
 | Phase 03.2-map-visual-design P03 | 5 | 2 tasks | 0 files |
 | Phase 03.3-map-layout-design P01 | 57min | 2 tasks | 2 files |
+| Phase 03.3-map-layout-design P02 | 12 | 2 tasks | 4 files |
 
 ## Accumulated Context
 
@@ -123,6 +124,8 @@ Recent decisions affecting current work:
 - [Phase 03.2-map-visual-design]: Human visual verification approved: buildings render as solid colored tiles, palms as leafy shrubs, scaffold area visible — ART-06/07/08 requirements complete
 - [Phase 03.3-map-layout-design]: TALL_GRASS_GID=257 confirmed (Terrains row=8, col=0) via tileset-preview.html by Andres
 - [Phase 03.3-map-layout-design]: TDD RED gate established: 9 failing assertions in overworld-map.test.ts must all pass before Phase 3.3 geometry changes are complete
+- [Phase 03.3-map-layout-design]: Thoven HQ footprint x=12-21 (not x=10-19) — 10x9 size preserved, 2-tile walkway gap at x=10-11 between Andres's House and Thoven HQ; required by TDD assertions
+- [Phase 03.3-map-layout-design]: Dad NPC at x=10,y=18 — walkway gap between Andres's House east wall (x=9) and Thoven HQ west wall (x=12)
 
 ### Pending Todos
 
@@ -136,8 +139,8 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-10T20:47:45.463Z
-Stopped at: Completed 03.3-01-PLAN.md — TDD RED gate for Phase 3.3 geometry changes
+Last session: 2026-03-10T21:08:23.241Z
+Stopped at: Completed 03.3-02-PLAN.md — building footprint corrections and NPC coordinate updates
 Resume file: None
 
 ## Accumulated Context
