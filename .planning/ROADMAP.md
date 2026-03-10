@@ -69,16 +69,6 @@ Plans:
 - [ ] 03-04-PLAN.md — Wire interaction system into OverworldScene + Boot: Space/E detection, interactionMap, NPC spawn, facing-tile dispatch
 - [ ] 03-05-PLAN.md — John Collison patrol + human smoke test checkpoint
 
-### Phase 03.3: Map Layout Design (INSERTED)
-
-**Goal:** [Urgent work - to be planned]
-**Requirements**: TBD
-**Depends on:** Phase 3
-**Plans:** 0 plans
-
-Plans:
-- [ ] TBD (run /gsd:plan-phase 03.3 to break down)
-
 ### Phase 03.1: Art Foundation - Real Tilesets and Programmatic Miami World Map (INSERTED)
 
 **Goal:** Replace placeholder colored-block tileset with real LimeZu Modern Exteriors 16x16 tiles. Generate the complete Miami overworld map programmatically with real tile IDs. The world must render actual pixel art — real buildings, paths, palm trees, beach, dock, Main Street — not colored blocks.
@@ -108,6 +98,18 @@ Plans:
 - [ ] 03.2-01-PLAN.md — Add 4 failing GID assertions to overworld-map.test.ts (RED gate for ART-06/07/08)
 - [ ] 03.2-02-PLAN.md — Fix BUILDING_GID/PALM_GID/SCAFFOLD_GID constants + placePalm() + tile properties + regenerate overworld.json
 - [ ] 03.2-03-PLAN.md — Human visual verify: buildings, palms, scaffolding visible in browser
+
+### Phase 03.3: Map Layout Design (INSERTED)
+
+**Goal:** Fix building footprints and overlaps, add all missing map zones (tall grass, hidden areas, boardwalk, dock detail), wire the full path network. Every building coordinate locked here is the permanent contract for Phase 4+ interior entrance/exit tile detection.
+**Requirements**: (geometry foundations for WORLD-06, HIDE-01 through HIDE-05 — verified in later phases)
+**Depends on:** Phase 3.2
+**Plans:** 3 plans
+
+Plans:
+- [ ] 03.3-01-PLAN.md — Confirm TALL_GRASS_GID (human visual confirm) + write 8 failing test assertions (RED gate)
+- [ ] 03.3-02-PLAN.md — Fix 6 building footprints in generate-map.ts + update NPC coordinates in npcs.ts
+- [ ] 03.3-03-PLAN.md — Add tall grass zones, east boardwalk, cross-streets, dock welcome, Secret Beach + human visual verify
 
 ### Phase 3.4: Character + NPC Sprites
 
@@ -216,7 +218,7 @@ Plans:
 | 3. Interaction + NPC System | 5/5 | Complete   | 2026-03-09 |
 | 3.1. Art Foundation | 3/3 | Complete   | 2026-03-09 |
 | 3.2. Map Visual Design | 3/3 | Complete    | 2026-03-10 |
-| 3.3. Map Layout Design | 0/TBD | Not started | - |
+| 3.3. Map Layout Design | 0/3 | Not started | - |
 | 3.4. Character + NPC Sprites | 0/TBD | Not started | - |
 | 3.5. Pre-Interior Architecture Foundations | 0/TBD | Not started | - |
 | 4. Andres's Room | 0/TBD | Not started | - |
