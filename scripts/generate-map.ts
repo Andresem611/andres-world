@@ -1,4 +1,18 @@
 /**
+ * ============================================================
+ * RETIRED — DO NOT RUN THIS SCRIPT
+ * ============================================================
+ * overworld.json is now owned by Tiled GUI (Phase 03.3.1).
+ * Running this script will overwrite ALL visual work done in Tiled.
+ *
+ * To edit the overworld map: open public/assets/maps/overworld.tmx in Tiled,
+ * make your changes, then File > Export As > public/assets/maps/overworld.json.
+ *
+ * This file is kept for historical reference only.
+ * ============================================================
+ */
+
+/**
  * generate-map.ts
  *
  * ╔══════════════════════════════════════════════════════════════════╗
