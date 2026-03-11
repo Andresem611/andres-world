@@ -113,13 +113,15 @@ Plans:
 
 ### Phase 03.3.1: Tiled visual map design pass (INSERTED)
 
-**Goal:** [Urgent work - to be planned]
-**Requirements**: TBD
+**Goal:** Visual design pass on overworld map using Tiled GUI — replacing flat BUILDING_GID placeholder blocks with multi-tile building facades, adding ground/water visual variety, and transitioning map ownership from generate-map.ts to Tiled. Ends with generate-map.ts retired, overworld.tmx committed, and no flat BUILDING_GID=7689 blocks anywhere in the Above layer.
+**Requirements**: (visual quality improvement — no new requirement IDs; foundations for Phase 4+ which requires believable buildings)
 **Depends on:** Phase 3.3
-**Plans:** 0 plans
+**Plans:** 3 plans
 
 Plans:
-- [ ] TBD (run /gsd:plan-phase 03.3.1 to break down)
+- [ ] 03.3.1-01-PLAN.md — Retire generate-map.ts (RETIRED banner), delete overworld-map.test.ts, verify baseline
+- [ ] 03.3.1-02-PLAN.md — Tiled session (HUMAN): register 12 tilesets, paint building facades, ground/water pass, export .tmx + .json
+- [ ] 03.3.1-03-PLAN.md — Conditional Boot.ts/Overworld.ts update for new tilesets + human walk-through + screenshot checklist
 
 ### Phase 3.4: Character + NPC Sprites
 
@@ -219,7 +221,7 @@ Plans:
 
 ## Progress
 
-**Execution Order:** 1 → 2 → 3 → 3.1 → 3.2 → 3.3 → 3.4 → 3.5 → 4 → 5 → 6 → 7 → 8 → 9
+**Execution Order:** 1 → 2 → 3 → 3.1 → 3.2 → 3.3 → 3.3.1 → 3.4 → 3.5 → 4 → 5 → 6 → 7 → 8 → 9
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
@@ -228,7 +230,8 @@ Plans:
 | 3. Interaction + NPC System | 5/5 | Complete   | 2026-03-09 |
 | 3.1. Art Foundation | 3/3 | Complete   | 2026-03-09 |
 | 3.2. Map Visual Design | 3/3 | Complete    | 2026-03-10 |
-| 3.3. Map Layout Design | 0/3 | Not started | - |
+| 3.3. Map Layout Design | 3/3 | Complete    | 2026-03-10 |
+| 3.3.1. Tiled Visual Map Design Pass | 0/3 | Not started | - |
 | 3.4. Character + NPC Sprites | 0/TBD | Not started | - |
 | 3.5. Pre-Interior Architecture Foundations | 0/TBD | Not started | - |
 | 4. Andres's Room | 0/TBD | Not started | - |
