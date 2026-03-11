@@ -116,7 +116,7 @@ Plans:
 **Goal:** Visual design pass on overworld map using Tiled GUI — replacing flat BUILDING_GID placeholder blocks with multi-tile building facades, adding ground/water visual variety, and transitioning map ownership from generate-map.ts to Tiled. Ends with generate-map.ts retired, overworld.tmx committed, and no flat BUILDING_GID=7689 blocks anywhere in the Above layer.
 **Requirements**: (visual quality improvement — no new requirement IDs; foundations for Phase 4+ which requires believable buildings)
 **Depends on:** Phase 3.3
-**Plans:** 3 plans
+**Plans:** 1/3 plans executed
 
 Plans:
 - [ ] 03.3.1-01-PLAN.md — Retire generate-map.ts (RETIRED banner), delete overworld-map.test.ts, verify baseline
