@@ -125,17 +125,20 @@ Plans:
 
 ### Phase 3.4: Character + NPC Sprites
 
-**Goal:** Real pixel art character (hoodie + backpack, 32x32, 4-directional walk) replaces the placeholder. Dialogue content extracted from scene files into a typed content layer. Sprite commission started.
+**Goal:** Real pixel art character (hoodie + backpack, 32x32, 4-directional walk) replaces the placeholder. Dialogue content extracted from scene files into a typed content layer. AI-generated sprites via PixelLab replace colored-box placeholders.
 **Depends on:** Phase 3.3
 **Requirements**: CHAR-04, CHAR-05, NPC-06
 **Success Criteria** (what must be TRUE):
-  1. Player character shows hoodie + backpack sprite with 4-directional walk animation (commissioned or interim free asset)
+  1. Player character shows hoodie + backpack sprite with 4-directional walk animation (AI-generated via PixelLab)
   2. At least 5 NPC sprites are real pixel art (not the current colored-box placeholders)
   3. All sprite sources and licenses documented in .planning/SPRITE-SOURCES.md
   4. `src/types/dialog.ts` defines `DialogEntry` interface
-  5. All NPC string arrays extracted from GameScene.ts into `src/content/dialogue.ts` organized by zone
-**Gate:** Sprite commission posted before planning (see ARCHITECTURE-DECISIONS.md Decision 3 for brief). Splash screen gate active on andresmartinez.com until commissioned sprite arrives.
-**Plans**: TBD
+  5. All NPC string arrays extracted from npcs.ts into `src/content/dialogue.ts` organized by zone
+**Plans**: 2 plans
+
+Plans:
+- [ ] 03.4-01-PLAN.md — Dialogue extraction: DialogEntry interface + content layer + rewire npcs.ts and Overworld.ts
+- [ ] 03.4-02-PLAN.md — AI sprite generation (PixelLab): player spritesheet + NPC sprites + Boot.ts update + visual verify
 
 ### Phase 3.5: Pre-Interior Architecture Foundations
 
@@ -232,7 +235,7 @@ Plans:
 | 3.2. Map Visual Design | 3/3 | Complete    | 2026-03-10 |
 | 3.3. Map Layout Design | 3/3 | Complete    | 2026-03-10 |
 | 3.3.1. Tiled Visual Map Design Pass | 0/3 | Not started | - |
-| 3.4. Character + NPC Sprites | 0/TBD | Not started | - |
+| 3.4. Character + NPC Sprites | 0/2 | Not started | - |
 | 3.5. Pre-Interior Architecture Foundations | 0/TBD | Not started | - |
 | 4. Andres's Room | 0/TBD | Not started | - |
 | 5. Thoven HQ | 0/TBD | Not started | - |
