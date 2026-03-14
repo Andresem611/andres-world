@@ -1,6 +1,7 @@
 import Phaser from "phaser";
 import { Direction } from "grid-engine";
 import NPC_CONFIG from "../config/npcs";
+import { DIALOGUE } from "../../content/dialogue";
 import { DialogBox, InteractionPayload } from "../ui/DialogBox";
 
 export class OverworldScene extends Phaser.Scene {
@@ -122,17 +123,17 @@ export class OverworldScene extends Phaser.Scene {
       this.interactionMap.set(`${npc.startPosition.x},${npc.startPosition.y}`, {
         type: "npc",
         id: npc.id,
-        dialog: npc.dialog,
+        dialog: DIALOGUE[npc.dialogId]?.lines ?? ["..."],
       });
     }
     // Register building entrances (player faces INTO building wall tile)
     this.interactionMap.set("13,22", { type: "building", key: "ThovenHQ", returnPos: { x: 13, y: 23 } });
     this.interactionMap.set("9,22", { type: "building", key: "AndresRoom", returnPos: { x: 9, y: 23 } });
     // Register under-construction buildings
-    this.interactionMap.set("20,13", { type: "under_construction", message: "Builder still hammering away... check back soon." });
-    this.interactionMap.set("30,20", { type: "under_construction", message: "Builder still hammering away... check back soon." });
+    this.interactionMap.set("20,13", { type: "under_construction", message: DIALOGUE["under-construction-default"]?.lines[0] ?? "Under construction." });
+    this.interactionMap.set("30,20", { type: "under_construction", message: DIALOGUE["under-construction-default"]?.lines[0] ?? "Under construction." });
     // Register welcome sign near dock
-    this.interactionMap.set("25,36", { type: "sign", text: ["Welcome to Andres World.", "Population: always building."] });
+    this.interactionMap.set("25,36", { type: "sign", text: DIALOGUE["welcome-sign"]?.lines ?? ["Welcome to Andres World."] });
 
     // 11. Scene shutdown cleanup — prevents memory leaks from open dialog
     this.events.on("shutdown", () => {

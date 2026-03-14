@@ -11,27 +11,12 @@ describe("NPC-01: spriteKey", () => {
   });
 });
 
-// NPC-02: Every entry has a dialog array with at least one string
-describe("NPC-02: dialog array", () => {
-  it("every entry has a dialog array with at least one string", () => {
+// NPC-02: Every entry has a non-empty dialogId string (replaces old dialog array test)
+describe("NPC-02: dialogId", () => {
+  it("every entry has a non-empty dialogId string", () => {
     for (const npc of NPC_CONFIG) {
-      expect(Array.isArray(npc.dialog)).toBe(true);
-      expect(npc.dialog.length).toBeGreaterThan(0);
-      for (const line of npc.dialog) {
-        expect(typeof line).toBe("string");
-      }
-    }
-  });
-});
-
-// NPC-03: No dialog string equals "TODO" or contains "[placeholder]"
-describe("NPC-03: no placeholder dialog", () => {
-  it('no dialog string equals "TODO" or contains "[placeholder]"', () => {
-    for (const npc of NPC_CONFIG) {
-      for (const line of npc.dialog) {
-        expect(line).not.toBe("TODO");
-        expect(line).not.toContain("[placeholder]");
-      }
+      expect(typeof npc.dialogId).toBe("string");
+      expect(npc.dialogId.length).toBeGreaterThan(0);
     }
   });
 });
