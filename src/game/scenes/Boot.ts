@@ -27,13 +27,14 @@ export class BootScene extends Phaser.Scene {
     this.load.image("worksite",  "assets/tilesets/8_Worksite_16x16.png");
     // Tiled JSON map
     this.load.tilemapTiledJSON("overworld", "assets/maps/overworld.json");
-    // Character placeholder sprite sheet (32x32 per frame, 4-directional)
-    this.load.spritesheet("player", "assets/sprites/character-placeholder.png", {
+    // Player sprite sheet (32x32 per frame, 4-directional walk cycle)
+    // Layout: 96x128px, 3 frames × 4 rows (PIPOYA order: Down/Left/Right/Up)
+    this.load.spritesheet("player", "assets/sprites/player.png", {
       frameWidth: 32,
       frameHeight: 32,
     });
 
-    // NPC placeholder sprites (single 32x32 frame — not a spritesheet)
+    // NPC sprites (single 32x32 frame — mix of AI-generated and placeholders)
     const npcIds = [
       "paul-graham", "marc-andreessen", "brian-chesky", "tobi-lutke",
       "dalton-caldwell", "ben-horowitz", "vinod-khosla", "dario-amodei",
