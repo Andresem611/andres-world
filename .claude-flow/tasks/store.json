@@ -1,0 +1,43 @@
+{
+  "tasks": {
+    "task-1773067994233-tevspr": {
+      "taskId": "task-1773067994233-tevspr",
+      "type": "feature",
+      "description": "Bootstrap project scaffold: Create package.json (phaser ^3.90.0, grid-engine ^2.48.0, vite ^6.0.0, typescript ^5.7.0), vite.config.ts (base: \"./\"), tsconfig.json (strict, ES2020, bundler moduleResolution), index.html (links style.css, loads /src/main.ts as module). Run npm install. Verify: npm run build exits 0 and dist/ exists. Working directory: /Users/andresmartinez/andres-world",
+      "priority": "high",
+      "status": "pending",
+      "progress": 0,
+      "assignedTo": [
+        "coder-scaffold"
+      ],
+      "tags": [
+        "phase-1",
+        "scaffold",
+        "config"
+      ],
+      "createdAt": "2026-03-09T14:53:14.233Z",
+      "startedAt": null,
+      "completedAt": null
+    },
+    "task-1773067997299-7c1hin": {
+      "taskId": "task-1773067997299-7c1hin",
+      "type": "feature",
+      "description": "Create Phaser source files: src/main.ts (imports ./game/main), src/game/main.ts (Phaser.Game config with pixelArt:true, Grid Engine plugin registered as scene plugin with mapping gridEngine, BootScene in scene array), src/game/scenes/Boot.ts (extends Phaser.Scene, key Boot, console.log in create()), src/types/global.d.ts (module augmentation declaring gridEngine: GridEngine on Phaser.Scene interface), public/style.css (image-rendering: pixelated, body centers canvas on black bg). Verify: npm run build exits 0, npx tsc --noEmit exits 0. Working directory: /Users/andresmartinez/andres-world",
+      "priority": "high",
+      "status": "pending",
+      "progress": 0,
+      "assignedTo": [
+        "coder-phaser"
+      ],
+      "tags": [
+        "phase-1",
+        "phaser",
+        "source"
+      ],
+      "createdAt": "2026-03-09T14:53:17.299Z",
+      "startedAt": null,
+      "completedAt": null
+    }
+  },
+  "version": "3.0.0"
+}

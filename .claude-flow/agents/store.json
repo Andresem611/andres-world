@@ -1,0 +1,47 @@
+{
+  "agents": {
+    "coord-phase1": {
+      "agentId": "coord-phase1",
+      "agentType": "coordinator",
+      "status": "idle",
+      "health": 1,
+      "taskCount": 0,
+      "config": {
+        "model": "sonnet"
+      },
+      "createdAt": "2026-03-09T14:53:05.356Z",
+      "domain": "orchestration",
+      "model": "sonnet",
+      "modelRoutedBy": "explicit"
+    },
+    "coder-scaffold": {
+      "agentId": "coder-scaffold",
+      "agentType": "coder",
+      "status": "idle",
+      "health": 1,
+      "taskCount": 0,
+      "config": {
+        "model": "sonnet"
+      },
+      "createdAt": "2026-03-09T14:53:05.607Z",
+      "domain": "frontend",
+      "model": "sonnet",
+      "modelRoutedBy": "explicit"
+    },
+    "coder-phaser": {
+      "agentId": "coder-phaser",
+      "agentType": "coder",
+      "status": "idle",
+      "health": 1,
+      "taskCount": 0,
+      "config": {
+        "model": "sonnet"
+      },
+      "createdAt": "2026-03-09T14:53:05.844Z",
+      "domain": "frontend",
+      "model": "sonnet",
+      "modelRoutedBy": "explicit"
+    }
+  },
+  "version": "3.0.0"
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Tileset Preview</title>
+<style>
+  body { background: #222; color: #fff; font-family: monospace; padding: 20px; }
+  .tileset { margin-bottom: 40px; }
+  h2 { color: #ff0; margin-bottom: 8px; }
+  .canvas-wrap { position: relative; display: inline-block; border: 1px solid #444; }
+  canvas { image-rendering: pixelated; display: block; }
+  .info { margin-top: 8px; font-size: 12px; color: #aaa; }
+  #coords { position: fixed; top: 10px; right: 10px; background: #000; padding: 8px 12px; border: 1px solid #ff0; font-size: 14px; color: #ff0; }
+</style>
+</head>
+<body>
+<div id="coords">Hover a tile to see row/col/GID</div>
+
+<script>
+const TILESETS = [
+  { name: 'terrains',  file: '/assets/tilesets/1_Terrains_and_Fences_16x16.png',  firstgid: 1,     cols: 32 },
+  { name: 'beach',     file: '/assets/tilesets/21_Beach_16x16.png',               firstgid: 2369,  cols: 32 },
+  { name: 'buildings', file: '/assets/tilesets/4_Generic_Buildings_16x16.png',    firstgid: 6369,  cols: 32 },
+  { name: 'garden',    file: '/assets/tilesets/17_Garden_16x16.png',              firstgid: 12769, cols: 32 },
+  { name: 'worksite',  file: '/assets/tilesets/8_Worksite_16x16.png',             firstgid: 19041, cols: 32 },
+];
+
+const SCALE = 3; // 16px tiles → 48px display
+const TILE = 16;
+const coords = document.getElementById('coords');
+
+TILESETS.forEach(ts => {
+  const section = document.createElement('div');
+  section.className = 'tileset';
+
+  const h2 = document.createElement('h2');
+  h2.textContent = ts.name + ' (firstgid=' + ts.firstgid + ')';
+  section.appendChild(h2);
+
+  const wrap = document.createElement('div');
+  wrap.className = 'canvas-wrap';
+
+  const canvas = document.createElement('canvas');
+  const img = new Image();
+  img.onload = () => {
+    const rows = img.height / TILE;
+    canvas.width = img.width * SCALE;
+    canvas.height = img.height * SCALE;
+    const ctx = canvas.getContext('2d');
+    ctx.imageSmoothingEnabled = false;
+    ctx.drawImage(img, 0, 0, img.width * SCALE, img.height * SCALE);
+
+    // Draw grid
+    ctx.strokeStyle = 'rgba(255,255,0,0.3)';
+    ctx.lineWidth = 0.5;
+    for (let r = 0; r <= rows; r++) {
+      ctx.beginPath(); ctx.moveTo(0, r * TILE * SCALE); ctx.lineTo(canvas.width, r * TILE * SCALE); ctx.stroke();
+    }
+    for (let c = 0; c <= ts.cols; c++) {
+      ctx.beginPath(); ctx.moveTo(c * TILE * SCALE, 0); ctx.lineTo(c * TILE * SCALE, canvas.height); ctx.stroke();
+    }
+  };
+  img.src = ts.file;
+
+  canvas.addEventListener('mousemove', e => {
+    const rect = canvas.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const col = Math.floor(x / (TILE * SCALE));
+    const row = Math.floor(y / (TILE * SCALE));
+    const gid = ts.firstgid + row * ts.cols + col;
+    coords.textContent = ts.name + ' | row=' + row + ' col=' + col + ' | GID=' + gid;
+  });
+
+  wrap.appendChild(canvas);
+  section.appendChild(wrap);
+
+  const info = document.createElement('div');
+  info.className = 'info';
+  info.textContent = img.src;
+  section.appendChild(info);
+
+  document.body.appendChild(section);
+});
+</script>
+</body>
+</html>
