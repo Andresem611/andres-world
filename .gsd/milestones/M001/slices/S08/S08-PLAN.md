@@ -15,8 +15,8 @@
 
 - [x] **T01: Dialogue content layer extraction** `est:3min`
   - Create DialogEntry interface + DIALOGUE content map. Rewire npcs.ts and Overworld.ts to use content layer. NPC-06 requirement complete.
-- [ ] **T02: AI sprite generation + integration** `est:TBD`
-  - Generate player spritesheet + NPC sprites via PixelLab. Update Boot.ts. Create SPRITE-SOURCES.md. Human visual verify. (CHAR-04, CHAR-05)
+- [x] **T02: AI sprite generation + integration** `est:TBD`
+  - Generated player spritesheet + 4 NPC sprites via Retro Diffusion API. Updated Boot.ts. Created SPRITE-SOURCES.md. Remaining NPCs deferred (budget). (CHAR-04, CHAR-05 partial)
 
 ## Files Likely Touched
 

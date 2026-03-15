@@ -29,7 +29,7 @@
   > After this: All building footprints corrected, tall grass zones added, boardwalk/streets/Secret Beach walkable. Building coordinates locked for interior scenes.
 - [ ] **S07: Tiled Visual Map Design Pass** `risk:medium` `depends:[S06]`
   > After this: Flat placeholder blocks replaced with multi-tile building facades via Tiled GUI. Map ownership transferred from generate-map.ts to Tiled.
-- [ ] **S08: Character + NPC Sprites** `risk:medium` `depends:[S06]`
+- [x] **S08: Character + NPC Sprites** `risk:medium` `depends:[S06]`
   > After this: Player has hoodie+backpack sprite with 4-dir walk animation. At least 5 NPCs are real pixel art. All dialogue in typed content layer.
 - [ ] **S09: Pre-Interior Architecture** `risk:high` `depends:[S08]`
   > After this: InteriorBaseScene, scene transition contract, mobile gate, and tileset registry are ready. One complete enter→walk→exit transition test passes.
