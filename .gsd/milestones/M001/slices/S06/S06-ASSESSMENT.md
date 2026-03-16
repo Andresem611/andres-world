@@ -1,36 +1,30 @@
 # S06 Roadmap Assessment
 
-**Verdict: No changes needed.**
+## Verdict: No changes needed
 
-## What S06 Delivered
-
-Building footprints corrected and locked as the permanent coordinate contract for all interior scenes. Tall grass zones, east boardwalk, cross-streets, dock welcome zone, and Secret Beach geometry all in place. All 9 TDD assertions GREEN.
+S06 locked the permanent building footprint coordinate contract (Thoven HQ x=12-21, Andres House x=6-9, etc.), added tall grass zones, east boardwalk, and Secret Beach geometry. All 9 TDD assertions passed. No new risks surfaced.
 
 ## Success Criteria Coverage
 
-- Visitors can walk the full overworld and talk to all 14 NPCs → S07, S08 ✓ (done)
-- Every building entrance loads interior or shows under-construction popup → S09, S10, S11, S12, S13
-- All 5 hidden areas reachable via correct paths → S13
-- Player character hoodie+backpack sprite with 4-dir walk animation → S08 ✓ (done)
+- Visitors can walk full overworld and talk to all 14 NPCs → S07, S08 ✅ (validated)
+- Every building entrance loads interior or shows under-construction → S09, S10, S11, S12, S13
+- All 5 hidden areas reachable → S13
+- Player character hoodie+backpack sprite with 4-dir animation → S08 ✅ (complete)
 - Pokemon-style title card on load → S14
-- 8-bit background music on loop → S15
-- Mobile graceful static landing page → S09 (mobile gate), S15
+- 8-bit background music loops → S15
+- Mobile graceful static landing page → S15
 - Live at andresmartinez.com with OG meta tags → S15
 
-All criteria have at least one remaining owning slice. No gaps.
-
-## Risk Assessment
-
-- S06 retired its risk (building geometry accuracy). No residual risk carried forward.
-- No new risks or unknowns emerged.
-- S07 (Tiled visual pass) dependency on S06's locked coordinates is satisfied.
-- S09 (Pre-Interior Architecture) dependency on S08 is satisfied (S08 complete).
-- Interior scene chain (S09→S10→S11→S12) remains sound — building footprint coordinates are now the permanent contract.
+All criteria have at least one remaining owning slice. Coverage check passes.
 
 ## Requirement Coverage
 
-Active requirements (ROOM-*, THOV-*, CAFE-*, LAB-*, CONST-*, HIDE-*, BULL-*, LOAD-*, POLI-*) all have credible owning slices in S09–S15. No requirement lost coverage from S06 completion. No new requirements surfaced.
+All active requirements (ROOM-01–13, THOV-01–08, CAFE-01–05, LAB-01–07, CONST-01–04, HIDE-01–05, BULL-01–05, LOAD-01–03, POLI-01–05) retain credible slice ownership in S09–S15. No requirements were validated, invalidated, deferred, or newly surfaced by S06.
 
-## Conclusion
+## Risk Retired
 
-Remaining slices S07–S15 stand as planned. Slice ordering, dependencies, and scope are all still correct.
+S06's target risk — incorrect building footprints blocking interior scene development — fully retired. Coordinate contract is now the permanent reference for S09+ entrance/exit detection.
+
+## Slice Ordering
+
+Remaining order (S07 → S09 → S10 → S11 → S12 → S13 → S14 → S15) remains sound. S08 completed out of order but its dependency (S06) was satisfied. No reordering needed.
