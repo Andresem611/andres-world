@@ -35,8 +35,8 @@
   > After this: InteriorBaseScene bugs fixed, 4x zoom, mobile gate for touch devices, 16 tests verify transition contract.
 - [x] **S10: Andres's Room** `risk:medium` `depends:[S09]`
   > After this: First complete interior — bed, PC, DJ booth, bookshelf interactions, wall decorations, Dad NPC, two dachshunds. 18 tests.
-- [ ] **S11: Thoven HQ** `risk:medium` `depends:[S10]`
-  > After this: Thoven HQ interior with metrics board, shipped corkboard, practice rooms, Keri/Michael Seibel/Brian Chesky NPCs.
+- [x] **S11: Thoven HQ** `risk:medium` `depends:[S10]`
+  > After this: Thoven HQ interior with metrics board, shipped corkboard, practice rooms, Keri/Michael Seibel/Brian Chesky NPCs. 15 tests.
 - [ ] **S12: Starbucks Cafe + Engineering Lab** `risk:medium` `depends:[S11]`
   > After this: Essay reading system via HTML overlay + tools/experiments section. Paul Graham, Tobi, Patrick, Dario NPCs.
 - [ ] **S13: Hidden Areas + Under-Construction + Bulletin Board** `risk:medium` `depends:[S12]`

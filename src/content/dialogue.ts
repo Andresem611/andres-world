@@ -107,4 +107,36 @@ export const DIALOGUE: Record<string, DialogEntry> = {
   "under-construction-default": {
     lines: ["Builder still hammering away... check back soon."],
   },
+
+  // ─── Thoven HQ Objects ──────────────────────────────────────
+  "thoven-metrics": {
+    lines: [
+      "THOVEN METRICS",
+      "Teachers: 142 | Students: 1,847 | Lessons completed: 23,419",
+    ],
+  },
+  "thoven-shipped": {
+    lines: [
+      "SHIPPED BOARD",
+      "Last shipped: AI practice feedback v2",
+      "Current focus: Student progress dashboard",
+      "Under construction: Group lessons",
+    ],
+  },
+  "thoven-practice-piano": {
+    lines: ["🎹 Piano Practice Room", "Under construction. Check back soon."],
+  },
+  "thoven-practice-guitar": {
+    lines: ["🎸 Guitar Practice Room", "Under construction. Check back soon."],
+  },
+  "thoven-practice-voice": {
+    lines: ["🎤 Voice Practice Room", "Under construction. Check back soon."],
+  },
+  "thoven-practice-violin": {
+    lines: ["🎻 Violin Practice Room", "Under construction. Check back soon."],
+  },
+  "thoven-pc": {
+    lines: ["Thoven — the operating system for music education."],
+    link: "https://thoven.com",
+  },
 };
