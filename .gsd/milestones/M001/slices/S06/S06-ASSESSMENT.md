@@ -1,30 +1,41 @@
 # S06 Roadmap Assessment
 
-## Verdict: No changes needed
+**Verdict: Roadmap unchanged.**
 
-S06 delivered exactly what it set out to — corrected building footprints, tall grass zones, east boardwalk, Secret Beach path, dock welcome zone, and the permanent coordinate contract for interior scenes. No blockers discovered, no new risks surfaced.
+## What S06 Delivered
+
+Building footprints corrected and locked as permanent coordinate contract. Tall grass zones, east boardwalk, Secret Beach path, and dock welcome zone all in place with TDD geometry assertions enforcing accuracy.
 
 ## Success Criteria Coverage
 
-- Visitors can walk the full overworld and talk to all 14 NPCs → S07, S08
-- Every building entrance loads interior or shows under-construction popup → S09, S10, S11, S12, S13
-- All 5 hidden areas reachable via correct paths → S13
-- Player character is hoodie+backpack founder sprite with 4-dir walk → S08
-- Pokemon-style title card on load → S14
-- 8-bit background music loops → S15
-- Mobile graceful static landing page → S15
-- Live at andresmartinez.com with OG meta tags → S15
+All 8 success criteria have at least one remaining owning slice:
 
-All criteria have at least one remaining owning slice. Coverage check passes.
+- Walk full map + talk to NPCs → S07, already validated S02-S06/S03/S08 ✓
+- Building entrances load interior or under-construction → S09, S10-S12, S13 ✓
+- 5 hidden areas reachable → S13 ✓
+- Hoodie+backpack founder sprite → S08 (done) ✓
+- Pokemon-style title card → S14 ✓
+- 8-bit background music → S15 ✓
+- Mobile graceful static page → S09, S15 ✓
+- Live at andresmartinez.com with OG tags → S15 ✓
 
 ## Requirement Coverage
 
-No requirement status changes from S06. Active requirements retain credible slice coverage. HIDE-01 through HIDE-05 geometry foundations are now in place (tall grass, Secret Beach path, boardwalk), strengthening confidence in S13 delivery.
+Active requirements map cleanly to remaining slices:
 
-## Slice Ordering
+- ROOM-01 through ROOM-13 → S10
+- THOV-01 through THOV-08 → S11
+- CAFE-01 through CAFE-05, LAB-01 through LAB-07 → S12
+- CONST-01 through CONST-04, HIDE-01 through HIDE-05, BULL-01 through BULL-05 → S13
+- LOAD-01 through LOAD-03 → S14
+- POLI-01 through POLI-05 → S15
+- S09 provides the interior architecture that S10-S12 all depend on
 
-S07 (Tiled visual pass) and S08 (character + NPC sprites) both depend on S06's locked coordinates and can proceed in parallel. S09 (interior architecture) correctly depends on S08. No reordering needed.
+No orphaned requirements. No new risks surfaced.
 
-## Key Observation
+## Why No Changes
 
-The building footprint coordinate contract established by S06 is the critical handoff point for all interior work (S09+). The TDD geometry assertions provide regression protection if map generation changes.
+- S06 retired its risk cleanly (building geometry locked with 9/9 assertions GREEN)
+- No new unknowns emerged — coordinate contract is clean
+- Remaining slice ordering and dependencies are still correct
+- S07 (Tiled visual pass) and S09 (interior architecture) are both unblocked and correctly sequenced
