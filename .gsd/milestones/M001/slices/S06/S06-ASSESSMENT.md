@@ -8,23 +8,27 @@ verdict: no-change
 
 ## Changes Made
 
-No changes. S06 delivered exactly what was planned — building footprints corrected, tall grass zones added, boardwalk/streets/Secret Beach walkable, and the permanent coordinate contract locked for interior scenes. All 8 success criteria have at least one remaining owning slice:
+No changes. S06 retired its risk cleanly — building footprints are locked, tall grass zones placed, east boardwalk and Secret Beach walkable, dock welcome zone extended. The coordinate contract is the foundation S07 (Tiled visual pass) and S09+ (interior scenes) depend on.
 
-- Walk full map + talk to NPCs → S07, S08 (done)
-- Building entrances load interiors or under-construction → S09, S10, S11, S12, S13
-- 5 hidden areas reachable → S13
-- Founder sprite with walk animation → S08 (done)
-- Pokemon-style title card → S14
-- 8-bit music loop → S15
-- Mobile graceful static page → S15
-- Live at andresmartinez.com with OG tags → S15
+All 8 success criteria have at least one remaining owning slice:
 
-No new risks surfaced. The coordinate contract from S06 feeds directly into S09 (pre-interior architecture) as designed. Remaining slice ordering is correct.
+- Walk full map + talk to 14 NPCs → already proven (S01-S06, S08)
+- Building entrances load interior or under-construction popup → S09, S10-S12, S13
+- All 5 hidden areas reachable → S13
+- Hoodie+backpack founder sprite with 4-dir walk → already proven (S08)
+- Pokemon-style title card on load → S14
+- 8-bit background music loops → S15
+- Mobile graceful static landing → S09 (mobile gate), S15
+- Live at andresmartinez.com with OG meta → S01 (deployed), S15 (OG tags)
+
+No criteria left unowned. No new risks surfaced. Slice ordering remains correct.
 
 ## Requirement Coverage Impact
 
-None. All Active requirements retain credible coverage from remaining slices. S06 advanced WORLD-06 and HIDE-01–05 foundations but didn't change requirement ownership.
+None. S06 validated WORLD-06 (distinct zones) and established geometry foundations for HIDE-01 through HIDE-05. All ROOM-*, THOV-*, CAFE-*, LAB-*, CONST-*, HIDE-*, BULL-*, LOAD-*, and POLI-* requirements remain active with credible coverage in S09-S15.
 
 ## Decision References
 
-None.
+- "Thoven HQ footprint x=12-21 (not x=10-19) — 2-tile walkway gap at x=10-11"
+- "East boardwalk column x=37 is sacred — zero Above/Collision tiles"
+- "Building footprint coordinates are the permanent contract for interior scenes"
