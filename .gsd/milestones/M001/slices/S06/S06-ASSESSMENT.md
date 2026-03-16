@@ -1,28 +1,28 @@
 # S06 Roadmap Assessment
 
-## Verdict: No changes needed
+**Verdict: No changes needed.**
 
-S06 delivered exactly what it promised — building footprints corrected, tall grass zones added, boardwalk/streets/Secret Beach walkable, and the permanent building coordinate contract locked for all downstream interior scenes.
+## What S06 Retired
 
-S08 shipped out of order (depended on S06, not S07) — valid sequencing. The remaining slices S07, S09–S15 still form a coherent dependency chain.
+S06 retired its target risk: incorrect building footprints and missing map zones. All geometry is now locked as the permanent coordinate contract for interior scenes (S09+). No new risks or unknowns emerged.
 
-## Success Criteria Coverage
+## Success-Criterion Coverage (remaining slices)
 
-- Visitors can walk the full overworld and talk to all 14 NPCs → validated (S02/S03/S06), S07 adds visual polish
+- Visitors can walk full overworld and talk to all 14 NPCs → S07, S08 ✓ (done)
 - Every building entrance loads interior or shows under-construction popup → S09, S10, S11, S12, S13
 - All 5 hidden areas reachable via correct paths → S13
-- Player character hoodie+backpack sprite with 4-dir walk animation → ✅ S08 complete
+- Player character is hoodie+backpack founder sprite with 4-dir walk → S08 ✓ (done)
 - Pokemon-style title card on load → S14
-- 8-bit background music on loop → S15
-- Mobile graceful static landing page → S15
-- Live at andresmartinez.com with OG meta tags → S15
+- 8-bit background music plays on loop → S15
+- Mobile shows graceful static landing page → S09 (mobile gate), S15
+- Site live at andresmartinez.com with OG meta tags → S15
 
-All 8 criteria have at least one remaining owning slice. Coverage check passes.
+All criteria covered. No gaps.
 
 ## Requirement Coverage
 
-No requirement ownership changes. S06 validated WORLD-06 and laid geometry foundations for HIDE-01 through HIDE-05. All active requirements (ROOM-*, THOV-*, CAFE-*, LAB-*, CONST-*, HIDE-*, BULL-*, LOAD-*, POLI-*) retain credible owning slices in S09–S15.
+All active requirements (ROOM-01–13, THOV-01–08, CAFE-01–05, LAB-01–07, CONST-01–04, HIDE-01–05, BULL-01–05, LOAD-01–03, POLI-01–05) retain credible owning slices in S09–S15. No requirement lost coverage.
 
-## Risks
+## Slice Ordering
 
-No new risks surfaced. S07 (Tiled visual pass) is next and has its prerequisites met — correct building footprints from S06 provide the geometry contract Tiled needs.
+S07 (Tiled visual pass) → S08 ✓ (done) → S09 (pre-interior architecture) remains the correct sequence. S06's coordinate contract is the direct input S07 and S09 need. No reordering warranted.
