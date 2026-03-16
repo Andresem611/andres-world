@@ -64,6 +64,39 @@ export const DIALOGUE: Record<string, DialogEntry> = {
   "dog-1": {
     lines: ["Woof."],
   },
+  "dog-2": {
+    lines: ["Woof."],
+  },
+
+  // ─── Andres's Room Objects ──────────────────────────────────
+  "room-bed": {
+    lines: ["Not yet. Too much to build."],
+  },
+  "room-pc": {
+    lines: ["Andres's links:"],
+    link: "social",
+  },
+  "room-dj": {
+    lines: ["He takes this seriously."],
+  },
+  "room-bookshelf": {
+    lines: ["The Hard Thing About Hard Things.", "\"Sometimes the only way through is through.\""],
+  },
+  "room-jersey": {
+    lines: ["Arsenal #14. North London forever."],
+  },
+  "room-flags": {
+    lines: ["Venezuelan + Dominican. The combo that built this."],
+  },
+  "room-pennant": {
+    lines: ["Michigan. Go Blue."],
+  },
+  "room-poster": {
+    lines: ["Doxxin. The best dachshund who ever lived."],
+  },
+  "room-window": {
+    lines: ["Miami skyline. Palm trees. Always warm."],
+  },
 
   // ─── Signs ─────────────────────────────────────────────────
   "welcome-sign": {

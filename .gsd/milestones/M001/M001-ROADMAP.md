@@ -33,8 +33,8 @@
   > After this: Player has hoodie+backpack sprite with 4-dir walk animation. At least 5 NPCs are real pixel art. All dialogue in typed content layer.
 - [x] **S09: Pre-Interior Architecture** `risk:high` `depends:[S08]`
   > After this: InteriorBaseScene bugs fixed, 4x zoom, mobile gate for touch devices, 16 tests verify transition contract.
-- [ ] **S10: Andres's Room** `risk:medium` `depends:[S09]`
-  > After this: First complete interior explorable — bed, PC, DJ booth, bookshelf, wall items, Dad NPC, two dachshunds.
+- [x] **S10: Andres's Room** `risk:medium` `depends:[S09]`
+  > After this: First complete interior — bed, PC, DJ booth, bookshelf interactions, wall decorations, Dad NPC, two dachshunds. 18 tests.
 - [ ] **S11: Thoven HQ** `risk:medium` `depends:[S10]`
   > After this: Thoven HQ interior with metrics board, shipped corkboard, practice rooms, Keri/Michael Seibel/Brian Chesky NPCs.
 - [ ] **S12: Starbucks Cafe + Engineering Lab** `risk:medium` `depends:[S11]`

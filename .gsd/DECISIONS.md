@@ -72,3 +72,8 @@
 - "Mobile gate: dual detection — (ontouchstart OR maxTouchPoints>0) AND NOT pointer:fine, OR window.innerWidth < 768"
 - "Mobile gate inline script runs before Phaser module loads — toggles #mobile-gate display:flex and #game-container display:none"
 - "Removed window.__SCENE_DEBUG diagnostic surface from InteriorBaseScene — unnecessary in production"
+- "Andres's Room map 10×8 with 5 layers (ground, walls, furniture, exits, collision) — generated via script"
+- "Interior interaction pattern: override update() to check facingPosition against interactionMap, then delegate to super.update()"
+- "Interior NPCs added via gridEngine.addCharacter() at runtime — not in overworld NPC_CONFIG"
+- "Wall decorations registered on y=1 (wall base) so player at y=2 facing up can interact"
+- "dog-2 added to DIALOGUE map — both dogs say 'Woof.'"
