@@ -25,6 +25,7 @@ export class BootScene extends Phaser.Scene {
     this.load.image("buildings", "assets/tilesets/4_Generic_Buildings_16x16.png");
     this.load.image("garden",    "assets/tilesets/17_Garden_16x16.png");
     this.load.image("worksite",  "assets/tilesets/8_Worksite_16x16.png");
+    this.load.image("villas",    "assets/tilesets/7_Villas_16x16.png");
     // Tiled JSON map
     this.load.tilemapTiledJSON("overworld", "assets/maps/overworld.json");
     // Player sprite sheet (32x32 per frame, 4-directional walk cycle)

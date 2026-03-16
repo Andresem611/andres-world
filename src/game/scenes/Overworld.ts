@@ -42,7 +42,8 @@ export class OverworldScene extends Phaser.Scene {
     const buildings = map.addTilesetImage("buildings", "buildings")!;
     const garden    = map.addTilesetImage("garden",    "garden")!;
     const worksite  = map.addTilesetImage("worksite",  "worksite")!;
-    const allTilesets = [terrains, beach, buildings, garden, worksite];
+    const villas    = map.addTilesetImage("villas",    "villas")!;
+    const allTilesets = [terrains, beach, buildings, garden, worksite, villas];
 
     // 2. Create all layers in order (bottom to top draw order)
     //    ALL createLayer() calls MUST complete before gridEngine.create() is called

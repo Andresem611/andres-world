@@ -27,8 +27,8 @@
   > After this: Buildings, palm trees, and scaffolding are visible pixel art — transparent-tile bug fixed.
 - [x] **S06: Map Layout Design** `risk:medium` `depends:[S05]`
   > After this: All building footprints corrected, tall grass zones added, boardwalk/streets/Secret Beach walkable. Building coordinates locked for interior scenes.
-- [ ] **S07: Tiled Visual Map Design Pass** `risk:medium` `depends:[S06]`
-  > After this: Flat placeholder blocks replaced with multi-tile building facades via Tiled GUI. Map ownership transferred from generate-map.ts to Tiled.
+- [x] **S07: Tiled Visual Map Design Pass** `risk:medium` `depends:[S06]`
+  > After this: Flat placeholder blocks replaced with multi-tile building facades via automated script. Villas tileset added for Andres's House.
 - [x] **S08: Character + NPC Sprites** `risk:medium` `depends:[S06]`
   > After this: Player has hoodie+backpack sprite with 4-dir walk animation. At least 5 NPCs are real pixel art. All dialogue in typed content layer.
 - [ ] **S09: Pre-Interior Architecture** `risk:high` `depends:[S08]`
