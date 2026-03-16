@@ -139,4 +139,41 @@ export const DIALOGUE: Record<string, DialogEntry> = {
     lines: ["Thoven — the operating system for music education."],
     link: "https://thoven.com",
   },
+
+  // ─── Starbucks Café Objects ─────────────────────────────────
+  "cafe-barista": {
+    lines: ["One drip coffee. That'll be $7. Welcome to Miami."],
+  },
+  "cafe-essay-1": {
+    lines: [
+      "📖 Do Things That Don't Scale — Paul Graham",
+      "The most common unscalable thing founders have to do at the start is recruit users manually.",
+    ],
+  },
+  "cafe-essay-2": {
+    lines: [
+      "📖 How to Get Startup Ideas — Paul Graham",
+      "The way to get startup ideas is not to try to think of startup ideas.",
+    ],
+  },
+
+  // ─── Engineering Lab Objects ────────────────────────────────
+  "lab-experiment-1": {
+    lines: ["EXPERIMENT: AI Practice Feedback", "Uses Claude to analyze student recordings in real-time."],
+  },
+  "lab-experiment-2": {
+    lines: ["EXPERIMENT: Curriculum Engine", "Generates adaptive lesson plans from teacher templates."],
+  },
+  "lab-experiment-3": {
+    lines: ["EXPERIMENT: Progress Dashboard", "Visual learning analytics for teachers and students."],
+  },
+  "lab-stack-wall": {
+    lines: [
+      "THE STACK",
+      "Anthropic · Vercel · Supabase · Stripe · n8n · Figma · Notion · Mixpanel",
+    ],
+  },
+  "lab-rubber-duck": {
+    lines: ["I just listen."],
+  },
 };

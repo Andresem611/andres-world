@@ -142,6 +142,8 @@ export class OverworldScene extends Phaser.Scene {
     // Register building entrances (player faces INTO building wall tile)
     this.interactionMap.set("13,22", { type: "building", key: "ThovenHQ", returnPos: { x: 13, y: 23 } });
     this.interactionMap.set("9,22", { type: "building", key: "AndresRoom", returnPos: { x: 9, y: 23 } });
+    this.interactionMap.set("31,28", { type: "building", key: "StarbucksCafe", returnPos: { x: 31, y: 29 } });
+    this.interactionMap.set("41,8", { type: "building", key: "EngineeringLab", returnPos: { x: 41, y: 9 } });
     // Register under-construction buildings
     this.interactionMap.set("20,13", { type: "under_construction", message: DIALOGUE["under-construction-default"]?.lines[0] ?? "Under construction." });
     this.interactionMap.set("30,20", { type: "under_construction", message: DIALOGUE["under-construction-default"]?.lines[0] ?? "Under construction." });

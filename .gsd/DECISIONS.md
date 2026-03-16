@@ -77,3 +77,8 @@
 - "Interior NPCs added via gridEngine.addCharacter() at runtime — not in overworld NPC_CONFIG"
 - "Wall decorations registered on y=1 (wall base) so player at y=2 facing up can interact"
 - "dog-2 added to DIALOGUE map — both dogs say 'Woof.'"
+- "Starbucks and Engineering Lab both 10×8 — café has counter + 2 essay tables, lab has workbench zone + stack wall"
+- "Barista NPC reuses keri sprite (no new art needed)"
+- "Essays rendered as multi-line dialogue, not HTML overlay — simpler, consistent with game feel"
+- "Stack wall is one dialogue entry listing all 8 tools — not 8 separate poster interactions"
+- "Overworld entrances: Starbucks at 31,28, Engineering Lab at 41,8"
