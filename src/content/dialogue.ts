@@ -176,4 +176,72 @@ export const DIALOGUE: Record<string, DialogEntry> = {
   "lab-rubber-duck": {
     lines: ["I just listen."],
   },
+
+  // ─── Construction Buildings ─────────────────────────────────
+  "chalk-lab-construction": {
+    lines: [
+      "🚧 Chalk is still being built. Follow along.",
+      "@andaborunda on Twitter for updates.",
+    ],
+  },
+  "chalk-lab-hardhat": {
+    lines: ["He started this two weeks ago. Very excited about it. Check back."],
+  },
+  "vc-office": {
+    lines: ["Sand Hill & Co. — Door's locked. Come back when you've raised a round."],
+  },
+
+  // ─── Hidden Area Signs ──────────────────────────────────────
+  "secret-beach-sign": {
+    lines: ["still figuring things out."],
+  },
+  "music-room-sign": {
+    lines: ["🎵 The Music Room", "An 8-bit track hums softly..."],
+  },
+  "idea-graveyard-sign": {
+    lines: [
+      "💀 THE IDEA GRAVEYARD",
+      "Here lie the ideas that didn't make it.",
+      "They taught him everything the good ones know.",
+    ],
+  },
+  "lookout-hill-sign": {
+    lines: ["Miami, 2026. Let's build something."],
+  },
+  "hidden-mentor": {
+    lines: [
+      "You found me.",
+      "Most people don't come this far. That says something about you.",
+      "Keep building. Keep shipping. The world needs what you're making.",
+    ],
+  },
+
+  // ─── Bulletin Board ─────────────────────────────────────────
+  "bulletin-header": {
+    lines: ["THINGS I'M FIGURING OUT RIGHT NOW"],
+  },
+  "bulletin-pin-1": {
+    lines: ["📌 AI PM skills — How to manage products that think for themselves."],
+  },
+  "bulletin-pin-2": {
+    lines: ["📌 LLM constraints — Token limits, hallucinations, eval frameworks."],
+  },
+  "bulletin-pin-3": {
+    lines: ["📌 RAG + embeddings — Making AI actually know your data."],
+  },
+  "bulletin-pin-4": {
+    lines: ["📌 Prompt engineering + evals — The craft of talking to machines."],
+  },
+  "bulletin-pin-5": {
+    lines: ["📌 Agents — Autonomous systems that can plan, act, and recover."],
+  },
+  "bulletin-pin-6": {
+    lines: ["📌 Design — Interfaces that feel inevitable, not designed."],
+  },
+  "bulletin-pin-7": {
+    lines: ["📌 Game theory in AI — Mechanism design meets language models."],
+  },
+  "bulletin-pc": {
+    lines: ["Andres's reading list — books, papers, and rabbit holes."],
+  },
 };

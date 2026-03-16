@@ -145,8 +145,39 @@ export class OverworldScene extends Phaser.Scene {
     this.interactionMap.set("31,28", { type: "building", key: "StarbucksCafe", returnPos: { x: 31, y: 29 } });
     this.interactionMap.set("41,8", { type: "building", key: "EngineeringLab", returnPos: { x: 41, y: 9 } });
     // Register under-construction buildings
-    this.interactionMap.set("20,13", { type: "under_construction", message: DIALOGUE["under-construction-default"]?.lines[0] ?? "Under construction." });
-    this.interactionMap.set("30,20", { type: "under_construction", message: DIALOGUE["under-construction-default"]?.lines[0] ?? "Under construction." });
+    // Chalk Lab (CONST-01 through CONST-03)
+    this.interactionMap.set("20,13", { type: "under_construction", message: DIALOGUE["chalk-lab-construction"]?.lines.join(" ") ?? "Under construction." });
+    // VC Office (CONST-04)
+    this.interactionMap.set("30,20", { type: "under_construction", message: DIALOGUE["vc-office"]?.lines[0] ?? "Under construction." });
+
+    // Hard hat NPC outside Chalk Lab (CONST-02) — placed at 21,14
+    this.interactionMap.set("21,14", { type: "sign", text: DIALOGUE["chalk-lab-hardhat"]?.lines ?? ["Check back soon."] });
+
+    // Hidden area signs (HIDE-01 through HIDE-05)
+    // Secret Beach — south beach area sign (HIDE-01)
+    this.interactionMap.set("42,35", { type: "sign", text: DIALOGUE["secret-beach-sign"]?.lines ?? ["..."] });
+    // Music Room — behind Andres's House (HIDE-02)
+    this.interactionMap.set("5,16", { type: "sign", text: DIALOGUE["music-room-sign"]?.lines ?? ["..."] });
+    // Idea Graveyard — southwest overgrown path (HIDE-03)
+    this.interactionMap.set("4,36", { type: "sign", text: DIALOGUE["idea-graveyard-sign"]?.lines ?? ["..."] });
+    // Lookout Hill — top center (HIDE-04)
+    this.interactionMap.set("24,3", { type: "sign", text: DIALOGUE["lookout-hill-sign"]?.lines ?? ["..."] });
+    // Hidden mentor NPC — north tip behind hill (HIDE-05)
+    this.interactionMap.set("25,1", { type: "sign", text: DIALOGUE["hidden-mentor"]?.lines ?? ["..."] });
+
+    // Bulletin Board area (BULL-01 through BULL-05)
+    // Main board — near dock/main street entry
+    this.interactionMap.set("24,32", { type: "sign", text: DIALOGUE["bulletin-header"]?.lines ?? ["..."] });
+    // 7 pins around the board
+    this.interactionMap.set("23,32", { type: "sign", text: DIALOGUE["bulletin-pin-1"]?.lines ?? ["..."] });
+    this.interactionMap.set("25,32", { type: "sign", text: DIALOGUE["bulletin-pin-2"]?.lines ?? ["..."] });
+    this.interactionMap.set("23,33", { type: "sign", text: DIALOGUE["bulletin-pin-3"]?.lines ?? ["..."] });
+    this.interactionMap.set("24,33", { type: "sign", text: DIALOGUE["bulletin-pin-4"]?.lines ?? ["..."] });
+    this.interactionMap.set("25,33", { type: "sign", text: DIALOGUE["bulletin-pin-5"]?.lines ?? ["..."] });
+    this.interactionMap.set("23,34", { type: "sign", text: DIALOGUE["bulletin-pin-6"]?.lines ?? ["..."] });
+    this.interactionMap.set("25,34", { type: "sign", text: DIALOGUE["bulletin-pin-7"]?.lines ?? ["..."] });
+    // PC next to board (BULL-04)
+    this.interactionMap.set("26,32", { type: "sign", text: DIALOGUE["bulletin-pc"]?.lines ?? ["..."] });
     // Register welcome sign near dock
     this.interactionMap.set("25,36", { type: "sign", text: DIALOGUE["welcome-sign"]?.lines ?? ["Welcome to Andres World."] });
 

@@ -39,8 +39,8 @@
   > After this: Thoven HQ interior with metrics board, shipped corkboard, practice rooms, Keri/Michael Seibel/Brian Chesky NPCs. 15 tests.
 - [x] **S12: Starbucks Cafe + Engineering Lab** `risk:medium` `depends:[S11]`
   > After this: Starbucks with essays, Paul Graham, barista. Engineering Lab with experiments, stack wall, rubber duck, Tobi/Patrick/Dario. 16 tests.
-- [ ] **S13: Hidden Areas + Under-Construction + Bulletin Board** `risk:medium` `depends:[S12]`
-  > After this: All 5 hidden areas accessible with correct content. Bulletin board with 7 pressable learning pins.
+- [x] **S13: Hidden Areas + Under-Construction + Bulletin Board** `risk:medium` `depends:[S12]`
+  > After this: All 5 hidden areas accessible with correct content. Bulletin board with 7 pressable learning pins. 17 tests.
 - [ ] **S14: Loading Screen** `risk:low` `depends:[S13]`
   > After this: Pokemon-style "ANDRES WORLD" title card with loading bar on page load.
 - [ ] **S15: Miami Art + Polish** `risk:low` `depends:[S14]`
