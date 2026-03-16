@@ -13,7 +13,7 @@
 export type InteractionPayload =
   | { type: "npc"; id: string; dialog: string[] }
   | { type: "sign"; text: string[] }
-  | { type: "building"; key: string; returnPos: { x: number; y: number } }
+  | { type: "building"; key: string; returnPos: { x: number; y: number }; entryPos?: { x: number; y: number } }
   | { type: "under_construction"; message: string };
 
 // ─── splitIntoPages (pure function — exported for Vitest) ─────────────────────

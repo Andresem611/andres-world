@@ -40,7 +40,7 @@
 
 ## Tasks
 
-- [ ] **T01: InteriorBaseScene + transition data contract** `est:45m`
+- [x] **T01: InteriorBaseScene + transition data contract** `est:45m`
   - Why: Core scene class that all interiors extend. Must handle tilemap, Grid Engine, player spawn, exit detection, and camera fades. Currently InteriorStubScene is a text-only placeholder with no real scene infrastructure.
   - Files: `src/game/scenes/InteriorBaseScene.ts`, `src/types/scene-data.ts`, `tests/interior-base.test.ts`
   - Do: (1) Create `src/types/scene-data.ts` with `InteriorTransitionData` and `OverworldReturnData` interfaces. (2) Create `InteriorBaseScene` that: loads a Tiled JSON map by `buildingKey`, initializes Grid Engine with player at `entryPos`, detects exit tiles (layer named "exits" or tile property `exit: true`), triggers camera fadeOut → scene.start("Overworld", returnData) on exit. (3) Add camera fadeIn on create. (4) Write unit tests for type shapes and class method existence.

@@ -3,6 +3,7 @@ import { Direction } from "grid-engine";
 import NPC_CONFIG from "../config/npcs";
 import { DIALOGUE } from "../../content/dialogue";
 import { DialogBox, InteractionPayload } from "../ui/DialogBox";
+import type { InteriorTransitionData, OverworldReturnData } from "../../types/scene-data";
 
 export class OverworldScene extends Phaser.Scene {
   private cursors!: Phaser.Types.Input.Keyboard.CursorKeys;
@@ -109,9 +110,20 @@ export class OverworldScene extends Phaser.Scene {
       ],
     });
 
-    // 8. Handle return from interior — reposition player if returning from a building
-    if (data?.returnFrom?.returnPos) {
-      this.gridEngine.setPosition("player", data.returnFrom.returnPos);
+    // 8. Handle return from interior — reposition player and fade in
+    const returnData = data?.returnFrom as OverworldReturnData | undefined;
+    if (returnData?.returnPos) {
+      this.gridEngine.setPosition("player", returnData.returnPos);
+      if (returnData.facingDirection) {
+        const dirMap: Record<string, Direction> = {
+          up: Direction.UP, down: Direction.DOWN,
+          left: Direction.LEFT, right: Direction.RIGHT,
+        };
+        const dir = dirMap[returnData.facingDirection];
+        if (dir) this.gridEngine.turnTowards("player", dir);
+      }
+      // Fade in from black (matching interior's fade out)
+      this.cameras.main.fadeIn(300, 0, 0, 0);
     }
 
     // 9. Create DialogBox (camera-fixed, depth 100, hidden by default)
@@ -239,12 +251,27 @@ export class OverworldScene extends Phaser.Scene {
         this.dialogBox.show(payload.text);
         this.dialogOpen = true;
         break;
-      case "building":
-        this.scene.start("InteriorStub", {
-          returnPos: payload.returnPos,
+      case "building": {
+        // Camera fade out, then transition to interior scene
+        const transitionData: InteriorTransitionData = {
           buildingKey: payload.key,
+          returnPos: payload.returnPos,
+          entryPos: payload.entryPos ?? { x: 3, y: 6 }, // default entry near bottom-center
+        };
+        this.cameras.main.fadeOut(300, 0, 0, 0);
+        this.cameras.main.once("camerafadeoutcomplete", () => {
+          // Try named scene first (e.g. "ThovenHQ"), fall back to InteriorStub
+          if (this.scene.get(payload.key)) {
+            this.scene.start(payload.key, transitionData);
+          } else {
+            this.scene.start("InteriorStub", {
+              returnPos: payload.returnPos,
+              buildingKey: payload.key,
+            });
+          }
         });
         break;
+      }
       case "under_construction":
         this.dialogBox.show([payload.message]);
         this.dialogOpen = true;
