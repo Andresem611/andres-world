@@ -3,7 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Andres World</title>
+    <title>Andres World — Interactive Portfolio</title>
+    <meta name="description" content="A playable Pokemon-style pixel-art portfolio. Walk around a Miami-themed overworld, talk to NPCs, and explore buildings to learn about Andres Martinez." />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Andres World" />
+    <meta property="og:description" content="A playable pixel-art portfolio game. Walk around Miami, talk to NPCs, explore buildings." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://andresmartinez.com" />
+    <meta property="og:image" content="https://andresmartinez.com/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Andres World" />
+    <meta name="twitter:description" content="A playable pixel-art portfolio game. Walk around Miami, talk to NPCs, explore buildings." />
+    <meta name="twitter:image" content="https://andresmartinez.com/assets/og-image.png" />
+
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
@@ -29,6 +46,23 @@
     <div id="game-container">
       <script type="module" src="/src/main.ts"></script>
     </div>
+
+    <!-- SEO: Static content for crawlers (hidden visually but in DOM) -->
+    <noscript>
+      <div style="max-width: 600px; margin: 2rem auto; font-family: monospace; color: #ccc; background: #1a1a2e; padding: 2rem;">
+        <h1>Andres World</h1>
+        <p>An interactive pixel-art portfolio by Andres Martinez. Built as a playable Pokemon-style game where you walk around a Miami-themed overworld.</p>
+        <h2>What's inside</h2>
+        <ul>
+          <li><strong>Thoven HQ</strong> — The operating system for music education</li>
+          <li><strong>Engineering Lab</strong> — Tools, experiments, and the tech stack</li>
+          <li><strong>Starbucks Café</strong> — Essays and readings on startups</li>
+          <li><strong>Andres's Room</strong> — Personal space with DJ booth, bookshelf, and family</li>
+          <li><strong>Bulletin Board</strong> — What I'm learning right now</li>
+        </ul>
+        <p>Visit on desktop with JavaScript enabled for the full experience.</p>
+      </div>
+    </noscript>
 
     <script>
       // Mobile gate: detect touch-only devices and show static landing

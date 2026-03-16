@@ -181,6 +181,13 @@ export class OverworldScene extends Phaser.Scene {
     // Register welcome sign near dock
     this.interactionMap.set("25,36", { type: "sign", text: DIALOGUE["welcome-sign"]?.lines ?? ["Welcome to Andres World."] });
 
+    // 12. Background music — plays on loop if audio loaded
+    if (this.cache.audio.exists("bgm-overworld")) {
+      if (!this.sound.get("bgm-overworld")) {
+        this.sound.play("bgm-overworld", { loop: true, volume: 0.3 });
+      }
+    }
+
     // 11. Scene shutdown cleanup — prevents memory leaks from open dialog
     this.events.on("shutdown", () => {
       // Unsubscribe patrol observable to prevent memory leak

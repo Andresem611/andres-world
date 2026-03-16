@@ -75,6 +75,18 @@ export class BootScene extends Phaser.Scene {
     for (const id of npcIds) {
       this.load.image(`npc-${id}`, `assets/sprites/npc-${id}.png`);
     }
+
+    // ─── Audio ─────────────────────────────────────────────────
+    // 8-bit background music — loaded if the file exists, gracefully skipped if not
+    this.load.audio("bgm-overworld", "assets/audio/overworld.mp3");
+    this.load.audio("bgm-music-room", "assets/audio/music-room.mp3");
+
+    // Don't fail on missing audio — it's optional until real tracks are added
+    this.load.on("loaderror", (file: Phaser.Loader.File) => {
+      if (file.key.startsWith("bgm-")) {
+        console.warn(`[Boot] Optional audio not found: ${file.key} — music will be silent.`);
+      }
+    });
   }
 
   create(): void {
