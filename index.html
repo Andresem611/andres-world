@@ -7,6 +7,41 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <script type="module" src="/src/main.ts"></script>
+    <!-- Mobile landing page — shown on touch-only devices -->
+    <div id="mobile-gate" style="display: none;">
+      <div class="mobile-content">
+        <h1 class="mobile-title">ANDRES WORLD</h1>
+        <p class="mobile-subtitle">A playable pixel-art portfolio</p>
+        <div class="mobile-divider"></div>
+        <p class="mobile-desc">This site is a game — walk around a Miami-themed overworld, talk to NPCs, and explore buildings to learn about me.</p>
+        <p class="mobile-cta">🖥️ Best experienced on desktop with a keyboard.</p>
+        <div class="mobile-links">
+          <a href="https://twitter.com/andresmartinez" target="_blank" rel="noopener">Twitter/X</a>
+          <a href="https://linkedin.com/in/andresmartinez" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://github.com/andresmartinez" target="_blank" rel="noopener">GitHub</a>
+          <a href="mailto:andres@thoven.com">Email</a>
+        </div>
+        <p class="mobile-footer">Built with Phaser 3 · Miami, 2026</p>
+      </div>
+    </div>
+
+    <!-- Game canvas — hidden on mobile -->
+    <div id="game-container">
+      <script type="module" src="/src/main.ts"></script>
+    </div>
+
+    <script>
+      // Mobile gate: detect touch-only devices and show static landing
+      (function() {
+        const isTouchOnly = ('ontouchstart' in window || navigator.maxTouchPoints > 0) 
+          && !window.matchMedia('(pointer: fine)').matches;
+        const isSmallScreen = window.innerWidth < 768;
+        
+        if (isTouchOnly || isSmallScreen) {
+          document.getElementById('mobile-gate').style.display = 'flex';
+          document.getElementById('game-container').style.display = 'none';
+        }
+      })();
+    </script>
   </body>
 </html>

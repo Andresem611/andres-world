@@ -31,8 +31,8 @@
   > After this: Flat placeholder blocks replaced with multi-tile building facades via automated script. Villas tileset added for Andres's House.
 - [x] **S08: Character + NPC Sprites** `risk:medium` `depends:[S06]`
   > After this: Player has hoodie+backpack sprite with 4-dir walk animation. At least 5 NPCs are real pixel art. All dialogue in typed content layer.
-- [ ] **S09: Pre-Interior Architecture** `risk:high` `depends:[S08]`
-  > After this: InteriorBaseScene, scene transition contract, mobile gate, and tileset registry are ready. One complete enter→walk→exit transition test passes.
+- [x] **S09: Pre-Interior Architecture** `risk:high` `depends:[S08]`
+  > After this: InteriorBaseScene bugs fixed, 4x zoom, mobile gate for touch devices, 16 tests verify transition contract.
 - [ ] **S10: Andres's Room** `risk:medium` `depends:[S09]`
   > After this: First complete interior explorable — bed, PC, DJ booth, bookshelf, wall items, Dad NPC, two dachshunds.
 - [ ] **S11: Thoven HQ** `risk:medium` `depends:[S10]`

@@ -67,3 +67,8 @@
 - "fillFacade() stretch/tile algorithm fills any footprint size from a smaller pattern by repeating middle rows/cols"
 - "Ground texture variety: ~15% grass tiles get variant GIDs, ~10% path tiles get variants, seeded random (seed=42) for reproducibility"
 - "No .tmx file created — overworld.json remains source of truth. Tiled can open it later for manual refinement"
+- "InteriorBaseScene keyboard input moved from update() to create() — createCursorKeys/addKeys called once, stored as class fields"
+- "Interior camera zoom set to 4x (setZoom(4)) matching overworld — interiors were rendering at 1x before"
+- "Mobile gate: dual detection — (ontouchstart OR maxTouchPoints>0) AND NOT pointer:fine, OR window.innerWidth < 768"
+- "Mobile gate inline script runs before Phaser module loads — toggles #mobile-gate display:flex and #game-container display:none"
+- "Removed window.__SCENE_DEBUG diagnostic surface from InteriorBaseScene — unnecessary in production"

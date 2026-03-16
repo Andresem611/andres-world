@@ -18,6 +18,15 @@ export class InteriorBaseScene extends Phaser.Scene {
   private exitPositions: Array<{ x: number; y: number }> = [];
   private isExiting = false;
 
+  // Keyboard — created once in create(), NOT in update()
+  private cursors!: Phaser.Types.Input.Keyboard.CursorKeys;
+  private wasd!: {
+    up: Phaser.Input.Keyboard.Key;
+    down: Phaser.Input.Keyboard.Key;
+    left: Phaser.Input.Keyboard.Key;
+    right: Phaser.Input.Keyboard.Key;
+  };
+
   constructor(sceneKey: string) {
     super({ key: sceneKey });
   }
@@ -129,13 +138,14 @@ export class InteriorBaseScene extends Phaser.Scene {
       ],
     });
 
-    // 7. Camera follow + bounds
+    // 7. Camera follow + bounds + zoom (match overworld 4x)
     this.cameras.main.startFollow(this.playerSprite, true);
     this.cameras.main.setBounds(
       0, 0,
       map.widthInPixels,
       map.heightInPixels,
     );
+    this.cameras.main.setZoom(4); // 4x zoom — matches overworld pixel art scale
 
     // 8. Exit detection — when player finishes moving, check if on exit tile
     this.gridEngine.movementStopped().subscribe(({ charId }: { charId: string }) => {
@@ -150,37 +160,32 @@ export class InteriorBaseScene extends Phaser.Scene {
     // 9. Fade in
     this.cameras.main.fadeIn(300, 0, 0, 0);
 
-    // 10. Keyboard input — movement handled in update()
-    // (no additional keydown listeners needed)
+    // 10. Keyboard input — created once here, used in update()
+    //     Same pattern as Overworld.ts: createCursorKeys() and addKeys() in create()
+    const { LEFT, RIGHT, UP, DOWN } = Phaser.Input.Keyboard.KeyCodes;
+    this.cursors = this.input.keyboard!.createCursorKeys();
+    this.wasd = this.input.keyboard!.addKeys({
+      up: Phaser.Input.Keyboard.KeyCodes.W,
+      down: Phaser.Input.Keyboard.KeyCodes.S,
+      left: Phaser.Input.Keyboard.KeyCodes.A,
+      right: Phaser.Input.Keyboard.KeyCodes.D,
+    }) as typeof this.wasd;
+    this.input.keyboard!.addCapture([LEFT, RIGHT, UP, DOWN]);
 
-    // 11. Diagnostic surface
-    (window as any).__SCENE_DEBUG = {
-      scene: this.scene.key,
-      buildingKey: this.transitionData.buildingKey,
-      entryPos,
-      exitPositions: this.exitPositions,
-    };
-
-    // 12. Subclass hook
+    // 11. Subclass hook
     this.onInteriorCreate();
   }
 
   update(): void {
     if (this.isExiting) return;
 
-    const cursors = this.input.keyboard!.createCursorKeys();
-    const wKey = this.input.keyboard!.addKey("W");
-    const aKey = this.input.keyboard!.addKey("A");
-    const sKey = this.input.keyboard!.addKey("S");
-    const dKey = this.input.keyboard!.addKey("D");
-
-    if (cursors.left.isDown || aKey.isDown) {
+    if (this.cursors.left.isDown || this.wasd.left.isDown) {
       this.gridEngine.move("player", Direction.LEFT);
-    } else if (cursors.right.isDown || dKey.isDown) {
+    } else if (this.cursors.right.isDown || this.wasd.right.isDown) {
       this.gridEngine.move("player", Direction.RIGHT);
-    } else if (cursors.up.isDown || wKey.isDown) {
+    } else if (this.cursors.up.isDown || this.wasd.up.isDown) {
       this.gridEngine.move("player", Direction.UP);
-    } else if (cursors.down.isDown || sKey.isDown) {
+    } else if (this.cursors.down.isDown || this.wasd.down.isDown) {
       this.gridEngine.move("player", Direction.DOWN);
     }
   }

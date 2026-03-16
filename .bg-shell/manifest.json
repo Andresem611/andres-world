@@ -1,14 +1,1 @@
-[
-  {
-    "id": "3081486b",
-    "label": "vite-dev",
-    "command": "cd /Users/andresmartinez/andres-world && npx vite dev --port 5173",
-    "cwd": "/Users/andresmartinez/andres-world",
-    "startedAt": 1773622339991,
-    "processType": "server",
-    "group": null,
-    "readyPattern": null,
-    "readyPort": 5173,
-    "pid": 55495
-  }
-]
+[]
