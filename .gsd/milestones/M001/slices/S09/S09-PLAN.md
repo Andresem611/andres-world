@@ -47,7 +47,7 @@
   - Verify: `npx vitest run tests/interior-base.test.ts`
   - Done when: InteriorBaseScene class exists with create/exit flow, types exported, tests pass
 
-- [ ] **T02: Wire InteriorBaseScene into game + update Overworld transition** `est:30m`
+- [x] **T02: Wire InteriorBaseScene into game + update Overworld transition** `est:30m`
   - Why: Connect the new scene class to the actual game. Replace InteriorStubScene with InteriorBaseScene for buildings that have maps (Thoven HQ stub), keep stub for others.
   - Files: `src/game/main.ts`, `src/game/scenes/Overworld.ts`, `src/game/scenes/InteriorStub.ts`
   - Do: (1) Register InteriorBaseScene in game config scene array. (2) Update Overworld `handleInteraction` for "building" type to: camera fadeOut → scene.start(buildingKey) with InteriorTransitionData. (3) Create a minimal `thoven-hq-stub.json` Tiled map (8×8 tiles, single ground layer + exits layer) for testing the round-trip. (4) Add `window.__SCENE_DEBUG` diagnostic surface. (5) Keep InteriorStubScene as fallback for buildings without maps.
