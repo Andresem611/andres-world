@@ -41,7 +41,7 @@
   > After this: Starbucks with essays, Paul Graham, barista. Engineering Lab with experiments, stack wall, rubber duck, Tobi/Patrick/Dario. 16 tests.
 - [x] **S13: Hidden Areas + Under-Construction + Bulletin Board** `risk:medium` `depends:[S12]`
   > After this: All 5 hidden areas accessible with correct content. Bulletin board with 7 pressable learning pins. 17 tests.
-- [ ] **S14: Loading Screen** `risk:low` `depends:[S13]`
-  > After this: Pokemon-style "ANDRES WORLD" title card with loading bar on page load.
+- [x] **S14: Loading Screen** `risk:low` `depends:[S13]`
+  > After this: Pokemon-style "ANDRES WORLD" title card with loading bar on page load. 11 tests.
 - [ ] **S15: Miami Art + Polish** `risk:low` `depends:[S14]`
   > After this: 8-bit music, mobile graceful degradation, Open Graph meta tags. Ship-ready.
