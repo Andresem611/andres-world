@@ -82,3 +82,8 @@
 - "Essays rendered as multi-line dialogue, not HTML overlay — simpler, consistent with game feel"
 - "Stack wall is one dialogue entry listing all 8 tools — not 8 separate poster interactions"
 - "Overworld entrances: Starbucks at 31,28, Engineering Lab at 41,8"
+- "M002 STACK PIVOT: React DOM + GridEngineHeadless + code-defined maps replaces Phaser 3 + Tiled. Rationale: (1) Tiled JSON/GID complexity was core pain point for AI-assisted iteration, (2) canvas text rendering was hardest UI work — trivial in CSS, (3) GridEngineHeadless provides same movement API without Phaser, (4) Claude Code autonomy jumps from ~65% to ~95% — everything is TypeScript/React/CSS. Evidence: LennyRPG creator confirmed 'Phaser UI polish was hardest part'; mewmewdevart won DEV Community challenge with React+DOM approach; viral Claude Pokemon clone validated raw Canvas + code-defined maps"
+- "GridEngineHeadless + ArrayTilemap chosen over full rewrite of movement logic — ArrayTilemap accepts { data: [[0,0,1],[0,1,0]] } directly, Grid Engine already in package.json, movement concepts (patrol, collision, pathfinding) carry over"
+- "nes-ui-react chosen for dialog UI — NES-styled React components, CSS-based, customizable. Fallback: custom DOM dialog component (~100 lines) if nes-ui-react doesn't match Gen 1/2 aesthetic"
+- "M001 preserved as historical reference — 15 slices, 131 tests, full Phaser implementation. Not deleted. M002 is a parallel implementation milestone"
+- "All M001 content carries forward to M002 — dialogue.ts (247 lines), npcs.ts (175 lines), 16 NPC sprites, player sprite, LimeZu tilesets. Zero content loss in pivot"

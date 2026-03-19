@@ -74,7 +74,7 @@ export const DIALOGUE: Record<string, DialogEntry> = {
   },
   "room-pc": {
     lines: ["Andres's links:"],
-    link: "social",
+    link: { label: "Social Links", url: "social" },
   },
   "room-dj": {
     lines: ["He takes this seriously."],
@@ -137,7 +137,7 @@ export const DIALOGUE: Record<string, DialogEntry> = {
   },
   "thoven-pc": {
     lines: ["Thoven — the operating system for music education."],
-    link: "https://thoven.com",
+    link: { label: "Thoven", url: "https://thoven.com" },
   },
 
   // ─── Starbucks Café Objects ─────────────────────────────────
