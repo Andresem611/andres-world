@@ -398,7 +398,7 @@ M001 built Andres World from an empty repo to a fully playable personal website 
 
 ## Requirement Changes
 
-All 55 requirements transitioned from `active` → `validated` during M001. Each is backed by test coverage and/or slice verification. See the `requirement_outcomes` frontmatter for full evidence mapping.
+All 79 requirements transitioned from `active` → `validated` during M001. Each is backed by test coverage and/or slice verification. See the `requirement_outcomes` frontmatter for full evidence mapping.
 
 Notable:
 - POLI-01/02 (music): validated as "infrastructure ready" — code loads and plays audio, gracefully handles missing files. Actual .mp3 creation is a content task, not an engineering gap.

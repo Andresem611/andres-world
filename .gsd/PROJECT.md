@@ -10,7 +10,7 @@ Visitors discover who Andres is by *playing* the world — every building, NPC, 
 
 ## Current State
 
-**M001 complete.** Shipped the full site using Phaser 3 + Grid Engine + Tiled (15 slices, 131 tests, 55 requirements validated). The game is playable: 50×40 Miami-themed overworld, 14 NPCs, 4 interior scenes, 5 hidden areas, Pokemon-style title card, mobile gate, OG meta tags. Music infrastructure ready but no .mp3 files yet.
+**M001 complete.** Shipped the full site using Phaser 3 + Grid Engine + Tiled (15 slices, 131 tests, 79 requirements validated). The game is playable: 50×40 Miami-themed overworld, 14 NPCs, 4 interior scenes, 5 hidden areas, Pokemon-style title card, mobile gate, OG meta tags. Music infrastructure ready but no .mp3 files yet.
 
 The Phaser 3 + Tiled stack made AI-assisted iteration painful — canvas text rendering, Tiled GID math, and tileset offset chains consumed the most debugging time. A stack pivot to React DOM + GridEngineHeadless was decided during M001.
 
@@ -45,11 +45,11 @@ The Phaser 3 + Tiled stack made AI-assisted iteration painful — canvas text re
 
 ## Capability Contract
 
-See `.gsd/REQUIREMENTS.md` for the explicit capability contract, requirement status, and coverage mapping. All 55 requirements validated in M001.
+See `.gsd/REQUIREMENTS.md` for the explicit capability contract, requirement status, and coverage mapping. All 79 requirements validated in M001.
 
 ## Milestone Sequence
 
-- [x] M001: Andres World v1.0 — Full site shipped with Phaser 3 + Tiled (15 slices, 131 tests, 55 requirements validated)
+- [x] M001: Andres World v1.0 — Full site shipped with Phaser 3 + Tiled (15 slices, 131 tests, 79 requirements validated)
 - [ ] M002: Andres World v2.0 (Path A+) — Rebuild with React DOM + GridEngineHeadless + code-defined maps
 
 ## World Geography (Build Reference)
