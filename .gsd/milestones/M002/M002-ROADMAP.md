@@ -52,28 +52,29 @@ This milestone is complete only when all are true:
 
 ## Slices
 
-- [ ] **S01: React + Vite Scaffold + Tile Renderer** `risk:high` `depends:[]`
+- [x] **S01: React + Vite Scaffold + Tile Renderer** `risk:high` `depends:[]`
   > After this: A 50×40 tile grid renders in the browser from a TypeScript 2D array with camera scrolling, 4x pixel zoom, and smooth viewport panning. No movement yet — just the rendered map with ground, paths, buildings, water, and trees visible.
 
-- [ ] **S02: GridEngineHeadless + Character Movement** `risk:high` `depends:[S01]`
+- [x] **S02: GridEngineHeadless + Character Movement** `risk:high` `depends:[S01]`
   > After this: Player sprite moves on the tile grid with arrow keys / WASD, grid-locked 4-directional movement, collision with buildings/water/trees, camera follows player. GridEngineHeadless manages all movement state, React renders position via CSS transform.
 
-- [ ] **S03: NPC System + Dialog UI** `risk:medium` `depends:[S02]`
+- [x] **S03: NPC System + Dialog UI** `risk:medium` `depends:[S02]`
   > After this: All 14+ overworld NPCs are visible at their positions, Space/E opens Pokemon-style dialog box (nes-ui-react or custom DOM), NPC turns to face player, dialog advances and closes. John Collison patrols Main Street.
 
-- [ ] **S04: Building Interactions + Interior Framework** `risk:medium` `depends:[S03]`
+- [x] **S04: Building Interactions + Interior Framework** `risk:medium` `depends:[S03]`
   > After this: Player can enter Andres's Room (first interior). Camera fades, interior React view loads with its own tile grid, objects, and NPCs. Player can exit back to overworld at correct position. Under-construction buildings show dialog popup. VC Office door is locked.
 
-- [ ] **S05: Remaining Interiors** `risk:medium` `depends:[S04]`
+- [x] **S05: Remaining Interiors** `risk:medium` `depends:[S04]`
   > After this: Thoven HQ (metrics board, shipped corkboard, practice rooms, 3 NPCs), Starbucks Café (essays, Paul Graham, barista), and Engineering Lab (experiments, stack wall, rubber duck, 3 NPCs) are all enterable and fully interactive.
+  > **Note: Collapsed into S04 — all 4 interiors delivered together.**
 
-- [ ] **S06: Hidden Areas + Bulletin Board** `risk:low` `depends:[S03]`
+- [x] **S06: Hidden Areas + Bulletin Board** `risk:low` `depends:[S03]`
   > After this: All 5 hidden areas accessible (Secret Beach, Music Room, Idea Graveyard, Lookout Hill, Hidden NPC) with correct signs and NPCs. Bulletin board has 7 pressable pins and adjacent PC. Dalton Caldwell NPC on bench.
 
-- [ ] **S07: Title Screen + Mobile Gate + SEO** `risk:low` `depends:[S05,S06]`
+- [x] **S07: Title Screen + Mobile Gate + SEO** `risk:low` `depends:[S05,S06]`
   > After this: Pokemon-style "ANDRES WORLD" title card with loading bar. Mobile gate blocks touch devices with static landing. OG meta tags and structured data for social sharing.
 
-- [ ] **S08: Visual Polish + Deploy** `risk:low` `depends:[S07]`
+- [x] **S08: Visual Polish + Deploy** `risk:low` `depends:[S07]`
   > After this: Pixel-perfect rendering verified. Multi-tile building facades match M001 visual quality. Music infrastructure ready. Deployed to andresmartinez.com on Vercel. Content parity with M001 verified.
 
 ## Boundary Map
