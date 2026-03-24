@@ -43,11 +43,11 @@ export function TitleScreen({ onStart }: TitleScreenProps) {
         {/* Player sprite */}
         <div
           style={{
-            width: 64,
-            height: 64,
+            width: 128,
+            height: 128,
             backgroundImage: "url(./assets/sprites/player.png)",
-            backgroundPosition: "-32px -96px", // frame 1 (idle), row 3 (up)
-            backgroundSize: "192px 256px",
+            backgroundPosition: "-128px 0px", // frame 1 (idle), row 0 (down/front-facing)
+            backgroundSize: "384px 512px", // 4x scale of 96×128
             imageRendering: "pixelated" as const,
             margin: "0 auto 24px",
           }}
