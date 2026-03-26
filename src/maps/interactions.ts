@@ -34,20 +34,23 @@ export function buildInteractionMap(): Map<string, Interaction> {
   });
 
   // ─── Building Entrances ──────────────────────────────
-  // Andres's House entrance (bottom of house footprint)
-  map.set("8,20", {
+  // Each entrance is on the lowest collision tile of the building face.
+  // Player stands on the walkable tile below and faces up to interact.
+
+  // Andres's House entrance
+  map.set("8,22", {
     type: "building",
     id: "andres-house",
     interiorKey: "andres-room",
-    returnPos: { x: 8, y: 21 },
+    returnPos: { x: 8, y: 23 },
   });
 
   // Thoven HQ entrance
-  map.set("16,19", {
+  map.set("16,22", {
     type: "building",
     id: "thoven-hq",
     interiorKey: "thoven-hq",
-    returnPos: { x: 16, y: 20 },
+    returnPos: { x: 16, y: 23 },
   });
 
   // Starbucks Café entrance

@@ -140,22 +140,23 @@ export function GameContainer() {
       }
     }
 
-    // Check interaction map (signs, buildings, under-construction)
-    const key = `${targetX},${targetY}`;
-    const interaction = INTERACTION_MAP.get(key);
-    if (interaction) {
-      switch (interaction.type) {
-        case "sign":
-        case "under_construction":
-          if (interaction.dialog) {
-            openDialog(interaction.dialog, interaction.type === "sign" ? "Sign" : "⚠️");
-          }
-          break;
-        case "building":
-          if (interaction.interiorKey && interaction.returnPos) {
-            enterInterior(interaction.interiorKey, interaction.returnPos);
-          }
-          break;
+    // Check interaction map — first the faced tile, then the standing tile
+    for (const key of [`${targetX},${targetY}`, `${playerState.x},${playerState.y}`]) {
+      const interaction = INTERACTION_MAP.get(key);
+      if (interaction) {
+        switch (interaction.type) {
+          case "sign":
+          case "under_construction":
+            if (interaction.dialog) {
+              openDialog(interaction.dialog, interaction.type === "sign" ? "Sign" : "⚠️");
+            }
+            return;
+          case "building":
+            if (interaction.interiorKey && interaction.returnPos) {
+              enterInterior(interaction.interiorKey, interaction.returnPos);
+            }
+            return;
+        }
       }
     }
   }

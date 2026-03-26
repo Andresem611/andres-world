@@ -66,7 +66,7 @@ describe("interaction map", () => {
   });
 
   it("has building entrances", () => {
-    const entrances = ["8,20", "16,19", "31,28", "41,8"];
+    const entrances = ["8,22", "16,22", "31,28", "41,8"];
     for (const pos of entrances) {
       const interaction = INTERACTION_MAP.get(pos);
       expect(interaction).toBeDefined();
